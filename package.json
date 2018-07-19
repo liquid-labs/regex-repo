@@ -1,0 +1,28 @@
+{
+  "name": "regex-repo",
+  "version": "0.0.1",
+  "description": "Collection of common regular expressions in multiple languages for data validation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/liquidlabs/regex-repo.git"
+  },
+  "keywords": [
+    "regex",
+    "validate-data",
+    "data-validation"
+  ],
+  "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/liquidlabs/regex-repo/issues"
+  },
+  "homepage": "https://gitlab.com/liquidlabs/regex-repo#README",
+  "devDependencies": {
+    "jest": "^23.4.1"
+  },
+  "dependencies": {}
+}
