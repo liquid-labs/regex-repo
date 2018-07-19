@@ -18,6 +18,7 @@ cache:
 test:node:8:
   script:
     - npm test
+  coverage: All files[^|]*\|[^|]*\s+([\d\.]+)
 
 # test:node:7:
 #  image: node:7
