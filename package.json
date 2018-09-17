@@ -1,10 +1,12 @@
 {
   "name": "regex-repo",
   "version": "0.0.1",
-  "description": "Collection of common regular expressions in multiple languages for data validation.",
-  "main": "index.js",
+  "description": "Collection of JS regular expressions.",
+  "main": "src/index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "pretest": "babel --source-maps inline src -d dist",
+    "start": "babel --watch --source-maps inline src -d dist",
+    "test": "jest --coverage dist"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,11 @@
   },
   "homepage": "https://gitlab.com/liquidlabs/regex-repo#README",
   "devDependencies": {
-    "jest": "^23.4.1"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0"
   },
   "dependencies": {}
 }
