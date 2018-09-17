@@ -8,7 +8,7 @@
     "start": "babel --watch --source-maps inline src -d dist",
     "pretest": "babel --source-maps inline src -d dist",
     "test": "jest --coverage dist",
-    "prepublish": "babel src -d dist && find dist -name '*.test.js' | xargs rm"
+    "prepublishOnly": "rm -rf dist && babel src -d dist && find dist -name '*.test.js' | xargs rm"
   },
   "repository": {
     "type": "git",
