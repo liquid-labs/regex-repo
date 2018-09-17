@@ -1,12 +1,14 @@
 {
-  "name": "regex-repo",
-  "version": "0.0.1",
+  "name": "@liquid-labs/regex-repo",
+  "version": "0.0.2",
   "description": "Collection of JS regular expressions.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "files": ["dist/"],
   "scripts": {
-    "pretest": "babel --source-maps inline src -d dist",
     "start": "babel --watch --source-maps inline src -d dist",
-    "test": "jest --coverage dist"
+    "pretest": "babel --source-maps inline src -d dist",
+    "test": "jest --coverage dist",
+    "prepublish": "babel src -d dist && find dist -name '*.test.js' | xargs rm"
   },
   "repository": {
     "type": "git",
