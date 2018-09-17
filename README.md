@@ -1,5 +1,5 @@
-[![pipeline status](https://gitlab.com/liquidlabs/regex-repo/badges/master/pipeline.svg)](https://gitlab.com/liquidlabs/regex-repo/commits/master)
-[![coverage report](https://gitlab.com/liquidlabs/regex-repo/badges/master/coverage.svg)](https://gitlab.com/liquidlabs/regex-repo/commits/master)
+[![pipeline status](https://gitlab.com/liquid-labs/regex-repo/badges/master/pipeline.svg)](https://gitlab.com/liquid-labs/regex-repo/commits/master)
+[![coverage report](https://gitlab.com/liquid-labs/regex-repo/badges/master/coverage.svg)](https://gitlab.com/liquid-labs/regex-repo/commits/master)
 
 # regex-repo
 
