@@ -1,6 +1,6 @@
 {
   "name": "@liquid-labs/regex-repo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Collection of JS regular expressions.",
   "main": "dist/index.js",
   "files": ["README.md", "dist/"],
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Liquid-Labs/regex-repo/issues"
   },
-  "homepage": "https://github.com/Liquid-Labs/regex-repo",
+  "homepage": "https://github.com/Liquid-Labs/regex-repo#readme",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.1",
