@@ -1,9 +1,9 @@
 {
   "name": "@liquid-labs/regex-repo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Collection of JS regular expressions.",
   "main": "dist/index.js",
-  "files": ["dist/"],
+  "files": ["README.md", "dist/"],
   "scripts": {
     "start": "babel --watch --source-maps inline src -d dist",
     "pretest": "babel --source-maps inline src -d dist",
