@@ -20,9 +20,9 @@
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/liquidlabs/regex-repo/issues"
+    "url": "https://github.com/Liquid-Labs/regex-repo/issues"
   },
-  "homepage": "https://gitlab.com/liquidlabs/regex-repo#README",
+  "homepage": "https://github.com/Liquid-Labs/regex-repo",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.1",
