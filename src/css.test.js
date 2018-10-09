@@ -1,10 +1,11 @@
 import { groupTest } from './lib'
 import * as regex from './index'
 import { validHexColors1, validHexColors, invalidHexColors } from './test-data/hexColors'
-import { validRgb1, validRgba1, invalidRgb1, validRgb, invalidRgb } from './test-data/rgbColors'
+import { validRgb1, validRgba3, invalidRgb1, validRgb, invalidRgb } from './test-data/rgbColors'
+import { validHsl3, invalidHsl3, validHsl, invalidHsl } from './test-data/hslColors'
 
-groupTest(regex.hexColor1, validHexColors1, invalidHexColors)
-groupTest(regex.hexColor, validHexColors, invalidHexColors)
+groupTest(regex.hexColor1, validHexColors1, invalidHexColors, 'hexColor1')
+groupTest(regex.hexColor, validHexColors, invalidHexColors, 'hexColor')
 
 // since the colors are hard coded, we don't test the while thing; we'd just
 // end up replicating the structure or building pointless tests from the same
@@ -35,6 +36,9 @@ test('cssPreColors fails to match invalid', () => {
   expect(regex.cssPreColors.test('blueberry')).toBe(false)
 })
 
-groupTest(regex.rgb1, validRgb1, invalidRgb1)
-groupTest(regex.rgba1, validRgba1, invalidRgb1) // note, same invalid group
-groupTest(regex.rgb, validRgb, invalidRgb)
+groupTest(regex.rgb1, validRgb1, invalidRgb1, 'rgb')
+groupTest(regex.rgba3, validRgba3, invalidRgb1, 'rgba3') // note, same invalid group
+groupTest(regex.rgb, validRgb, invalidRgb, 'rgb')
+
+groupTest(regex.hsl3, validHsl3, invalidHsl3, 'hsl3')
+groupTest(regex.hsl, validHsl, invalidHsl, 'hsl')

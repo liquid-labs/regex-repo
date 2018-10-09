@@ -6,7 +6,7 @@ export const validRgb1 = [
   'rgb(100%,0%,60%)',
   'rgb(100%, 0%, 60%)',
 ]
-export const validRgba1 = [
+export const validRgba3 = [
   'rgba(1, 2, 3, .4)',
   'rgba(1, 2, 3, .002)',
   'rgba(1, 2, 3, 1)',
@@ -19,7 +19,7 @@ export const validRgba1 = [
   'rgba(100%, 0%, 60%, 40%)',
 ]
 
-export const validRgb = validRgb1.concat(validRgba1).concat([
+export const validRgb = validRgb1.concat(validRgba3).concat([
   'rgb(1, 2, 3, .4)',
   'rgba(1, 2, 3)',
   'rgb(255, 0, 153, 100%)',
