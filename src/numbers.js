@@ -1,6 +1,6 @@
 import * as numStrs from './numbers-strings'
-import { lockdown } from './lib'
+import { lockdownRe } from './lib'
 
-export const zeroTo255 = new RegExp(lockdown(numStrs.zeroTo255Str))
-export const zeroTo1Float = new RegExp(lockdown(numStrs.zeroTo1FloatStr))
-export const percent = new RegExp(lockdown(numStrs.percentStr))
+export const zeroTo255 = lockdownRe(numStrs.zeroTo255Str)
+export const zeroTo1Float = lockdownRe(numStrs.zeroTo1FloatStr)
+export const percent = lockdownRe(numStrs.percentStr)

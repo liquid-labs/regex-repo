@@ -1,10 +1,11 @@
 import * as pre from './css-color-data'
+import { lockdownRe } from './lib'
 import { zeroTo255Str, zeroTo1FloatStr, percentStr } from './numbers-strings'
 
 // supports latest rgba hex
-const hexColorStr = '^#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})$'
-export const hexColor = new RegExp(hexColorStr, 'i')
-export const hexColor1 = /^#([a-f0-9]{6}|[a-f0-9]{3})$/i
+const hexColorStr = '#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})'
+export const hexColor = lockdownRe(hexColorStr, 'i')
+export const hexColor1 = lockdownRe('#([a-f0-9]{6}|[a-f0-9]{3})', 'i')
 
 const cssPreColors1Str = '^(' + Object.keys(pre.cssPreColors1).join('|') + ')$'
 export const cssPreColors1 = new RegExp(cssPreColors1Str, 'i')
