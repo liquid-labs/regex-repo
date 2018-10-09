@@ -7,14 +7,10 @@ const hexColorStr = '#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})'
 export const hexColor = lockdownRe(hexColorStr, 'i')
 export const hexColor1 = lockdownRe('#([a-f0-9]{6}|[a-f0-9]{3})', 'i')
 
-const cssPreColors1Str = '^(' + Object.keys(pre.cssPreColors1).join('|') + ')$'
-export const cssPreColors1 = new RegExp(cssPreColors1Str, 'i')
-const cssPreColors2Str = '^(' + Object.keys(pre.cssPreColors2).join('|') + ')$'
-export const cssPreColors2 = new RegExp(cssPreColors2Str, 'i')
-const cssPreColors3Str = '^(' + Object.keys(pre.cssPreColors3).join('|') + ')$'
-export const cssPreColors3 = new RegExp(cssPreColors3Str, 'i')
-const cssPreColorsStr = '^(' + Object.keys(pre.cssPreColors).join('|') + ')$'
-export const cssPreColors = new RegExp(cssPreColorsStr, 'i')
+export const cssPreColors1 = lockdownRe(Object.keys(pre.cssPreColors1), 'i')
+export const cssPreColors2 = lockdownRe(Object.keys(pre.cssPreColors2), 'i')
+export const cssPreColors3 = lockdownRe(Object.keys(pre.cssPreColors3), 'i')
+export const cssPreColors = lockdownRe(Object.keys(pre.cssPreColors), 'i')
 
 const alphaStr = `(${zeroTo1FloatStr}|${percentStr})`
 const rgb1IntStr = `rgb\\((\\s*${zeroTo255Str}\\s*,){2}\\s*${zeroTo255Str}\\s*\\)`

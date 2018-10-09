@@ -1,6 +1,6 @@
 export const lockdownRe = (str, flags) =>
   Array.isArray(str)
-    ? new RegExp(`^\\s*(${str.join('|')})\\s$`, flags)
+    ? new RegExp(`^\\s*(${str.join('|')})\\s*$`, flags)
     : new RegExp(`^\\s*${str}\\s*$`, flags)
 
 const groupTestHelper = (re, data, isValid, desc) =>
