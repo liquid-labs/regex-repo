@@ -13,3 +13,9 @@ const cssPreColors3Re = '^(' + Object.keys(pre.cssPreColors3).join('|') + ')$'
 export const cssPreColors3 = new RegExp(cssPreColors3Re, 'i')
 const cssPreColorsRe = '^(' + Object.keys(pre.cssPreColors).join('|') + ')$'
 export const cssPreColors = new RegExp(cssPreColorsRe, 'i')
+
+const zeroTo255Re = '([1-9]|[1-9][0-9]|1[0-9][0-9]|25[0-5]|2[0-4][0-9])'
+const rgbRe = `rgb\\((\\s*${zeroTo255Re}\\s*,){2}\\s*${zeroTo255Re}\\s*\\)`
+const rgbaRe = `rgba\\((\\s*${zeroTo255Re}\\s*,){3}\\s*${zeroTo255Re}\\s*\\)`
+const rgbBothRe = `^(${rgbRe}|${rgbaRe})$`
+export const rgb = new RegExp(rgbBothRe)
