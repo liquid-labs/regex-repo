@@ -1,7 +1,7 @@
 import { groupTest } from './testlib'
 import * as regex from './index'
 import { validHexColors1, validHexColors, invalidHexColors } from './test-data/hexColors'
-import { validRgb1, invalidRgb1, validRgb, invalidRgb } from './test-data/rgbColors'
+import { validRgb1, validRgba1, invalidRgb1, validRgb, invalidRgb } from './test-data/rgbColors'
 
 groupTest(regex.hexColor1, validHexColors1, invalidHexColors)
 groupTest(regex.hexColor, validHexColors, invalidHexColors)
@@ -36,4 +36,5 @@ test('cssPreColors fails to match invalid', () => {
 })
 
 groupTest(regex.rgb1, validRgb1, invalidRgb1)
-groupTest(regex.rgb, validRgb, invalidRgb)
+groupTest(regex.rgba1, validRgba1, invalidRgb1) // note, same invalid group
+//groupTest(regex.rgb, validRgb, invalidRgb)
