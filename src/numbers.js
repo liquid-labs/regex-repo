@@ -1,6 +1,10 @@
 import * as numStrs from './numbers-strings'
 import { lockdownRe } from './lib'
 
+export const plainFloat = lockdownRe(numStrs.plainFloatStr)
+export const scientificFloat = lockdownRe(numStrs.scientificFloatStr)
+export const float = lockdownRe(numStrs.floatStr)
+
 export const zeroTo1Float = lockdownRe(numStrs.zeroTo1FloatStr)
 export const zeroTo100Percent = lockdownRe(numStrs.zeroTo100PercentStr)
 export const zeroTo100FloatPercent = lockdownRe(numStrs.zeroTo100FloatPercentStr)

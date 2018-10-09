@@ -1,6 +1,6 @@
 import * as pre from './css-color-data'
 import { lockdownRe } from './lib'
-import { zeroTo255Str, zeroTo1FloatStr, zeroTo100PercentStr, zeroTo100FloatPercentStr, zeroTo255FloatStr } from './numbers-strings'
+import { zeroTo255Str, zeroTo1FloatStr, zeroTo100PercentStr, zeroTo100FloatPercentStr, zeroTo255FloatStr, zeroTo360Str } from './numbers-strings'
 
 // supports latest rgba hex
 const hexColorStr = '#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})'
@@ -28,3 +28,6 @@ const rgbPercFuncStr = `(\\s*${zeroTo100FloatPercentStr}\\s*,){2}\\s*${zeroTo100
 const rgbDecSpaceStr = `(\\s*${zeroTo255FloatStr}\\s+){2}${zeroTo255FloatStr}\\s*(/\\s*${alphaFloatStr}\\s*)?`
 const rgbPercSpaceStr = `(\\s*${zeroTo100FloatPercentStr}\\s+){2}${zeroTo100FloatPercentStr}\\s*(/\\s*${alphaFloatStr}\\s*)?`
 export const rgb = lockdownRe(`rgba?\\((${rgbDecFuncStr}|${rgbPercFuncStr}|${rgbDecSpaceStr}|${rgbPercSpaceStr})\\s*\\)`)
+
+export const hsl1 = lockdownRe(`hsl\\(${zeroTo360Str}(deg)?\\s*(,\\s${zeroTo100PercentStr}){2}\\)`)
+// export const hsl = lockdownRe(`hsl\\(${zeroTo360Str}(deg)?\\s*(,\\s${zeroTo100PercentStr}){2}\\)`)

@@ -1,5 +1,8 @@
 // Note, this module is used internally, so these aStr exported to for other
 // modules to use, but the file is not Str-exported through index.
+export const plainFloatStr = '[+-]?(0(\\.[0-9]+)?|[1-9][0-9]*(\\.[0-9]+)?)'
+export const scientificFloatStr = `${plainFloatStr}[eE]${plainFloatStr}`
+export const floatStr = `${plainFloatStr}([eE]${plainFloatStr})?`
 export const zeroTo1FloatStr = '(0|0?\\.[0-9]+|1(\\.0+)?)'
 export const zeroTo100PercentStr = '([0-9]|[1-9][0-9]|100)\\%'
 export const zeroTo100FloatPercentStr =
