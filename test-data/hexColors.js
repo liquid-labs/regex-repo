@@ -1,4 +1,4 @@
-export const validHexColors3 = [
+export const validHexColors1 = [
   '#abc',
   '#def',
   '#123',
@@ -10,7 +10,7 @@ export const validHexColors3 = [
 ]
 
 // allows 4th value for alpha channel in level 4
-export const validHexColors = validHexColors3.concat([
+export const validHexColors = validHexColors1.concat([
   '#abca',
   '#defb',
   '#1233',
