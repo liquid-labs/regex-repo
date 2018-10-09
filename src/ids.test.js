@@ -1,12 +1,12 @@
-import { uuidRe } from './ids'
+import * as regex from './index'
 
 const trivial0 = '00000000-0000-1000-8000-000000000000'
 const invalidUuid = '00000000-0000-0000-0000-000000000000'
 
 test('trivial (all 0) UUID is valid', () => {
-  expect(uuidRe.test(trivial0)).toBe(true)
+  expect(regex.uuid.test(trivial0)).toBe(true)
 })
 
 test('recognize invalid UUID', () => {
-  expect(uuidRe.test(invalidUuid)).toBe(false)
+  expect(regex.uuid.test(invalidUuid)).toBe(false)
 })

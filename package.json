@@ -3,12 +3,15 @@
   "version": "0.0.5",
   "description": "Collection of JS regular expressions.",
   "main": "dist/index.js",
-  "files": ["README.md", "dist/"],
+  "files": [
+    "README.md",
+    "dist/"
+  ],
   "scripts": {
     "start": "babel --watch --source-maps inline src -d dist",
-    "pretest": "babel --source-maps inline src -d dist",
+    "pretest": "rm -rf dist/ && babel --source-maps inline src -d dist && babel test-data -d dist/test-data",
     "test": "jest --coverage dist",
-    "prepublishOnly": "rm -rf dist && babel src -d dist && find dist -name '*.test.js' | xargs rm"
+    "prepublishOnly": "rm -rf dist && babel src -d dist && find dist -name '*.test.js' -o -name 'testlib.js' | xargs rm"
   },
   "repository": {
     "type": "git",
