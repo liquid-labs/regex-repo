@@ -14,8 +14,8 @@ export const cssPreColors3 = new RegExp(cssPreColors3Re, 'i')
 const cssPreColorsRe = '^(' + Object.keys(pre.cssPreColors).join('|') + ')$'
 export const cssPreColors = new RegExp(cssPreColorsRe, 'i')
 
-const zeroTo255Re = '([1-9]|[1-9][0-9]|1[0-9][0-9]|25[0-5]|2[0-4][0-9])'
-const zeroTo1Re = '(1(\\.0+)?|0?\\.[0-9]+)'
+const zeroTo255Re = '([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])'
+const zeroTo1Re = '(0?\\.[0-9]+|1(\\.0+)?)'
 const percentRe = '([0-9]|[1-9][0-9]|100)\\%'
 const alphaRe = `(${zeroTo1Re}|${percentRe})`
 const rgb1IntRe = `rgb\\((\\s*${zeroTo255Re}\\s*,){2}\\s*${zeroTo255Re}\\s*\\)`
@@ -26,5 +26,12 @@ const rgba1PercRe = `rgba\\((\\s*${percentRe}\\s*,){3}\\s*${alphaRe}\\s*\\)`
 const rgba1Re = `(${rgba1IntRe}|${rgba1PercRe})`
 export const rgb1 = new RegExp(rgb1Re)
 export const rgba1 = new RegExp(rgba1Re)
-// In level 4, rgba is an alias for rgb
-export const rgb = new RegExp(`^rgba?\\((\\s*${zeroTo255Re}\\s*,){2,3}\\s*${zeroTo255Re}\\s*\\)$`)
+// In level 4, rgba is an alias for rgb, supports floats, and space notation
+// NOTE: The spec allows float values like '+.25e2%', which cannot be recognized
+// via RE and are not supported.
+const zeroTo255DecRe = '(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])(\\.[0-9]+)?|255(\\.0+)?)'
+const rgbDecFuncRe = `(\\s*${zeroTo255DecRe}\\s*,){2}\\s*${zeroTo255DecRe}\\s*(,\\s*${alphaRe}\\s*)?`
+const rgbPercFuncRe = `(\\s*${percentRe}\\s*,){2}\\s*${percentRe}\\s*(,\\s*${alphaRe}\\s*)?`
+const rgbDecSpaceRe = `(\\s*${zeroTo255DecRe}\\s+){2}${zeroTo255DecRe}\\s*(/\\s*${alphaRe}\\s*)?`
+const rgbPercSpaceRe = `(\\s*${percentRe}\\s+){2}${percentRe}\\s*(/\\s*${alphaRe}\\s*)?`
+export const rgb = new RegExp(`^rgba?\\((${rgbDecFuncRe}|${rgbPercFuncRe}|${rgbDecSpaceRe}|${rgbPercSpaceRe})\\s*\\)$`)

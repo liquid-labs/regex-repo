@@ -37,4 +37,4 @@ test('cssPreColors fails to match invalid', () => {
 
 groupTest(regex.rgb1, validRgb1, invalidRgb1)
 groupTest(regex.rgba1, validRgba1, invalidRgb1) // note, same invalid group
-//groupTest(regex.rgb, validRgb, invalidRgb)
+groupTest(regex.rgb, validRgb, invalidRgb)
