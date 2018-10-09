@@ -1,11 +1,11 @@
-const groupTestHelper = (re, data, isValid) =>
+const groupTestHelper = (re, data, isValid, desc) =>
   data.forEach((datum) =>
-    test(`${isValid ? 'pass' : 'fail'} '${datum}'`, () => {
+    test(`${desc ? desc + ' should ' : ''}${isValid ? 'pass' : 'fail'} '${datum}'`, () => {
       expect(re.test(datum)).toBe(isValid)
     })
   )
 
-export const groupTest = (re, validData, invalidData) => {
-  groupTestHelper(re, validData, true)
-  groupTestHelper(re, invalidData, false)
+export const groupTest = (re, validData, invalidData, desc) => {
+  groupTestHelper(re, validData, true, desc)
+  groupTestHelper(re, invalidData, false, desc)
 }
