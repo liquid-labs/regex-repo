@@ -29,9 +29,9 @@ export const rgba1 = new RegExp(rgba1Re)
 // In level 4, rgba is an alias for rgb, supports floats, and space notation
 // NOTE: The spec allows float values like '+.25e2%', which cannot be recognized
 // via RE and are not supported.
-const zeroTo255DecRe = '(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])(\\.[0-9]+)?|255(\\.0+)?)'
-const rgbDecFuncRe = `(\\s*${zeroTo255DecRe}\\s*,){2}\\s*${zeroTo255DecRe}\\s*(,\\s*${alphaRe}\\s*)?`
+const zeroTo255FloatRe = '(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])(\\.[0-9]+)?|255(\\.0+)?)'
+const rgbDecFuncRe = `(\\s*${zeroTo255FloatRe}\\s*,){2}\\s*${zeroTo255FloatRe}\\s*(,\\s*${alphaRe}\\s*)?`
 const rgbPercFuncRe = `(\\s*${percentRe}\\s*,){2}\\s*${percentRe}\\s*(,\\s*${alphaRe}\\s*)?`
-const rgbDecSpaceRe = `(\\s*${zeroTo255DecRe}\\s+){2}${zeroTo255DecRe}\\s*(/\\s*${alphaRe}\\s*)?`
+const rgbDecSpaceRe = `(\\s*${zeroTo255FloatRe}\\s+){2}${zeroTo255FloatRe}\\s*(/\\s*${alphaRe}\\s*)?`
 const rgbPercSpaceRe = `(\\s*${percentRe}\\s+){2}${percentRe}\\s*(/\\s*${alphaRe}\\s*)?`
 export const rgb = new RegExp(`^rgba?\\((${rgbDecFuncRe}|${rgbPercFuncRe}|${rgbDecSpaceRe}|${rgbPercSpaceRe})\\s*\\)$`)
