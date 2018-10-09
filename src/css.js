@@ -9,15 +9,16 @@ import {
   zeroTo255FloatStr,
   zeroTo360Str } from './numbers-strings'
 
-// supports latest rgba hex
-const hexColorStr = '#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})'
-export const hexColor = lockdownRe(hexColorStr, 'i')
-export const hexColor1 = lockdownRe('#([a-f0-9]{6}|[a-f0-9]{3})', 'i')
+const hexColor1Str = '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
+export const hexColor1 = lockdownRe(hexColor1Str)
+// level 4 adds alpha hex support
+const hexColorStr = '#([a-fA-F0-9]{6}|[a-fA-F0-9]{8}|[a-fA-F0-9]{3,4})'
+export const hexColor = lockdownRe(hexColorStr)
 
-export const cssPreColors1 = lockdownRe(Object.keys(pre.cssPreColors1), 'i')
-export const cssPreColors2 = lockdownRe(Object.keys(pre.cssPreColors2), 'i')
-export const cssPreColors3 = lockdownRe(Object.keys(pre.cssPreColors3), 'i')
-export const cssPreColors = lockdownRe(Object.keys(pre.cssPreColors), 'i')
+export const cssPreColors1 = lockdownRe(Object.keys(pre.cssPreColors1))
+export const cssPreColors2 = lockdownRe(Object.keys(pre.cssPreColors2))
+export const cssPreColors3 = lockdownRe(Object.keys(pre.cssPreColors3))
+export const cssPreColors = lockdownRe(Object.keys(pre.cssPreColors))
 
 const alphaStr = `(${zeroTo1FloatStr}|${zeroTo100PercentStr})`
 const rgb1IntStr = `rgb\\((\\s*${zeroTo255Str}\\s*,){2}\\s*${zeroTo255Str}\\s*\\)`
@@ -34,8 +35,19 @@ const rgbDecFuncStr = `(\\s*${zeroTo255FloatStr}\\s*,){2}\\s*${zeroTo255FloatStr
 const rgbPercFuncStr = `(\\s*${zeroTo100FloatPercentStr}\\s*,){2}\\s*${zeroTo100FloatPercentStr}\\s*(,\\s*${alphaFloatStr}\\s*)?`
 const rgbDecSpaceStr = `(\\s*${zeroTo255FloatStr}\\s+){2}${zeroTo255FloatStr}\\s*(/\\s*${alphaFloatStr}\\s*)?`
 const rgbPercSpaceStr = `(\\s*${zeroTo100FloatPercentStr}\\s+){2}${zeroTo100FloatPercentStr}\\s*(/\\s*${alphaFloatStr}\\s*)?`
-export const rgb = lockdownRe(`rgba?\\((${rgbDecFuncStr}|${rgbPercFuncStr}|${rgbDecSpaceStr}|${rgbPercSpaceStr})\\s*\\)`)
+const rgbStr = `rgba?\\((${rgbDecFuncStr}|${rgbPercFuncStr}|${rgbDecSpaceStr}|${rgbPercSpaceStr})\\s*\\)`
+export const rgb = lockdownRe(rgbStr)
 
 const hsl3BaseStr = `\\s*${zeroTo360Str}(deg)?\\s*(,\\s*${zeroTo100PercentStr}\\s*)`
-export const hsl3 = lockdownRe([`hsl\\(${hsl3BaseStr}{2}\\)`, `hsla\\(${hsl3BaseStr}{3}\\)`])
-export const hsl = lockdownRe(`hsla?\\(\\s*${floatStr}(deg|grad|rad|turn)?\\s*(,\\s*${zeroTo100FloatPercentStr}\\s*){2,3}\\)`)
+const hsl3Opts = [`hsl\\(${hsl3BaseStr}{2}\\)`, `hsla\\(${hsl3BaseStr}{3}\\)`]
+export const hsl3 = lockdownRe(hsl3Opts)
+const hslStr = `hsla?\\(\\s*${floatStr}(deg|grad|rad|turn)?\\s*(,\\s*${zeroTo100FloatPercentStr}\\s*){2,3}\\)`
+export const hsl = lockdownRe(hslStr)
+
+const cssColor3Opts = [hexColor1Str, rgb1IntStr, rgb1PercStr, rgba3IntStr, rgba3PercStr]
+  .concat(Object.keys(pre.cssPreColors3))
+  .concat(hsl3Opts)
+export const cssColor3 = lockdownRe(cssColor3Opts)
+const cssColorOpts = [hexColorStr, rgbStr, hslStr]
+  .concat(Object.keys(pre.cssPreColors))
+export const cssColor = lockdownRe(cssColorOpts)

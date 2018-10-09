@@ -42,3 +42,24 @@ groupTest(regex.rgb, validRgb, invalidRgb, 'rgb')
 
 groupTest(regex.hsl3, validHsl3, invalidHsl3, 'hsl3')
 groupTest(regex.hsl, validHsl, invalidHsl, 'hsl')
+
+const validCssColors3 = validHexColors1
+  .concat(validRgb1)
+  .concat(validRgba3)
+  .concat(['red', 'orange', 'ghostwhite']) // one from each
+  .concat(validHsl3)
+const invalidCssColors3 = invalidHexColors
+  .concat(invalidRgb1)
+  .concat(['rebeccapurple'])
+  .concat(invalidHsl3)
+groupTest(regex.cssColor3, validCssColors3, invalidCssColors3, 'cssColors3')
+
+const validCssColors = validHexColors
+  .concat(validRgb)
+  .concat(['red', 'orange', 'ghostwhite', 'rebeccapurple']) // one from each
+  .concat(validHsl)
+const invalidCssColors = invalidHexColors
+  .concat(invalidRgb)
+  .concat(['blueberry'])
+  .concat(invalidHsl)
+groupTest(regex.cssColor, validCssColors, invalidCssColors, 'cssColors')
