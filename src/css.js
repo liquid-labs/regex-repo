@@ -1,37 +1,29 @@
 import * as pre from './css-color-data'
+import { lockdownRe } from './lib'
+import { zeroTo255Str, zeroTo1FloatStr, zeroTo100PercentStr, zeroTo255FloatStr } from './numbers-strings'
 
 // supports latest rgba hex
-const hexColorRe = '^#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})$'
-export const hexColor = new RegExp(hexColorRe, 'i')
-export const hexColor1 = /^#([a-f0-9]{6}|[a-f0-9]{3})$/i
+const hexColorStr = '#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})'
+export const hexColor = lockdownRe(hexColorStr, 'i')
+export const hexColor1 = lockdownRe('#([a-f0-9]{6}|[a-f0-9]{3})', 'i')
 
-const cssPreColors1Re = '^(' + Object.keys(pre.cssPreColors1).join('|') + ')$'
-export const cssPreColors1 = new RegExp(cssPreColors1Re, 'i')
-const cssPreColors2Re = '^(' + Object.keys(pre.cssPreColors2).join('|') + ')$'
-export const cssPreColors2 = new RegExp(cssPreColors2Re, 'i')
-const cssPreColors3Re = '^(' + Object.keys(pre.cssPreColors3).join('|') + ')$'
-export const cssPreColors3 = new RegExp(cssPreColors3Re, 'i')
-const cssPreColorsRe = '^(' + Object.keys(pre.cssPreColors).join('|') + ')$'
-export const cssPreColors = new RegExp(cssPreColorsRe, 'i')
+export const cssPreColors1 = lockdownRe(Object.keys(pre.cssPreColors1), 'i')
+export const cssPreColors2 = lockdownRe(Object.keys(pre.cssPreColors2), 'i')
+export const cssPreColors3 = lockdownRe(Object.keys(pre.cssPreColors3), 'i')
+export const cssPreColors = lockdownRe(Object.keys(pre.cssPreColors), 'i')
 
-const zeroTo255Re = '([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])'
-const zeroTo1Re = '(0?\\.[0-9]+|1(\\.0+)?)'
-const percentRe = '([0-9]|[1-9][0-9]|100)\\%'
-const alphaRe = `(${zeroTo1Re}|${percentRe})`
-const rgb1IntRe = `rgb\\((\\s*${zeroTo255Re}\\s*,){2}\\s*${zeroTo255Re}\\s*\\)`
-const rgb1PercRe = `rgb\\((\\s*${percentRe}\\s*,){2}\\s*${percentRe}\\s*\\)`
-const rgb1Re = `(${rgb1IntRe}|${rgb1PercRe})`
-const rgba1IntRe = `rgba\\((\\s*${zeroTo255Re}\\s*,){3}\\s*${alphaRe}\\s*\\)`
-const rgba1PercRe = `rgba\\((\\s*${percentRe}\\s*,){3}\\s*${alphaRe}\\s*\\)`
-const rgba1Re = `(${rgba1IntRe}|${rgba1PercRe})`
-export const rgb1 = new RegExp(rgb1Re)
-export const rgba1 = new RegExp(rgba1Re)
+const alphaStr = `(${zeroTo1FloatStr}|${zeroTo100PercentStr})`
+const rgb1IntStr = `rgb\\((\\s*${zeroTo255Str}\\s*,){2}\\s*${zeroTo255Str}\\s*\\)`
+const rgb1PercStr = `rgb\\((\\s*${zeroTo100PercentStr}\\s*,){2}\\s*${zeroTo100PercentStr}\\s*\\)`
+const rgba1IntStr = `rgba\\((\\s*${zeroTo255Str}\\s*,){3}\\s*${alphaStr}\\s*\\)`
+const rgba1PercStr = `rgba\\((\\s*${zeroTo100PercentStr}\\s*,){3}\\s*${alphaStr}\\s*\\)`
+export const rgb1 = lockdownRe([rgb1IntStr, rgb1PercStr])
+export const rgba1 = lockdownRe([rgba1IntStr, rgba1PercStr])
 // In level 4, rgba is an alias for rgb, supports floats, and space notation
 // NOTE: The spec allows float values like '+.25e2%', which cannot be recognized
 // via RE and are not supported.
-const zeroTo255FloatRe = '(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-4])(\\.[0-9]+)?|255(\\.0+)?)'
-const rgbDecFuncRe = `(\\s*${zeroTo255FloatRe}\\s*,){2}\\s*${zeroTo255FloatRe}\\s*(,\\s*${alphaRe}\\s*)?`
-const rgbPercFuncRe = `(\\s*${percentRe}\\s*,){2}\\s*${percentRe}\\s*(,\\s*${alphaRe}\\s*)?`
-const rgbDecSpaceRe = `(\\s*${zeroTo255FloatRe}\\s+){2}${zeroTo255FloatRe}\\s*(/\\s*${alphaRe}\\s*)?`
-const rgbPercSpaceRe = `(\\s*${percentRe}\\s+){2}${percentRe}\\s*(/\\s*${alphaRe}\\s*)?`
-export const rgb = new RegExp(`^rgba?\\((${rgbDecFuncRe}|${rgbPercFuncRe}|${rgbDecSpaceRe}|${rgbPercSpaceRe})\\s*\\)$`)
+const rgbDecFuncStr = `(\\s*${zeroTo255FloatStr}\\s*,){2}\\s*${zeroTo255FloatStr}\\s*(,\\s*${alphaStr}\\s*)?`
+const rgbPercFuncStr = `(\\s*${zeroTo100PercentStr}\\s*,){2}\\s*${zeroTo100PercentStr}\\s*(,\\s*${alphaStr}\\s*)?`
+const rgbDecSpaceStr = `(\\s*${zeroTo255FloatStr}\\s+){2}${zeroTo255FloatStr}\\s*(/\\s*${alphaStr}\\s*)?`
+const rgbPercSpaceStr = `(\\s*${zeroTo100PercentStr}\\s+){2}${zeroTo100PercentStr}\\s*(/\\s*${alphaStr}\\s*)?`
+export const rgb = lockdownRe(`rgba?\\((${rgbDecFuncStr}|${rgbPercFuncStr}|${rgbDecSpaceStr}|${rgbPercSpaceStr})\\s*\\)`)
