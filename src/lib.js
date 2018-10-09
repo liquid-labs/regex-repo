@@ -1,3 +1,5 @@
+export const lockdown = (str) => `^\\s*${str}\\s*$`
+
 const groupTestHelper = (re, data, isValid, desc) =>
   data.forEach((datum) =>
     test(`${desc ? desc + ' should ' : ''}${isValid ? 'pass' : 'fail'} '${datum}'`, () => {

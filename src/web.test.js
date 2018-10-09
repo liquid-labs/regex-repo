@@ -1,4 +1,4 @@
-import { groupTest } from './testlib'
+import { groupTest } from './lib'
 import * as regex from './index'
 import { goodUrls, badUrls } from './test-data/urls'
 import { goodEmails, badEmails } from './test-data/emails'
