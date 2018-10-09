@@ -1,6 +1,6 @@
 import * as pre from './css-color-data'
 import { lockdownRe } from './lib'
-import { zeroTo255Str, zeroTo1FloatStr, zeroTo100PercentStr, zeroTo255FloatStr } from './numbers-strings'
+import { zeroTo255Str, zeroTo1FloatStr, zeroTo100PercentStr, zeroTo100FloatPercentStr, zeroTo255FloatStr } from './numbers-strings'
 
 // supports latest rgba hex
 const hexColorStr = '#([a-f0-9]{6}|[a-f0-9]{8}|[a-f0-9]{3,4})'
@@ -22,8 +22,9 @@ export const rgba1 = lockdownRe([rgba1IntStr, rgba1PercStr])
 // In level 4, rgba is an alias for rgb, supports floats, and space notation
 // NOTE: The spec allows float values like '+.25e2%', which cannot be recognized
 // via RE and are not supported.
-const rgbDecFuncStr = `(\\s*${zeroTo255FloatStr}\\s*,){2}\\s*${zeroTo255FloatStr}\\s*(,\\s*${alphaStr}\\s*)?`
-const rgbPercFuncStr = `(\\s*${zeroTo100PercentStr}\\s*,){2}\\s*${zeroTo100PercentStr}\\s*(,\\s*${alphaStr}\\s*)?`
-const rgbDecSpaceStr = `(\\s*${zeroTo255FloatStr}\\s+){2}${zeroTo255FloatStr}\\s*(/\\s*${alphaStr}\\s*)?`
-const rgbPercSpaceStr = `(\\s*${zeroTo100PercentStr}\\s+){2}${zeroTo100PercentStr}\\s*(/\\s*${alphaStr}\\s*)?`
+const alphaFloatStr = `(${zeroTo1FloatStr}|${zeroTo100FloatPercentStr})`
+const rgbDecFuncStr = `(\\s*${zeroTo255FloatStr}\\s*,){2}\\s*${zeroTo255FloatStr}\\s*(,\\s*${alphaFloatStr}\\s*)?`
+const rgbPercFuncStr = `(\\s*${zeroTo100FloatPercentStr}\\s*,){2}\\s*${zeroTo100FloatPercentStr}\\s*(,\\s*${alphaFloatStr}\\s*)?`
+const rgbDecSpaceStr = `(\\s*${zeroTo255FloatStr}\\s+){2}${zeroTo255FloatStr}\\s*(/\\s*${alphaFloatStr}\\s*)?`
+const rgbPercSpaceStr = `(\\s*${zeroTo100FloatPercentStr}\\s+){2}${zeroTo100FloatPercentStr}\\s*(/\\s*${alphaFloatStr}\\s*)?`
 export const rgb = lockdownRe(`rgba?\\((${rgbDecFuncStr}|${rgbPercFuncStr}|${rgbDecSpaceStr}|${rgbPercSpaceStr})\\s*\\)`)
