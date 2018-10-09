@@ -12,6 +12,24 @@ test('cssPreColors1 matches valid', () => {
   expect(regex.cssPreColors1.test('red')).toBe(true)
 })
 test('cssPreColors1 fails to match invalid', () => {
-  expect(regex.cssPreColors1.test('orange')).toBe(true)
-  expect(regex.cssPreColors1.test('blueberry')).toBe(true)
+  expect(regex.cssPreColors1.test('orange')).toBe(false)
+  expect(regex.cssPreColors1.test('blueberry')).toBe(false)
+})
+test('cssPreColors2 matches valid', () => {
+  expect(regex.cssPreColors2.test('orange')).toBe(true)
+})
+test('cssPreColors2 fails to match invalid', () => {
+  expect(regex.cssPreColors2.test('azure')).toBe(false)
+})
+test('cssPreColors3 matches valid', () => {
+  expect(regex.cssPreColors3.test('azure')).toBe(true)
+})
+test('cssPreColors3 fails to match invalid', () => {
+  expect(regex.cssPreColors3.test('rebeccapurple')).toBe(false)
+})
+test('cssPreColors matches valid', () => {
+  expect(regex.cssPreColors.test('rebeccapurple')).toBe(true)
+})
+test('cssPreColors fails to match invalid', () => {
+  expect(regex.cssPreColors.test('blueberry')).toBe(false)
 })
