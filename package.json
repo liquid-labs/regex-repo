@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/Liquid-Labs/regex-repo#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.5"
+    "@liquid-labs/catalyst-scripts": ">=1.0.0-alpha.6 <2"
   },
   "dependencies": {}
 }
