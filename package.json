@@ -1,6 +1,6 @@
 {
   "name": "@liquid-labs/regex-repo",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Collection of JS regular expressions.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,7 +12,6 @@
     "start": "catalyst-scripts \"$PWD\" start",
     "pretest": "catalyst-scripts \"$PWD\" pretest",
     "test": "npm run pretest && catalyst-scripts \"$PWD\" test",
-    "prepublishOnly": "rm -rf dist && babel src -d dist && find dist -name '*.test.js' -o -name 'testlib.js' | xargs rm",
     "build": "catalyst-scripts \"$PWD\" build",
     "lint": "catalyst-scripts \"$PWD\" lint",
     "lint-fix": "catalyst-scripts \"$PWD\" lint-fix",
