@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.1",
   "description": "Collection of JS regular expressions.",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
     "README.md",
     "dist/"
