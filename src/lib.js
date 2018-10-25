@@ -1,3 +1,5 @@
+/* globals test, expect */
+
 export const lockdownRe = (str, flags) =>
   Array.isArray(str)
     ? new RegExp(`^\\s*(${str.join('|')})\\s*$`, flags)
