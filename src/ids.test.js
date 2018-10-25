@@ -1,3 +1,4 @@
+/* globals test, expect */
 import * as regex from './index'
 
 const trivial0 = '00000000-0000-1000-8000-000000000000'

@@ -1,3 +1,4 @@
+/* globals test, expect */
 import { groupTest } from './lib'
 import * as regex from './index'
 import { validHexColors1, validHexColors, invalidHexColors } from './test-data/hexColors'
