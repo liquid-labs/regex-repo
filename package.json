@@ -9,12 +9,12 @@
     "dist/"
   ],
   "scripts": {
-    "start": "catalyst-scripts \"$PWD\" start",
-    "pretest": "catalyst-scripts \"$PWD\" pretest",
-    "test": "npm run pretest && catalyst-scripts \"$PWD\" test",
-    "build": "catalyst-scripts \"$PWD\" build",
-    "lint": "catalyst-scripts \"$PWD\" lint",
-    "lint-fix": "catalyst-scripts \"$PWD\" lint-fix",
+    "start": "catalyst-scripts start",
+    "pretest": "catalyst-scripts pretest",
+    "test": "catalyst-scripts test",
+    "build": "catalyst-scripts build",
+    "lint": "catalyst-scripts lint",
+    "lint-fix": "catalyst-scripts lint-fix",
     "install-clean": "rm -rf package-lock.json node_modules/ && npm install",
     "prepare": "rm -rf dist && npm run lint && npm run build"
   },
@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/Liquid-Labs/regex-repo#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts": ">=1.0.0-alpha.6 <2"
+    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.15"
   },
   "dependencies": {}
 }
