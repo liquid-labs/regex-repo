@@ -1,0 +1,22 @@
+- startTimestamp: 2022-01-25T17:03:56.713Z
+  startEpochMillis: 1643130236713
+  issues:
+    - https://github.com/Liquid-Labs/liq-core/issues/33
+    - https://github.com/Liquid-Labs/liq-core/issues/36
+    - https://github.com/Liquid-Labs/liq-audits/issues/1
+  branch: 2021.11.05-zane@liquid-labs.com-support_sourcing_responsibility_for
+  branchFrom: 53b413d599fb218ff43f56a36dc52503995da873
+  workInitiator: zane@liquid-labs.com
+  branchInitiator: zane@liquid-labs.com
+  involvedProjects:
+    - "@liquid-labs/liq-core"
+    - "@liquid-labs/liq-audits"
+    - "@liquid-labs/orgs-model"
+    - "@liquid-labs/liq-vendors"
+    - "@liquid-labs/policies-model"
+    - "@liquid-labs/regex-repo"
+  changeNotes:
+    - Support sourcing responsibility for evidence
+  securityNotes: []
+  drpBcpNotes: []
+  backoutNotes: []
