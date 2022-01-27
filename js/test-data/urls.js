@@ -35,7 +35,8 @@ export const goodUrls = [
   `http://-.~_!$&'()*+,;=:%40:80%2f::::::@example.com`,
   'http://1337.net',
   'http://a.b-c.de',
-  'http://223.255.255.254'
+  'http://223.255.255.254',
+  'http://some.reallylongtld'
 ]
 
 export const badUrls = [
@@ -76,4 +77,5 @@ export const badUrls = [
   'http://.www.foo.bar/',
   'http://www.foo.bar./',
   'http://.www.foo.bar./',
+  'http://some.really-long-tld-with-dashes'
 ]
