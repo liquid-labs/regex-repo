@@ -17,7 +17,8 @@
     "lint-fix": "catalyst-scripts lint-fix",
     "install-clean": "rm -rf package-lock.json node_modules/ && npm install",
     "prepare": "rm -rf dist && npm run lint && npm run build",
-    "postversion": "git push && git push --tags"
+    "preversion": "npm test && npm run lint",
+    "postversion": "git push upstream v${npm_package_version"
   },
   "repository": {
     "type": "git",
