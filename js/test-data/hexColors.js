@@ -8,7 +8,7 @@ export const validHexColors1 = [
   '#89c',
   '#abcdef',
   '#AbCdEf',
-  '#123456',
+  '#123456'
 ]
 
 // allows 4th value for alpha channel in level 4
@@ -19,7 +19,7 @@ export const validHexColors = validHexColors1.concat([
   '#1233',
   '#abcdefaa',
   '#AbCdEfAa',
-  '#12345612',
+  '#12345612'
 ])
 
 export const invalidHexColors = [
@@ -36,5 +36,5 @@ export const invalidHexColors = [
   '#abcdef1',
   // too short
   '#a',
-  '#ab',
+  '#ab'
 ]
