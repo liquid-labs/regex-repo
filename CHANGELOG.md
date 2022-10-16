@@ -10,3 +10,5 @@
 
 ## Release 1.0.0-alpha.5
 * _**hotfix**_: partial support for exporting RE strings as well as REs _(zane@liquid-labs.com; 2022-10-16T17:40:25.000Z)_
+* _**hotfix**_: updated CHANGELOGE.md for release (by liq) _(zane@liquid-labs.com; 2022-10-16T17:41:21.000Z)_
+* _**hotfix**_: updated 'liquid-labs' github org name _(zane@liquid-labs.com; 2022-10-16T17:49:14.000Z)_
