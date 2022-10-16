@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:Liquid-Labs/regex-repo.git"
+    "url": "git+ssh://git@github.com:liquid-labs/regex-repo.git"
   },
   "keywords": [
     "regex",
@@ -32,9 +32,9 @@
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Liquid-Labs/regex-repo/issues"
+    "url": "https://github.com/liquid-labs/regex-repo/issues"
   },
-  "homepage": "https://github.com/Liquid-Labs/regex-repo#readme",
+  "homepage": "https://github.com/liquid-labs/regex-repo#readme",
   "devDependencies": {
     "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.50"
   }
