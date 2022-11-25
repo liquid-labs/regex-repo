@@ -12,3 +12,7 @@
 * _**hotfix**_: partial support for exporting RE strings as well as REs _(zane@liquid-labs.com; 2022-10-16T17:40:25.000Z)_
 * _**hotfix**_: updated CHANGELOGE.md for release (by liq) _(zane@liquid-labs.com; 2022-10-16T17:41:21.000Z)_
 * _**hotfix**_: updated 'liquid-labs' github org name _(zane@liquid-labs.com; 2022-10-16T17:49:14.000Z)_
+
+## Release 1.0.0-alpha.6
+* _**hotfix**_: allow lowercase characters and support 'encoded' @-sign in emails _(zane@liquid-labs.com; 2022-11-25T17:00:56.000Z)_
+* _**hotfix**_: added matcher for URL escaped email addresses _(zane@liquid-labs.com; 2022-11-25T17:14:47.000Z)_
