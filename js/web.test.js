@@ -5,3 +5,6 @@ import { goodEmails, badEmails } from './test-data/emails'
 
 groupTest(regex.url, goodUrls, badUrls)
 groupTest(regex.email, goodEmails, badEmails)
+groupTest(regex.emailEncodedOrNot,
+  goodEmails.map((e) => e.replace('@', '%40')),
+  badEmails.map((e) => e.replace('@', '%40')))

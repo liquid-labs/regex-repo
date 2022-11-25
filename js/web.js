@@ -17,8 +17,10 @@ export const url =
   new RegExp(urlReString, 'i')
 
 // TODO: properly support all domain names https://github.com/liquid-labs/regex-repo/issues/3
-export const emailReString = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
+const preDomainBit = '(?:[a-zA-Z0-9._+-]|%[1-35-9][0-9]|%4[1-9]|%[a-zA-Z])+'
+const domainBit = '[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'
+export const emailReString = `^${preDomainBit}@${domainBit}$`
 export const email = new RegExp(emailReString, 'i')
 
-export const emailEncodedOrNotReString = '^[a-zA-Z0-9._%+-]+(?:@|%40)[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
+export const emailEncodedOrNotReString = `^${preDomainBit}(?:@|%40)${domainBit}$`
 export const emailEncodedOrNot = new RegExp(emailEncodedOrNotReString)
