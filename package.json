@@ -8,16 +8,13 @@
     "dist/"
   ],
   "scripts": {
-    "start": "catalyst-scripts start",
-    "pretest": "catalyst-scripts pretest",
-    "test": "catalyst-scripts test",
-    "build": "catalyst-scripts build",
-    "lint": "catalyst-scripts lint",
-    "lint:fix": "catalyst-scripts lint-fix",
-    "install-clean": "rm -rf package-lock.json node_modules/ && npm install",
-    "prepare": "rm -rf dist && npm run lint && npm run build",
-    "preversion": "npm test && npm run lint",
-    "postversion": "git push upstream v${npm_package_version}"
+    "build": "make build",
+    "lint": "make lint",
+    "lint:fix": "make lint-fix",
+    "test": "make test",
+    "prepack": "make build",
+    "preversion": "make qa",
+    "qa": "make qa"
   },
   "repository": {
     "type": "git",
