@@ -2,40 +2,36 @@
   "name": "@liquid-labs/regex-repo",
   "version": "1.0.0-alpha.6",
   "description": "Collection of JS regular expressions.",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/regex-repo.js",
   "files": [
     "README.md",
     "dist/"
   ],
   "scripts": {
-    "start": "catalyst-scripts start",
-    "pretest": "catalyst-scripts pretest",
-    "test": "catalyst-scripts test",
-    "build": "catalyst-scripts build",
-    "lint": "catalyst-scripts lint",
-    "lint:fix": "catalyst-scripts lint-fix",
-    "install-clean": "rm -rf package-lock.json node_modules/ && npm install",
-    "prepare": "rm -rf dist && npm run lint && npm run build",
-    "preversion": "npm test && npm run lint",
-    "postversion": "git push upstream v${npm_package_version}"
+    "build": "make build",
+    "lint": "make lint",
+    "lint:fix": "make lint-fix",
+    "test": "make test",
+    "prepack": "make build",
+    "preversion": "make qa",
+    "qa": "make qa"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:liquid-labs/regex-repo.git"
   },
+  "license": "ISC",
   "keywords": [
     "regex",
     "validate-data",
     "data-validation"
   ],
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/liquid-labs/regex-repo/issues"
   },
   "homepage": "https://github.com/liquid-labs/regex-repo#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts": "^1.0.0-alpha.50"
+    "@liquid-labs/catalyst-scripts-node-project": "file:.yalc/@liquid-labs/catalyst-scripts-node-project"
   }
 }

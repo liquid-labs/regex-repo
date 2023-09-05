@@ -1,3 +1,19 @@
+/*
+Copyright 2023 Liquid Labs LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 /* globals test, expect */
 import { groupTest } from './lib'
 import * as regex from './index'
@@ -11,7 +27,7 @@ groupTest(regex.hexColor, validHexColors, invalidHexColors, 'hexColor')
 // since the colors are hard coded, we don't test the while thing; we'd just
 // end up replicating the structure or building pointless tests from the same
 // structure, we just want to check that the regex gets built.
-test(`cssPreColors1 matches valid 'red'`, () => {
+test('cssPreColors1 matches valid \'red\'', () => {
   expect(regex.cssPreColors1.test('red')).toBe(true)
 })
 test('cssPreColors1 fails to match invalid', () => {
