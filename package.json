@@ -23,19 +23,18 @@
     "type": "git",
     "url": "git+ssh://git@github.com:liquid-labs/regex-repo.git"
   },
-  "license": "Apache-2.0",
+  "license": "ISC",
   "keywords": [
     "regex",
     "validate-data",
     "data-validation"
   ],
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/liquid-labs/regex-repo/issues"
   },
   "homepage": "https://github.com/liquid-labs/regex-repo#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts-node-project": "^1.0.0-alpha.21"
+    "@liquid-labs/catalyst-scripts-node-project": "file:.yalc/@liquid-labs/catalyst-scripts-node-project"
   }
 }
