@@ -27,7 +27,7 @@ groupTest(regex.hexColor, validHexColors, invalidHexColors, 'hexColor')
 // since the colors are hard coded, we don't test the while thing; we'd just
 // end up replicating the structure or building pointless tests from the same
 // structure, we just want to check that the regex gets built.
-test(`cssPreColors1 matches valid 'red'`, () => {
+test('cssPreColors1 matches valid \'red\'', () => {
   expect(regex.cssPreColors1.test('red')).toBe(true)
 })
 test('cssPreColors1 fails to match invalid', () => {

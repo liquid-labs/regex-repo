@@ -23,7 +23,8 @@ import {
   zeroTo100PercentStr,
   zeroTo100FloatPercentStr,
   zeroTo255FloatStr,
-  zeroTo360Str } from './numbers-strings'
+  zeroTo360Str
+} from './numbers-strings'
 
 const hexColor1Str = '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
 export const hexColor1 = lockdownRe(hexColor1Str)
