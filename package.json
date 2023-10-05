@@ -4,8 +4,9 @@
   "description": "Collection of JS regular expressions.",
   "main": "dist/regex-repo.js",
   "files": [
-    "README.md",
-    "dist/"
+    "dist/",
+    "LICENSE.txt",
+    "README.md"
   ],
   "scripts": {
     "build": "make build",
@@ -15,6 +16,9 @@
     "prepack": "make build",
     "preversion": "make qa",
     "qa": "make qa"
+  },
+  "engine": {
+    "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,8 @@
   },
   "homepage": "https://github.com/liquid-labs/regex-repo#readme",
   "devDependencies": {
-    "@liquid-labs/catalyst-scripts-node-project": "file:.yalc/@liquid-labs/catalyst-scripts-node-project"
+    "@liquid-labs/catalyst-resource-babel-and-rollup": "^1.0.0-alpha.3",
+    "@liquid-labs/catalyst-resource-eslint": "^1.0.0-alpha.1",
+    "@liquid-labs/catalyst-resource-jest": "^1.0.0-alpha.1"
   }
 }
