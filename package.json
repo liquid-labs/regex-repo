@@ -42,10 +42,10 @@
   },
   "catalyst": {
     "jestConfig": {
-      "collectCoverageFrom" : [
-        "**/*.{js,cjs,mjs,jsx}", 
+      "collectCoverageFrom": [
+        "**/*.{js,cjs,mjs,jsx}",
         "!**/doc-extractor/**/*",
-        "!**/index.{js,mjs,cjs}", 
+        "!**/index.{js,mjs,cjs}",
         "!**/.*.{js,mjs,cjs}"
       ]
     }
