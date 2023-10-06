@@ -1,0 +1,9 @@
+README_SRC:=$(SRC)/doc/README.md
+README_BUILT:=README.md
+DOC_EXTRACTOR:=$(SRC)/doc-extractor/doc-extractor.mjs
+
+$(README_BUILT): $(README_SRC) $(DOC_EXTRACTOR)
+	cp $< $@
+	node $(DOC_EXTRACTOR)
+
+BUILD_TARGETS:=$(README_BUILT)

@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-export const usPhoneReString = '^(\\+?1[._ -]?)?(\\(\\d{3}\\)|\\d{3})[._ -]?\\d{3}[._ -]?\\d{4}$'
-export const usPhone = new RegExp(usPhoneReString)
-export const zipCodeReString = '^\\d{5}([._ -]?\\d{4})?$'
-export const zipCode = new RegExp(zipCodeReString)
+const usPhoneReString = '^(\\+?1[._ -]?)?(\\(\\d{3}\\)|\\d{3})[._ -]?\\d{3}[._ -]?\\d{4}$'
+// Contact info: Matches US phone numbers with optional country code and area code.
+export const usPhoneRE = new RegExp(usPhoneReString)
+const zipCodeReString = '^\\d{5}([._ -]?\\d{4})?$'
+// Contact info: Matches 5 or 9 digit US zip codes.
+export const zipCodeRE = new RegExp(zipCodeReString)
