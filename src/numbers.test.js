@@ -32,40 +32,40 @@ const zeroTo255Float = zeroTo255.concat(['0.0', 0.1, 1.2, 254.98765, '255.0'])
 const zeroTo360 = zeroTo255.concat(300, 359, 360)
 const zeroTo360Float = zeroTo360.concat('0.0', 0.1, '359.0', 359.1, 360.0)
 
-groupTest(regex.plainFloat,
+groupTest(regex.plainFloatRE,
   stringify(plainFloats),
   ['1e20', 'a', '1b'],
   'plainFloat')
-groupTest(regex.scientificFloat,
+groupTest(regex.scientificFloatRE,
   scientificFloats,
   stringify([1.0, '1e20e20', '1b']),
   'scientificFloat')
-groupTest(regex.float, floats, ['1e20e20', '1b', '--20'], 'float')
-groupTest(regex.zeroTo1Float,
+groupTest(regex.floatRE, floats, ['1e20e20', '1b', '--20'], 'float')
+groupTest(regex.zeroTo1FloatRE,
   stringify([0, 0.0, 0.1, 0.54321, 0.9, 0.99999, 1, 1.0]),
   stringify([-1.1, -1, -0.1, 1.001, 2]),
   'zeroTo1Float')
-groupTest(regex.zeroTo100Percent,
+groupTest(regex.zeroTo100PercentRE,
   stringifyPerc(zeroTo100),
   stringifyPerc(notZeroTo100),
   'zeroTo100Percent')
-groupTest(regex.zeroTo100FloatPercent,
+groupTest(regex.zeroTo100FloatPercentRE,
   stringifyPerc(zeroTo100Float),
   stringifyPerc(notZeroTo100Float),
   'zeroTo100FloatPercent')
-groupTest(regex.zeroTo255,
+groupTest(regex.zeroTo255RE,
   stringify(zeroTo255),
   stringify([-1, 256, 1000, 0.1]),
   'zeroTo255')
-groupTest(regex.zeroTo255Float,
+groupTest(regex.zeroTo255FloatRE,
   stringify(zeroTo255Float),
   stringify([-1, 256, 1000, 255.1]),
   'zeroTo255Float')
-groupTest(regex.zeroTo360,
+groupTest(regex.zeroTo360RE,
   stringify(zeroTo360),
   stringify([-1, 361, 1000, 0.1]),
   'zeroTo360')
-groupTest(regex.zeroTo360Float,
+groupTest(regex.zeroTo360FloatRE,
   stringify(zeroTo360Float),
   stringify([-1, 361, 1000, 360.1]),
   'zeroTo360Float')
