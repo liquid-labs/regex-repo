@@ -12,11 +12,15 @@ npm i @liquid-labs/regex-repo
 ## Usage
 
 ```javascript
+// ESM
 import { emailRE } from '@liquid-labs/regex-repo'
 // import * as regex from '@liquid-labs/regex-repo'
+// CJS
+// const { emailRE } = require('@liquid-labs/regex-repo')
 
 const verified = emailRE.test(userInput)
 ```
+
 
 ## Regex reference
 
