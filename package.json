@@ -26,9 +26,13 @@
   },
   "license": "Apache-2.0",
   "keywords": [
+    "data-validation",
     "regex",
+    "regexp",
+    "regular expression",
+    "validate",
     "validate-data",
-    "data-validation"
+    "validation"
   ],
   "author": "Zane Rockenbaugh <zane@liquid-labs.com>",
   "bugs": {
