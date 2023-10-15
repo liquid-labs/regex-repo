@@ -1,0 +1,25 @@
+Test git rev: 43d3268c7618b72c2fb5a6939c90df18b843527f
+PASS ./css.test.js
+PASS ./web.test.js
+PASS ./numbers.test.js
+PASS ./contacts.test.js
+PASS ./ids.test.js
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |     100 |    77.77 |     100 |     100 |                   
+ contacts.js        |     100 |      100 |     100 |     100 |                   
+ css-color-data.js  |     100 |      100 |     100 |     100 |                   
+ css.js             |     100 |    66.66 |     100 |     100 | 27                
+ ids.js             |     100 |      100 |     100 |     100 |                   
+ lib.js             |     100 |      100 |     100 |     100 |                   
+ numbers-strings.js |     100 |      100 |     100 |     100 |                   
+ numbers.js         |     100 |    66.66 |     100 |     100 | 18                
+ web.js             |     100 |      100 |     100 |     100 |                   
+--------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 5 passed, 5 total
+Tests:       673 passed, 673 total
+Snapshots:   0 total
+Time:        0.464 s, estimated 1 s
+Ran all test suites.
