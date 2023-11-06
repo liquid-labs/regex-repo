@@ -1,6 +1,6 @@
 {
   "name": "@liquid-labs/regex-repo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Collection of JS regular expressions.",
   "main": "dist/regex-repo.js",
   "files": [
