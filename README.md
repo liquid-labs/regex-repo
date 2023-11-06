@@ -12,15 +12,11 @@ npm i @liquid-labs/regex-repo
 ## Usage
 
 ```javascript
-// ESM
 import { emailRE } from '@liquid-labs/regex-repo'
 // import * as regex from '@liquid-labs/regex-repo'
-// CJS
-// const { emailRE } = require('@liquid-labs/regex-repo')
 
 const verified = emailRE.test(userInput)
 ```
-
 
 ## Regex reference
 
@@ -60,6 +56,10 @@ const verified = emailRE.test(userInput)
 ### Identifiers
 
 - __uuidRE__: Matches a UUID.
+
+### NPM
+
+- __npmPackageNameRE__: Matches an NPM package name. Provides matching groups 1 (org name, if any) and 2 (package basename).
 
 ### Numbers
 
