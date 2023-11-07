@@ -17,5 +17,6 @@ limitations under the License.
 export * from './contacts'
 export * from './css'
 export * from './ids'
+export * from './npm'
 export * from './numbers'
 export * from './web'
