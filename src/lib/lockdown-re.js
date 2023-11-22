@@ -14,7 +14,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-export const lockdownRe = (str, flags) =>
-  Array.isArray(str)
-    ? new RegExp(`^\\s*(?:${str.join('|')})\\s*$`, flags)
-    : new RegExp(`^\\s*${str}\\s*$`, flags)
+export const lockdownRE = (str, flags) => new RegExp(`^\\s*${str}\\s*$`, flags)

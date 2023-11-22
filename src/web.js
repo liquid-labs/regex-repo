@@ -35,10 +35,11 @@ export const urlRE = new RegExp(urlReString, 'i')
 // TODO: properly support all domain names https://github.com/liquid-labs/regex-repo/issues/3
 const preDomainBit = '(?:[a-zA-Z0-9._+-]|%[1-35-9][0-9]|%4[1-9]|%[a-zA-Z])+'
 const domainBit = '[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'
-const emailReString = `^${preDomainBit}@${domainBit}$`
-// Contact info: Matche a valid email.
-export const emailRE = new RegExp(emailReString, 'i')
 
-const emailEncodedOrNotReString = `^${preDomainBit}(?:@|%40)${domainBit}$`
+export const emailREString = `^${preDomainBit}@${domainBit}$`
+// Contact info: Matche a valid email.
+export const emailRE = new RegExp(emailREString)
+
+export const emailEncodedOrNotREString = `^${preDomainBit}(?:@|%40)${domainBit}$`
 // Contact info: Matche a valid email, URL encoded or not.
-export const emailEncodedOrNotRE = new RegExp(emailEncodedOrNotReString)
+export const emailEncodedOrNotRE = new RegExp(emailEncodedOrNotREString)

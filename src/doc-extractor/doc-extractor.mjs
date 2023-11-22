@@ -14,13 +14,14 @@ const addData = ({ description, reName, section }) => {
 }
 
 (async() => {
+  // read everything from src root
   const files = (await fs.readdir(fsPath.resolve(__dirname, '..'), { withFileTypes : true }))
     .filter((f) => f.isFile())
   for (const { name: fileName } of files) {
     const contents = await fs.readFile(fsPath.resolve(__dirname, '..', fileName), { encoding : 'utf8' })
     const lines = contents.split('\n')
     lines.forEach((l, i, a) => {
-      const exportMatch = l.match(/^\s*export\s+const +([a-zA-Z0-9]+RE)/)
+      const exportMatch = l.match(/^\s*export\s+const +([a-zA-Z0-9]+RE(?=[ =]))/)
       if (exportMatch !== null) {
         const [, reName] = exportMatch
         const prevLine = a[i - 1]
