@@ -85,12 +85,12 @@ export const hsl3REString = '(?:' + hsl3Opts.join('|') + ')'
 // Colors/CSS: Matches CSS3 'hsl(...) and hsla(...) deg and percent notation.
 export const hsl3RE = lockdownRE(hsl3REString)
 
-export const hslREString = 
+export const hslREString =
   `hsla?\\(\\s*${floatStr}(deg|grad|rad|turn)?\\s*(,\\s*${zeroTo100FloatPercentStr}\\s*){2,3}\\)`
 // Colors/CSS: Matches CSS4 'hsl(...) and hsla(...) deg, grad, rad, turn and percent notation.
 export const hslRE = lockdownRE(hslREString)
 
-export const cssColor3REString = '(?:' 
+export const cssColor3REString = '(?:'
   + [hexColorNoAlphaREString, rgb1IntStr, rgb1PercStr, rgba3IntStr, rgba3PercStr]
     .concat(Object.keys(pre.cssPreColors3))
     .concat(hsl3Opts)
@@ -99,8 +99,8 @@ export const cssColor3REString = '(?:'
 // Colors/CSS: Matches CSS3 'hex, rgb, rgba, hsl, and predefined colors.
 export const cssColor3RE = lockdownRE(cssColor3REString)
 
-const cssColorREString = '(?:' + 
-  [hexColorAlphaREString, rgbREString, hslREString]
+const cssColorREString = '(?:'
+  + [hexColorAlphaREString, rgbREString, hslREString]
     .concat(Object.keys(pre.cssPreColors))
     .join('|')
   + ')'
