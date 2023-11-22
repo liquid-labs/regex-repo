@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { groupTest } from './lib'
-import * as regex from './index'
+import { groupTest } from './lib/test-lib'
+import * as regex from '../numbers'
 
 const stringify = (arr) => arr.map((i) => '' + i)
 const stringifyPerc = (arr, plus) => arr.map((i) => i + '%')

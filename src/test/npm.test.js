@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { groupTest } from './lib'
-import * as regex from './npm'
+import { groupTest } from './lib/test-lib'
+import * as regex from '../npm'
 
 groupTest(
   regex.npmPackageNameRE,

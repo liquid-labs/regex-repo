@@ -14,16 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/* globals test, expect */
-import * as regex from './index'
-
-const trivial0 = '00000000-0000-1000-8000-000000000000'
-const invalidUuid = '00000000-0000-0000-0000-000000000000'
-
-test('trivial (all 0) UUID is valid', () => {
-  expect(regex.uuidRE.test(trivial0)).toBe(true)
-})
-
-test('recognize invalid UUID', () => {
-  expect(regex.uuidRE.test(invalidUuid)).toBe(false)
-})
+export const lockdownRe = (str, flags) =>
+  Array.isArray(str)
+    ? new RegExp(`^\\s*(?:${str.join('|')})\\s*$`, flags)
+    : new RegExp(`^\\s*${str}\\s*$`, flags)
