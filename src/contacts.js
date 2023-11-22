@@ -14,9 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const usPhoneReString = '^(\\+?1[._ -]?)?(\\(\\d{3}\\)|\\d{3})[._ -]?\\d{3}[._ -]?\\d{4}$'
+import { lockdownRE } from './lib/lockdown-re'
+
+export const usPhoneREString = '(\\+?1[._ -]?)?(\\(\\d{3}\\)|\\d{3})[._ -]?\\d{3}[._ -]?\\d{4}'
 // Contact info: Matches US phone numbers with optional country code and area code.
-export const usPhoneRE = new RegExp(usPhoneReString)
-const zipCodeReString = '^\\d{5}([._ -]?\\d{4})?$'
+export const usPhoneRE = lockdownRE(usPhoneREString)
+
+export const zipCodeREString = '\\d{5}([._ -]?\\d{4})?'
 // Contact info: Matches 5 or 9 digit US zip codes.
-export const zipCodeRE = new RegExp(zipCodeReString)
+export const zipCodeRE = lockdownRE(zipCodeREString)
