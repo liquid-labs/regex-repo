@@ -57,6 +57,11 @@ const verified = emailRE.test(userInput)
 
 - __uuidRE__: Matches a UUID.
 
+### JavaScript
+
+- __jsReservedWordRE__: Matches a JS resereved word
+- __jsVariableRE__: Matches a valid JS variable name
+
 ### NPM
 
 - __npmPackageNameRE__: Matches an NPM package name. Provides matching groups 1 (org name, if any) and 2 (package basename).
