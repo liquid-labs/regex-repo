@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import * as pre from './css-color-data'
-import { lockdownRe } from './lib'
+import { lockdownRe } from './lib/lockdown-re'
 import {
   floatStr,
   zeroTo255Str,

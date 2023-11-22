@@ -15,11 +15,11 @@ limitations under the License.
 */
 
 /* globals test, expect */
-import { groupTest } from './lib'
-import * as regex from './index'
-import { validHexColors1, validHexColors, invalidHexColors } from './test-data/hexColors'
-import { validRgb1, validRgba3, invalidRgb1, validRgb, invalidRgb } from './test-data/rgbColors'
-import { validHsl3, invalidHsl3, validHsl, invalidHsl } from './test-data/hslColors'
+import { groupTest } from './lib/test-lib'
+import * as regex from '../css'
+import { validHexColors1, validHexColors, invalidHexColors } from './data/hexColors'
+import { validRgb1, validRgba3, invalidRgb1, validRgb, invalidRgb } from './data/rgbColors'
+import { validHsl3, invalidHsl3, validHsl, invalidHsl } from './data/hslColors'
 
 groupTest(regex.hexColorNoAlphaRE, validHexColors1, invalidHexColors, 'hexColor1')
 groupTest(regex.hexColorAlphaRE, validHexColors, invalidHexColors, 'hexColor')

@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import * as numStrs from './numbers-strings'
-import { lockdownRe } from './lib'
+import { lockdownRe } from './lib/lockdown-re'
 
 // Numbers: Matches a plain (non-scientific notation) float.
 export const plainFloatRE = lockdownRe(numStrs.plainFloatStr)
