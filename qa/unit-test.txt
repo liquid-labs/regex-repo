@@ -1,0 +1,31 @@
+Test git rev: 133e47eddc137e158e229e27c4f5530b502a3736
+PASS test/css.test.js
+PASS test/numbers.test.js
+PASS test/web.test.js
+PASS test/javascript.test.js
+PASS test/ids.test.js
+PASS test/contacts.test.js
+PASS test/npm.test.js
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     100 |    66.66 |     100 |     100 |                   
+ src                 |     100 |    66.66 |     100 |     100 |                   
+  contacts.js        |     100 |      100 |     100 |     100 |                   
+  css.js             |     100 |    66.66 |     100 |     100 | 27                
+  ids.js             |     100 |      100 |     100 |     100 |                   
+  javascript.js      |     100 |      100 |     100 |     100 |                   
+  npm.js             |     100 |      100 |     100 |     100 |                   
+  numbers.js         |     100 |    66.66 |     100 |     100 | 18                
+  web.js             |     100 |      100 |     100 |     100 |                   
+ src/lib             |     100 |      100 |     100 |     100 |                   
+  css-color-data.js  |     100 |      100 |     100 |     100 |                   
+  lockdown-re.js     |     100 |      100 |     100 |     100 |                   
+  numbers-strings.js |     100 |      100 |     100 |     100 |                   
+---------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 7 passed, 7 total
+Tests:       698 passed, 698 total
+Snapshots:   0 total
+Time:        0.569 s
+Ran all test suites.
