@@ -1,5 +1,5 @@
 {
-  "name": "@liquid-labs/regex-repo",
+  "name": "regex-repo",
   "version": "1.1.2",
   "description": "Collection of JS regular expressions.",
   "main": "dist/regex-repo.js",
@@ -21,12 +21,14 @@
     "node": ">=18.0.0"
   },
   "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:liquid-labs/regex-repo.git"
+    "url": "git+ssh://git@github.com:liquid-labs/regex-repo.git",
+    "type": "git"
   },
   "license": "Apache-2.0",
   "keywords": [
+    "css",
     "data-validation",
+    "javascript",
     "regex",
     "regexp",
     "regular expression",
@@ -53,5 +55,8 @@
         "!**/.*.{js,mjs,cjs}"
       ]
     }
+  },
+  "_comply": {
+    "orgKey": "@liquid-labs"
   }
 }
