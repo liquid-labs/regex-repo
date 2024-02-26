@@ -13,7 +13,7 @@ const addData = ({ description, reName, section }) => {
   data[section].push({ description, reName })
 }
 
-(async() => {
+(async () => {
   // read everything from src root
   const files = (await fs.readdir(fsPath.resolve(__dirname, '..'), { withFileTypes : true }))
     .filter((f) => f.isFile())
@@ -29,15 +29,14 @@ const addData = ({ description, reName, section }) => {
         if (commentMatch !== null) {
           const [, section, description] = commentMatch
           addData({ description, reName, section })
-        }
-        else {
+        } else {
           addData({ reName, section : 'Uncategorized' })
         }
       }
     })
   }
 
-  let content = ''
+  let content = '\n'
   for (const section of Object.keys(data).sort()) {
     content += `### ${section}\n\n`
     for (const { description, reName } of data[section].sort((a, b) => a.reName.localeCompare(b.reName))) {

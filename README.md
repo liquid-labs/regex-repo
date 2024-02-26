@@ -12,24 +12,31 @@ npm i @liquid-labs/regex-repo
 ## Usage
 
 ```javascript
-import { emailRE } from '@liquid-labs/regex-repo'
-// import * as regex from '@liquid-labs/regex-repo'
+import { emailRE } from '@liquid-labs/regex-repo' // ES6
+// const { emailRE } = require('@liquid-labs/regex-repo') // cjs
 
 const verified = emailRE.test(userInput)
 ```
 
 ## Regex reference
 
-Each regular expression listed below is paired with an exported embeddable string named `xxxString`. E.g., `rgbRE` is paired with `rgbREString`. While the RE is pinned to the beginning and end of the value; i.e, the RE begins with '^' and ends with '$', the string does not. It is up to the user to identify token seperators when using the RE strings. E.g., if using `rgbREString` in a larger RE, one might do something like:
+Each regular expression listed below is paired with an embeddable string named `xxxString`. E.g., `rgbRE` is paired with `rgbREString`. Each RE will only match strings that are the given type and nothing else. I.e., the RE begins with '^' and ends with '$'. The `xxxREString` can be used for partial matches, `matchAll`s, and used as part of larger expressions. E.g., to find all unique CSS RGB colors used in a style sheet, you might do something like:
 
 ```javascript
 import { rgbREString } from '@liquid-labs/regex-repo'
 
 const allColors = cssContent
-  .matchAll(new RegExp(`[ :](${rgbREString})`)).map((match) => match[1])
+  .matchAll(new RegExp(`[ :](${rgbREString})[; }]`, 'g'))
+  .map((match) => match[1]) // extract the capture group
   .filter((v, i, arr) => i === arr.indexOf(v)) // filter non-unique items
   .sort()
 ```
+
+### AWS
+
+- __awsS3BucketNameRE__: Matches valid S3 bucket name. Note `awsS3BucketNameREString` cannot be used for partial matches.
+- __awsS3TABucketNameRE__: Matches S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TABucketNameREString` cannot be used for partial matches.
+
 ### CSS numbers
 
 - __zeroTo100FloatPercentRE__: Matches a 0 to 100% float as used in CSS color specifications.

@@ -14,10 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { groupTest } from './lib/test-lib'
+import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../contacts'
 import { goodUsPhones, badUsPhones } from './data/usPhones'
 import { goodZipCodes, badZipCodes } from './data/zipCodes'
 
-groupTest(regex.usPhoneRE, goodUsPhones, badUsPhones)
-groupTest(regex.zipCodeRE, goodZipCodes, badZipCodes)
+groupTest(regex.usPhoneRE, goodUsPhones, badUsPhones, 'US phones')
+groupTestPartial(regex.usPhoneREString, goodUsPhones, badUsPhones, 'US phones')
+
+groupTest(regex.zipCodeRE, goodZipCodes, badZipCodes, 'US zip codes')
+groupTestPartial(regex.zipCodeREString, goodZipCodes, badZipCodes, 'US zip codes')

@@ -17,7 +17,7 @@
     "preversion": "make qa",
     "qa": "make qa"
   },
-  "engine": {
+  "engines": {
     "node": ">=18.0.0"
   },
   "repository": {
@@ -41,11 +41,6 @@
     "url": "https://github.com/liquid-labs/regex-repo/issues"
   },
   "homepage": "https://github.com/liquid-labs/regex-repo#readme",
-  "devDependencies": {
-    "@liquid-labs/catalyst-resource-babel-and-rollup": "^1.0.0-alpha.3",
-    "@liquid-labs/catalyst-resource-eslint": "^1.0.0-alpha.1",
-    "@liquid-labs/catalyst-resource-jest": "^1.0.0-alpha.3"
-  },
   "catalyst": {
     "jestConfig": {
       "collectCoverageFrom": [
@@ -58,5 +53,10 @@
   },
   "_comply": {
     "orgKey": "@liquid-labs"
+  },
+  "devDependencies": {
+    "@liquid-labs/sdlc-resource-babel-and-rollup": "^1.0.0-alpha.8",
+    "@liquid-labs/sdlc-resource-eslint": "^1.0.0-alpha.10",
+    "@liquid-labs/sdlc-resource-jest": "^1.0.0-alpha.7"
   }
 }

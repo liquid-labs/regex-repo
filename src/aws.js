@@ -15,11 +15,11 @@ limitations under the License.
 */
 
 // credit to: https://stackoverflow.com/a/50484916/929494
-export const awsS3TABucketNameString = '(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$'
-// AWS: Matches S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TABucketNameString` cannot be used for partial matches.
-export const awsS3TABucketName = new RegExp(awsS3TABucketNameString)
+export const awsS3TABucketNameREString = '(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$'
+// AWS: Matches S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TABucketNameREString` cannot be used for partial matches.
+export const awsS3TABucketNameRE = new RegExp(awsS3TABucketNameREString)
 
 // credit to: https://stackoverflow.com/a/50484916/929494
-export const awsS3BucketNameString = '(?!(^((2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})\\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})$|^xn--|.+-s3alias$))^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$'
-// AWS: Matcehs valid S3 bucket name. Note `awsS3BucketNameString` cannot be used for partial matches.
-export const awsS3BucketName = new RegExp(awsS3BucketNameString)
+export const awsS3BucketNameREString = '(?!(^((2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})\\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})$|^xn--|.+-s3alias$))^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$'
+// AWS: Matches valid S3 bucket name. Note `awsS3BucketNameREString` cannot be used for partial matches.
+export const awsS3BucketNameRE = new RegExp(awsS3BucketNameREString)

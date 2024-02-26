@@ -15,18 +15,16 @@ limitations under the License.
 */
 
 import * as regex from '../javascript'
-import { groupTest } from './lib/test-lib'
+import { groupTest, groupTestPartial } from './lib/test-lib'
 
-groupTest(
-  regex.jsReservedWordRE,
-  ['for', 'in', 'var', 'yield'],
-  ['excited', 'javascript', 'ina'],
-  'JS reserved words'
-)
+const validReservedWords = ['for', 'in', 'var', 'yield']
+const invalidReservedWords = ['excited', 'javascript', 'ina']
 
-groupTest(
-  regex.jsVariableRE,
-  ['blah', 'foo', 'ᾩ', 'ĦĔĽĻŎ', '〱〱〱〱', 'जावास्क्रिप्ट', 'KingGeorgeⅦ'],
-  ['for', 'in', 'var', 'yield', 'a-bad-name'],
-  'JS variable'
-)
+groupTest(regex.jsReservedWordRE, validReservedWords, invalidReservedWords, 'JS reserved words')
+groupTestPartial(regex.jsReservedWordREString, validReservedWords, invalidReservedWords, 'JS reserved words')
+
+const validVariableNames = ['blah', 'foo', 'ᾩ', 'ĦĔĽĻŎ', '〱〱〱〱', 'जावास्क्रिप्ट', 'KingGeorgeⅦ']
+const invalidVariableNames = ['for', 'in', 'var', 'yield', 'a-bad-name']
+
+groupTest(regex.jsVariableRE, validVariableNames, invalidVariableNames, 'JS variable')
+groupTestPartial(regex.jsVariableREString, validVariableNames, invalidVariableNames, 'JS variable', '= ', '  ')
