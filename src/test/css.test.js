@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/* globals test, expect */
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../css'
 import { validHexColors1, validHexColors, invalidHexColors } from './data/hexColors'

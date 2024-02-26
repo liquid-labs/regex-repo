@@ -90,19 +90,19 @@ export const hslREString =
 // Colors/CSS: Matches CSS4 'hsl(...) and hsla(...) deg, grad, rad, turn and percent notation.
 export const hslRE = lockdownRE(hslREString)
 
-export const cssColor3REString = '(?:'
-  + [hexColorNoAlphaREString, rgb1IntStr, rgb1PercStr, rgba3IntStr, rgba3PercStr]
+export const cssColor3REString = '(?:' +
+  [hexColorNoAlphaREString, rgb1IntStr, rgb1PercStr, rgba3IntStr, rgba3PercStr]
     .concat(Object.keys(pre.cssPreColors3))
     .concat(hsl3Opts)
-    .join('|')
-  + ')'
+    .join('|') +
+  ')'
 // Colors/CSS: Matches CSS3 'hex, rgb, rgba, hsl, and predefined colors.
 export const cssColor3RE = lockdownRE(cssColor3REString)
 
-export const cssColorREString = '(?:'
-  + [hexColorAlphaREString, rgbREString, hslREString]
+export const cssColorREString = '(?:' +
+  [hexColorAlphaREString, rgbREString, hslREString]
     .concat(Object.keys(pre.cssPreColors))
-    .join('|')
-  + ')'
+    .join('|') +
+  ')'
 // Colors/CSS: Matches CSS4 'hex, rgb, rgba, hsl, and predefined colors.
 export const cssColorRE = lockdownRE(cssColorREString)

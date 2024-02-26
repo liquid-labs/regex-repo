@@ -18,7 +18,7 @@ import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../numbers'
 
 const stringify = (arr) => arr.map((i) => '' + i)
-const stringifyPerc = (arr, plus) => arr.map((i) => i + '%')
+const stringifyPerc = (arr) => arr.map((i) => i + '%')
 
 const plainFloats = [-100, -100.1, '-99.0', 0, '0.0', '-0', '+0', '0.1', '678.938']
 const notPlainFloats = ['1e20', 'a', '1b']
@@ -55,9 +55,9 @@ groupTestPartial(regex.zeroTo1FloatREString, zeroTo1Floats, notZeroTo1Floats, 'z
 
 groupTest(regex.zeroTo100PercentRE, stringifyPerc(zeroTo100), stringifyPerc(notZeroTo100), 'zeroTo100Percent')
 groupTestPartial(
-  regex.zeroTo100PercentREString, 
-  stringifyPerc(zeroTo100), 
-  stringifyPerc(notZeroTo100), 
+  regex.zeroTo100PercentREString,
+  stringifyPerc(zeroTo100),
+  stringifyPerc(notZeroTo100),
   'zeroTo100Percent'
 )
 

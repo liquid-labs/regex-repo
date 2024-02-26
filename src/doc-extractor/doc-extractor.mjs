@@ -13,7 +13,7 @@ const addData = ({ description, reName, section }) => {
   data[section].push({ description, reName })
 }
 
-(async() => {
+(async () => {
   // read everything from src root
   const files = (await fs.readdir(fsPath.resolve(__dirname, '..'), { withFileTypes : true }))
     .filter((f) => f.isFile())
@@ -29,8 +29,7 @@ const addData = ({ description, reName, section }) => {
         if (commentMatch !== null) {
           const [, section, description] = commentMatch
           addData({ description, reName, section })
-        }
-        else {
+        } else {
           addData({ reName, section : 'Uncategorized' })
         }
       }

@@ -20,17 +20,17 @@ import { lockdownRE } from './lib/lockdown-re'
 // Annotations cribbed from https://gist.github.com/dperini/729294
 export const urlREString =
   // protocol ID
-  '(?!mailto:)(?:(?:http|https|ftp)://)'
+  '(?!mailto:)(?:(?:http|https|ftp)://)' +
   // user + pass
-  + '(?:\\S+(?::\\S*)?@)?'
+  '(?:\\S+(?::\\S*)?@)?' +
   // IP address dotted notation octets
-// excludes loopback network 0.0.0.0
-// excludes reserved space >= 224.0.0.0
-// excludes network & broacast addresses
-// (first & last IP address of each class)
-  + '(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])'
-  + '(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}'
-  + '(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?'
+  // excludes loopback network 0.0.0.0
+  // excludes reserved space >= 224.0.0.0
+  // excludes network & broacast addresses
+  // (first & last IP address of each class)
+  '(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
+  '(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}' +
+  '(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?'
 // Web: Matches a valid URL.
 export const urlRE = lockdownRE(urlREString, 'i')
 
