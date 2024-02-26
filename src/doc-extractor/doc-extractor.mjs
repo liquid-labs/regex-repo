@@ -37,7 +37,7 @@ const addData = ({ description, reName, section }) => {
     })
   }
 
-  let content = ''
+  let content = '\n'
   for (const section of Object.keys(data).sort()) {
     content += `### ${section}\n\n`
     for (const { description, reName } of data[section].sort((a, b) => a.reName.localeCompare(b.reName))) {
