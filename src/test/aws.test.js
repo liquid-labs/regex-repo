@@ -16,11 +16,11 @@ limitations under the License.
 
 import { groupTest } from './lib/test-lib'
 import * as regex from '../aws'
-import { 
-    goodAWSS3TABuckenNames, 
-    badAWSS3TABuckenNames, 
-    goodAWSS3BuckenNames, 
-    badAWSS3BuckenNames 
+import {
+  goodAWSS3TABuckenNames,
+  badAWSS3TABuckenNames,
+  goodAWSS3BuckenNames,
+  badAWSS3BuckenNames
 } from './data/aws-s3-bucket-names'
 
 groupTest(regex.awsS3TABucketName, goodAWSS3TABuckenNames, badAWSS3TABuckenNames)

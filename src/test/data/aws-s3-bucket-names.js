@@ -17,11 +17,11 @@ limitations under the License.
 export const goodAWSS3TABuckenNames = ['foobar', 'foo-bar', 'a-very-long-bucket-name-less-than-63-characters']
 
 export const badAWSS3BuckenNames = [
-    'ab', 
-    '192.168.8.20', 
-    'foo_bar', 
-    //       10        20        30        40        50        60
-    '1234567890123456789012345678901234567890123456789012345678901234'
+  'ab',
+  '192.168.8.20',
+  'foo_bar',
+  //       10        20        30        40        50        60
+  '1234567890123456789012345678901234567890123456789012345678901234'
 ]
 
 export const badAWSS3TABuckenNames = badAWSS3BuckenNames.concat(['foo.bar'])
