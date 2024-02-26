@@ -21,5 +21,5 @@ export const awsS3TABucketNameRE = new RegExp(awsS3TABucketNameREString)
 
 // credit to: https://stackoverflow.com/a/50484916/929494
 export const awsS3BucketNameREString = '(?!(^((2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})\\.){3}(2(5[0-5]|[0-4][0-9])|[01]?[0-9]{1,2})$|^xn--|.+-s3alias$))^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$'
-// AWS: Matcehs valid S3 bucket name. Note `awsS3BucketNameREString` cannot be used for partial matches.
+// AWS: Matches valid S3 bucket name. Note `awsS3BucketNameREString` cannot be used for partial matches.
 export const awsS3BucketNameRE = new RegExp(awsS3BucketNameREString)
