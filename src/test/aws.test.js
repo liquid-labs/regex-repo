@@ -13,11 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-export * from './aws'
-export * from './contacts'
-export * from './css'
-export * from './ids'
-export * from './javascript'
-export * from './npm'
-export * from './numbers'
-export * from './web'
+
+import { groupTest } from './lib/test-lib'
+import * as regex from '../aws'
+import { 
+    goodAWSS3TABuckenNames, 
+    badAWSS3TABuckenNames, 
+    goodAWSS3BuckenNames, 
+    badAWSS3BuckenNames 
+} from './data/aws-s3-bucket-names'
+
+groupTest(regex.awsS3TABucketName, goodAWSS3TABuckenNames, badAWSS3TABuckenNames)
+groupTest(regex.awsS3BucketName, goodAWSS3BuckenNames, badAWSS3BuckenNames)
