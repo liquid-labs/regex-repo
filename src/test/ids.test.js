@@ -15,15 +15,11 @@ limitations under the License.
 */
 
 /* globals test, expect */
+import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../ids'
 
-const trivial0 = '00000000-0000-1000-8000-000000000000'
-const invalidUuid = '00000000-0000-0000-0000-000000000000'
+const validUUID = ['00000000-0000-1000-8000-000000000000']
+const invalidUUID = ['00000000-0000-0000-0000-000000000000']
 
-test('trivial (all 0) UUID is valid', () => {
-  expect(regex.uuidRE.test(trivial0)).toBe(true)
-})
-
-test('recognize invalid UUID', () => {
-  expect(regex.uuidRE.test(invalidUuid)).toBe(false)
-})
+groupTest(regex.uuidRE, validUUID, invalidUUID, 'uuidRE')
+groupTestPartial(regex.uuidREString, validUUID, invalidUUID, 'uuidRE')

@@ -14,13 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { groupTest } from './lib/test-lib'
+import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../web'
 import { goodUrls, badUrls } from './data/urls'
 import { goodEmails, badEmails } from './data/emails'
 
-groupTest(regex.urlRE, goodUrls, badUrls)
-groupTest(regex.emailRE, goodEmails, badEmails)
+groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
+// remove URLs with spaces because those will correctly match on a partial match
+groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs')
+
+groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
+groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails')
+
 groupTest(regex.emailEncodedOrNotRE,
   goodEmails.map((e) => e.replace('@', '%40')),
-  badEmails.map((e) => e.replace('@', '%40')))
+  badEmails.map((e) => e.replace('@', '%40')),
+  'URI encoded emails')
+groupTestPartial(regex.emailEncodedOrNotREString,
+  goodEmails.map((e) => e.replace('@', '%40')),
+  badEmails.map((e) => e.replace('@', '%40')),
+  'URI encoded emails')

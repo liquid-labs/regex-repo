@@ -14,12 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { groupTest } from './lib/test-lib'
+import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../npm'
 
-groupTest(
-  regex.npmPackageNameRE,
-  ['ansi-escapes', 'foo.com', '@acme/foo'],
-  ['excited!', '.start-with-a-peried', '@acme/!foo'],
-  'NPM package names'
-)
+const validNPMPackegeNames = ['ansi-escapes', 'foo.com', '@acme/foo']
+const invalidNPMPackageNames = ['excited!', '.start-with-a-peried', '@acme/!foo']
+
+groupTest(regex.npmPackageNameRE, validNPMPackegeNames, invalidNPMPackageNames, 'NPM package names')
+groupTestPartial(regex.npmPackageNameREString, validNPMPackegeNames, invalidNPMPackageNames, 'NPM package names')

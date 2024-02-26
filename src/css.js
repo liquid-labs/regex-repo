@@ -99,7 +99,7 @@ export const cssColor3REString = '(?:'
 // Colors/CSS: Matches CSS3 'hex, rgb, rgba, hsl, and predefined colors.
 export const cssColor3RE = lockdownRE(cssColor3REString)
 
-const cssColorREString = '(?:'
+export const cssColorREString = '(?:'
   + [hexColorAlphaREString, rgbREString, hslREString]
     .concat(Object.keys(pre.cssPreColors))
     .join('|')

@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-export const uuidREString = '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'
+import { lockdownRE } from './lib/lockdown-re'
+
+export const uuidREString = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}'
 // Identifiers: Matches a UUID.
-export const uuidRE = new RegExp(uuidREString)
+export const uuidRE = lockdownRE(uuidREString)

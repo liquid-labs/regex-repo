@@ -15,14 +15,17 @@ limitations under the License.
 */
 
 /* globals test, expect */
-import { groupTest } from './lib/test-lib'
+import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../css'
 import { validHexColors1, validHexColors, invalidHexColors } from './data/hexColors'
 import { validRgb1, validRgba3, invalidRgb1, validRgb, invalidRgb } from './data/rgbColors'
 import { validHsl3, invalidHsl3, validHsl, invalidHsl } from './data/hslColors'
 
 groupTest(regex.hexColorNoAlphaRE, validHexColors1, invalidHexColors, 'hexColor1')
+groupTestPartial(regex.hexColorNoAlphaREString, validHexColors1, invalidHexColors, 'hexColor1')
+
 groupTest(regex.hexColorAlphaRE, validHexColors, invalidHexColors, 'hexColor')
+groupTestPartial(regex.hexColorAlphaREString, validHexColors, invalidHexColors, 'hexColor')
 
 // since the colors are hard coded, we don't test the while thing; we'd just
 // end up replicating the structure or building pointless tests from the same
@@ -54,11 +57,19 @@ test('cssPreColors fails to match invalid', () => {
 })
 
 groupTest(regex.rgbFuncRE, validRgb1, invalidRgb1, 'rgb')
-groupTest(regex.rgbaFuncRE, validRgba3, invalidRgb1, 'rgba3') // note, same invalid group
+groupTestPartial(regex.rgbFuncREString, validRgb1, invalidRgb1, 'rgb')
+
+groupTest(regex.rgbaFuncRE, validRgba3, invalidRgb1, 'rgba3')
+groupTestPartial(regex.rgbaFuncREString, validRgba3, invalidRgb1, 'rgba3')
+
 groupTest(regex.rgbRE, validRgb, invalidRgb, 'rgb')
+groupTestPartial(regex.rgbREString, validRgb, invalidRgb, 'rgb')
 
 groupTest(regex.hsl3RE, validHsl3, invalidHsl3, 'hsl3')
+groupTestPartial(regex.hsl3REString, validHsl3, invalidHsl3, 'hsl3')
+
 groupTest(regex.hslRE, validHsl, invalidHsl, 'hsl')
+groupTestPartial(regex.hslREString, validHsl, invalidHsl, 'hsl')
 
 const validCssColors3 = validHexColors1
   .concat(validRgb1)
@@ -70,6 +81,7 @@ const invalidCssColors3 = invalidHexColors
   .concat(['rebeccapurple'])
   .concat(invalidHsl3)
 groupTest(regex.cssColor3RE, validCssColors3, invalidCssColors3, 'cssColors3')
+groupTestPartial(regex.cssColor3REString, validCssColors3, invalidCssColors3, 'cssColors3')
 
 const validCssColors = validHexColors
   .concat(validRgb)
@@ -80,3 +92,4 @@ const invalidCssColors = invalidHexColors
   .concat(['blueberry'])
   .concat(invalidHsl)
 groupTest(regex.cssColorRE, validCssColors, invalidCssColors, 'cssColors')
+groupTestPartial(regex.cssColorREString, validCssColors, invalidCssColors, 'cssColors')

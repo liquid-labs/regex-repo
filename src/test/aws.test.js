@@ -23,5 +23,7 @@ import {
   badAWSS3BuckenNames
 } from './data/aws-s3-bucket-names'
 
-groupTest(regex.awsS3TABucketName, goodAWSS3TABuckenNames, badAWSS3TABuckenNames)
-groupTest(regex.awsS3BucketName, goodAWSS3BuckenNames, badAWSS3BuckenNames)
+groupTest(regex.awsS3TABucketName, goodAWSS3TABuckenNames, badAWSS3TABuckenNames, 'AWS S3TA bucket RE')
+groupTest(regex.awsS3BucketName, goodAWSS3BuckenNames, badAWSS3BuckenNames, 'AWS S3 bucket RE')
+
+// The AWS S3 test strings don't support partial matches

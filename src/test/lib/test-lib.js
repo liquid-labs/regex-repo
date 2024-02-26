@@ -27,3 +27,9 @@ export const groupTest = (re, validData, invalidData, desc) => {
   groupTestHelper(re, validData, true, desc)
   groupTestHelper(re, invalidData, false, desc)
 }
+
+export const groupTestPartial = (reString, validData, invalidData, desc, prefix='Hi! ', suffix=' Bye!') => {
+  const re = new RegExp('(?:^|\\s+)' + reString + '(?:$|\\s+)')
+  groupTestHelper(re, validData.map((d) => prefix + d + suffix), true, desc + ' partial match')
+  groupTestHelper(re, invalidData.map((d) => prefix + d + suffix), false, desc + ' partial match')
+}
