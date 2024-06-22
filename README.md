@@ -65,8 +65,7 @@ const allColors = cssContent
 
 ### Contact info
 
-- __emailEncodedOrNotRE__: Matche a valid email, URL encoded or not.
-- __emailRE__: Matche a valid email.
+- __emailRE__: Match a valid email. Provides matching groups 1 (user name) and 2 (domain).
 - __usPhoneRE__: Matches US phone numbers with optional country code and area code.
 - __zipCodeRE__: Matches 5 or 9 digit US zip codes.
 
@@ -91,5 +90,8 @@ const allColors = cssContent
 
 ### Web
 
+- __domainNameRE__: Matches a (non-top level) domain name. Does not enforce 63 character limit.
+- __fqDomainNameRE__: Matches fully qualified domain name (on or more sub-domain + TLD). Does not enforce 63 character sub-domain or 255 character FQN domain limit.
+- __tldNameRE__: Matches a Top Level Domain (TLD)
 - __urlRE__: Matches a valid URL.
 

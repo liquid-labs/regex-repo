@@ -20,7 +20,8 @@ export const goodEmails = [
   'foo@bar.xqc',
   'foo@baz.bar.xqc',
   'foo-_18+Z.t%c@Bar-teg38w.co',
-  'foo@some.reallylongtld'
+  'foo@some.reallylongtld',
+  'foo@sub-sub.sub.com'
 ]
 
 export const badEmails = [
@@ -29,5 +30,6 @@ export const badEmails = [
   'foo@.com',
   'foo@some.really-long-tld-with-dashes'
 ]
+
 const badDomainChars = ['_', '@', '+', '%']
 badDomainChars.forEach((c) => badEmails.push(`foo@bar${c}baz.com`))
