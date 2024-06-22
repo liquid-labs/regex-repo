@@ -4,7 +4,7 @@ export const goodDomainNames = [
   'f',
   'foo',
   'foo-bar',
-  'a-b-c',
+  'a-b-c'
 ]
 
 export const badDomainNames = [
