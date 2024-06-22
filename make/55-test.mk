@@ -27,6 +27,8 @@ $(CATALYST_TEST_FILES_BUILT) &: $(CATALYST_ALL_JS_FILES_SRC)
 		--out-dir=./$(TEST_STAGING) \
 		--source-maps=inline \
 		$(SRC)
+	# remove because it's not really part of the test
+	rm $(TEST_STAGING)/doc-extractor/doc-extractor.js
 
 $(CATALYST_TEST_PASS_MARKER) $(CATALYST_TEST_REPORT) $(TEST_STAGING)/coverage &: package.json $(CATALYST_TEST_FILES_BUILT) $(CATALYST_TEST_DATA_BUILT)
 	rm -rf $@
