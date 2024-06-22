@@ -16,21 +16,24 @@ limitations under the License.
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../web'
-import { goodUrls, badUrls } from './data/urls'
+import { goodDomainNames, badDomainNames } from './data/domains'
 import { goodEmails, badEmails } from './data/emails'
+import { goodFQDomainNames, badFQDomainNames } from './data/fq-domains'
+import { goodTLDs, badTLDs } from './data/tlds'
+import { goodUrls, badUrls } from './data/urls'
 
 groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
 // remove URLs with spaces because those will correctly match on a partial match
 groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs')
 
+groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
+groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs')
+
+groupTest(regex.domainNameRE, goodDomainNames, badDomainNames, 'domain names')
+groupTestPartial(regex.domainNameREString, goodDomainNames, badDomainNames, 'domain names')
+
+groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
+groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
+
 groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
 groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails')
-
-groupTest(regex.emailEncodedOrNotRE,
-  goodEmails.map((e) => e.replace('@', '%40')),
-  badEmails.map((e) => e.replace('@', '%40')),
-  'URI encoded emails')
-groupTestPartial(regex.emailEncodedOrNotREString,
-  goodEmails.map((e) => e.replace('@', '%40')),
-  badEmails.map((e) => e.replace('@', '%40')),
-  'URI encoded emails')

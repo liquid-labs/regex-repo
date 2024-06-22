@@ -34,14 +34,20 @@ export const urlREString =
 // Web: Matches a valid URL.
 export const urlRE = lockdownRE(urlREString, 'i')
 
-// TODO: properly support all domain names https://github.com/liquid-labs/regex-repo/issues/3
-const preDomainBit = '(?:[a-zA-Z0-9._+-]|%[1-35-9][0-9]|%4[1-9]|%[a-zA-Z])+'
-const domainBit = '[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'
+export const tldNameREString = '[a-zA-Z]{2,}'
+// Web: Matches a Top Level Domain (TLD)
+export const tldNameRE = lockdownRE(tldNameREString)
 
-export const emailREString = `${preDomainBit}@${domainBit}`
-// Contact info: Matche a valid email.
+export const domainNameREString = '(?:[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)'
+// Web: Matches a (non-top level) domain name. Does not enforce 63 character limit.
+export const domainNameRE = lockdownRE(domainNameREString)
+
+export const fqDomainNameREString = `(?:${domainNameREString}\\.)+${tldNameREString}`
+// Web: Matches fully qualified domain name (on or more sub-domain + TLD). Does not enforce 63 character sub-domain or 255 character FQN domain limit.
+export const fqDomainNameRE = lockdownRE(fqDomainNameREString)
+
+// based on https://stackoverflow.com/a/201378/929494; modified to allow uppercase characters and restrict to valid DNS 
+// names in the domain portion
+export const emailREString = `([a-zA-Z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_\`{|}~-]+)*|"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*")@(${fqDomainNameREString})`
+// Contact info: Match a valid email. Provides matching groups 1 (user name) and 2 (domain).
 export const emailRE = lockdownRE(emailREString)
-
-export const emailEncodedOrNotREString = `${preDomainBit}(?:@|%40)${domainBit}`
-// Contact info: Matche a valid email, URL encoded or not.
-export const emailEncodedOrNotRE = lockdownRE(emailEncodedOrNotREString)
