@@ -17,6 +17,10 @@ limitations under the License.
 import * as numStrs from './lib/numbers-strings'
 import { lockdownRE } from './lib/lockdown-re'
 
+export const integerREString = '-?(?:0|[1-9]\\d*)'
+// Numbers: Matches an integer.
+export const integerRE = lockdownRE(integerREString)
+
 export const plainFloatREString = numStrs.plainFloatStr
 // Numbers: Matches a plain (non-scientific notation) float.
 export const plainFloatRE = lockdownRE(plainFloatREString)
