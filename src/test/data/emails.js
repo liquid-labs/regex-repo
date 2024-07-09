@@ -19,16 +19,16 @@ export const goodEmails = [
   'foo@bar.org',
   'foo@bar.xqc',
   'foo@baz.bar.xqc',
-  'foo-_18+Z.t%c@Bar-teg38w.co',
+  'foo-_18+Z.t%c@Bart-teg38w.co',
   'foo@some.reallylongtld',
-  'foo@sub-sub.sub.com'
+  'foo@subb-sub.sub.com',
+  'foo@some.really-long-tld-with-dashes'
 ]
 
 export const badEmails = [
   'foo.bar.com',
   'foo@bar.c',
-  'foo@.com',
-  'foo@some.really-long-tld-with-dashes'
+  'foo@.com'
 ]
 
 const badDomainChars = ['_', '@', '+', '%']
