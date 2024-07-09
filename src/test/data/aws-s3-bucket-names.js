@@ -20,9 +20,16 @@ export const badAWSS3BuckenNames = [
   'ab',
   '192.168.8.20',
   'foo_bar',
-  //       10        20        30        40        50        60
-  '1234567890123456789012345678901234567890123456789012345678901234'
+  'adjacent..periods',
+  'xn--foo',
+  'sthree-foo',
+  'foo-s3alias',
+  'foo--ol-s3'
 ]
 
-export const badAWSS3TABuckenNames = badAWSS3BuckenNames.concat(['foo.bar'])
+export const badAWSS3TABuckenNames = badAWSS3BuckenNames.concat([
+  'foo.bar',
+  //       10        20        30        40        50        60
+  '1234567890123456789012345678901234567890123456789012345678901234'
+])
 export const goodAWSS3BuckenNames = goodAWSS3TABuckenNames.concat(['foo.bar'])

@@ -34,8 +34,8 @@ const allColors = cssContent
 
 ### AWS
 
-- __awsS3BucketNameRE__: Matches valid S3 bucket name. Note `awsS3BucketNameREString` cannot be used for partial matches.
-- __awsS3TABucketNameRE__: Matches S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TABucketNameREString` cannot be used for partial matches.
+- __awsS3BucketNameRE__: Matches (most) valid S3 bucket name. Note `awsS3BucketNameREString` cannot be used for partial matches. Does not enforce 63 character limit.
+- __awsS3TABucketNameRE__: Matches (most) S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TABucketNameREString` cannot be used for partial matches.
 
 ### CSS numbers
 
