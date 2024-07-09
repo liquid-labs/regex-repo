@@ -85,6 +85,7 @@ const allColors = cssContent
 ### Numbers
 
 - __floatRE__: Matches a float in either plan or scientific format.
+- __integerRE__: Matches an integer.
 - __plainFloatRE__: Matches a plain (non-scientific notation) float.
 - __scientificFloatRE__: Matches a scientific notation float.
 
