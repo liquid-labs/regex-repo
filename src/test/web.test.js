@@ -33,6 +33,12 @@ groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails')
 groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 
+groupTest(regex.ipRE, goodIPs, badIPs, 'IP address')
+groupTestPartial(regex.ipREString, goodIPs, badIPs, 'IP address')
+
+groupTest(regex.ipFormatRE, goodIPFormats, badIPFormats, 'IP format')
+groupTestPartial(regex.ipFormatREString, goodIPFormats, badIPFormats, 'IP format')
+
 groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
 groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs')
 

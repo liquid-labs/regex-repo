@@ -22,7 +22,8 @@ export const ipREString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
 // Web: Matches a valid, non-localhost IP address.
 export const ipRE = lockdownRE(ipREString)
 
-export const ipFormatREString = '(?:\\.(?:0|1?\\d{1,2}|2[0-4]\\d|25[0-5])){4}'
+const ipTuple = '(?:0|1?\\d{1,2}|2[0-4]\\d|25[0-5])'
+export const ipFormatREString = `(?:${ipTuple}\\.){3}${ipTuple}`
 // Web: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
 export const ipFormatRE = lockdownRE(ipFormatREString)
 

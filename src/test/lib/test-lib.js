@@ -21,7 +21,8 @@ const groupTestHelper = (re, data, isValid, desc) => {
     test(`${desc} should ${isValid ? 'pass' : 'fail'} '${datum}'`, () => {
       expect(re.test(datum)).toBe(isValid)
     })
-  })}
+  })
+}
 
 export const groupTest = (re, validData, invalidData, desc) => {
   groupTestHelper(re, validData, true, desc)

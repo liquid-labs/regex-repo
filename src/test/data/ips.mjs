@@ -7,6 +7,7 @@ export const goodIPs = [
 ]
 
 export const badIPs = [
+  '230.1.1.1',
   '250.250.250.250',
   '1.1.1.255'
 ]
