@@ -1,14 +1,14 @@
 export const goodTLDs = [
   'com',
   'cc',
-  'alongtld',
-  'a-z'
+  'alongtld'
 ]
 
 export const badTLDs = [
   'a',
+  'a1b',
   '1a',
-  'a--z',
+  'a-z',
   '-az',
   'az-'
 ]

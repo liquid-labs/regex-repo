@@ -44,7 +44,7 @@ export const urlREString =
 // Web: Matches a valid URL.
 export const urlRE = lockdownRE(urlREString, 'i')
 
-export const tldNameREString = '[a-zA-Z](?:[a-zA-Z0-9]|[a-zA-Z0-9-][a-zA-Z0-9]|[a-zA-Z0-9-][a-zA-Z0-9]{2}|[a-zA-Z0-9-][a-zA-Z0-9]{2}(?:-?[a-zA-Z0-9]+)+)'
+export const tldNameREString = '[a-zA-Z]{2,63}'
 // Web: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules).
 export const tldNameRE = lockdownRE(tldNameREString)
 
