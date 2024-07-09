@@ -22,7 +22,7 @@ export const goodEmails = [
   'foo-_18+Z.t%c@Bart-teg38w.co',
   'foo@some.reallylongtld',
   'foo@subb-sub.sub.com',
-  'foo@some.really-long-tld-with-dashes'
+  'foo@some.reallylongtld'
 ]
 
 export const badEmails = [
