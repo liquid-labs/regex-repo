@@ -19,21 +19,29 @@ import * as regex from '../web'
 import { goodDomainNames, badDomainNames } from './data/domains'
 import { goodEmails, badEmails } from './data/emails'
 import { goodFQDomainNames, badFQDomainNames } from './data/fq-domains'
+import { goodIPs, badIPs } from './data/ips'
+import { goodIPFormats, badIPFormats } from './data/ip-formats'
 import { goodTLDs, badTLDs } from './data/tlds'
 import { goodUrls, badUrls } from './data/urls'
-
-groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
-// remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs')
-
-groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
-groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs')
 
 groupTest(regex.domainNameRE, goodDomainNames, badDomainNames, 'domain names')
 groupTestPartial(regex.domainNameREString, goodDomainNames, badDomainNames, 'domain names')
 
+groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
+groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails')
+
 groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 
-groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
-groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails')
+groupTest(regex.ipRE, goodIPs, badIPs, 'IP address')
+groupTestPartial(regex.ipREString, goodIPs, badIPs, 'IP address')
+
+groupTest(regex.ipFormatRE, goodIPFormats, badIPFormats, 'IP format')
+groupTestPartial(regex.ipFormatREString, goodIPFormats, badIPFormats, 'IP format')
+
+groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
+groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs')
+
+groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
+// remove URLs with spaces because those will correctly match on a partial match
+groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs')

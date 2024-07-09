@@ -90,8 +90,27 @@ const allColors = cssContent
 
 ### Web
 
-- __domainNameRE__: Matches a (non-top level) domain name. Does not enforce 63 character limit.
-- __fqDomainNameRE__: Matches fully qualified domain name (on or more sub-domain + TLD). Does not enforce 63 character sub-domain or 255 character FQN domain limit.
-- __tldNameRE__: Matches a Top Level Domain (TLD)
+- __domainNameRE__: Matches a registerable domain name. See [domain name rules](#domain-name-rules).
+- __fqDomainNameRE__: Matches fully qualified domain name (zero or more sub-domains + registerable domain + TLD). Does not enforce 63 character domain label limit or 255 character FQN domain limit.
+- __ipFormatRE__: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
+- __ipRE__: Matches a valid, non-localhost IP address.
+- __subDomainRE__: Matches a valid sub-domain label. See [domain name rules](#domain-name-rules).
+- __tldNameRE__: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules).
 - __urlRE__: Matches a valid URL.
 
+## Domain name rules
+
+Unfortunately, there isn't clear consensus on what is allowed in a subdomain vs a registerable domain vs a top level domain (TLD); referred to collectively as 'domain labels'. So, here are the rules we follow:
+
+* All domain labels must be at least 2 and no more than 63 characters in length. The 63 character limit is __not__ enforced by the regular expressions.
+* TLDs:
+  * must begin with an alpha character (a-z).
+  * may not have two consecutive hyphens.
+* Registerable domains:
+  * must begin with an alpha-numeric character (a-z, 0-9).
+  * may have consecutive hyphens except in the 3rd and 4th position.
+* Sub-domains:
+  * must begin with an alpha-numeric character (a-z, 0-9).
+  * may have consecutive hyphens anywhere.
+
+Also note, the base domain label REs do not support International Domain Names (IDNs; also called 'special character domain names').

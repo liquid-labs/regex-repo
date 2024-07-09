@@ -15,13 +15,14 @@ limitations under the License.
 */
 /* globals expect test */
 
-const groupTestHelper = (re, data, isValid, desc) =>
+const groupTestHelper = (re, data, isValid, desc) => {
+  desc += ` (${re.toString()})`
   data.forEach((datum) => {
-    desc += ` (${re.toString()})`
-    test(`${desc ? desc + ' should ' : ''}${isValid ? 'pass' : 'fail'} '${datum}'`, () => {
+    test(`${desc} should ${isValid ? 'pass' : 'fail'} '${datum}'`, () => {
       expect(re.test(datum)).toBe(isValid)
     })
   })
+}
 
 export const groupTest = (re, validData, invalidData, desc) => {
   groupTestHelper(re, validData, true, desc)
