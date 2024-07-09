@@ -20,6 +20,12 @@ import * as regex from '../numbers'
 const stringify = (arr) => arr.map((i) => '' + i)
 const stringifyPerc = (arr) => arr.map((i) => i + '%')
 
+const integers = [1, 0, -100]
+const notIntegers = ['1.0', '00', '01']
+
+groupTest(regex.integerRE, stringify(integers), notIntegers, 'integers')
+groupTestPartial(regex.integerREString, stringify(integers), notIntegers, 'integers')
+
 const plainFloats = [-100, -100.1, '-99.0', 0, '0.0', '-0', '+0', '0.1', '678.938']
 const notPlainFloats = ['1e20', 'a', '1b']
 const scientificFloats = ['-1e-40', '-1.1E-41.0', '38.8e0.83', '38.0e+0.38']
