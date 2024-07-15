@@ -71,15 +71,20 @@ const allColors = cssContent
 
 ### Date/Time
 
-- <span id="iso8601datere">__`iso8601DateRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time. Provides matching groups 1 (year), 3 (month), and 4 (day of month), 5 (week date), 6 (day of week date), and 7 (ordinal or Julian date), 8 (special instant end of day time), 10 (hour), 12 (decimal fraction of hour), 14 (minute), 15(decimal fraction of minute), 16 (seconds), 17 (decimal fraction of a second), and 18 (timezone designation). (Groups 2, 11, and 13 are internal back references.)
-- <span id="iso8601datetimere">__`iso8601DateTimeRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) requiring both date and time components.
-- <span id="iso8601loosedatere">__`iso8601LooseDateRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-like date time allowing for a space to separate the date and time components instead of requiring a 'T' as the ISO 8601 spec requires. See [`iso8601DateRE`](#iso8601datere) for capture groups.`
-- <span id="iso8601loosedatetimere">__`iso8601LooseDateTimeRE`__</span>: // Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-lke date time allowing for a space to separate the date and time instead of requiring a 'T' and requiring both date and time components. See [`iso8601DateRE`](#iso8601datere) for capture groups.
-- <span id="iso8601timeonlyre">__`iso8601TimeOnlyRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) style time designation. Provides matching 1 (special instant end of day time), 3 (hour), 4 (decimal fraction of hour), 6 (minute), 7 (decimal fraction of minute), 8 (seconds), 9 (decimal fraction of a second), and 10 (timezone designation). (Groups 2 and 5 are internal back references.)
+- <span id="iso8601datere">__`iso8601DateRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time like '20240101T1212Z. Provides matching groups 1 (year), 3 (month), and 4 (day of month), 5 (week date), 6 (day of week date), and 7 (ordinal or Julian date), 8 (special instant end of day time), 10 (hour), 12 (decimal fraction of hour), 14 (minute), 15(decimal fraction of minute), 16 (seconds), 17 (decimal fraction of a second), and 18 (timezone designation). (Groups 2, 11, and 13 are internal back references.)
+- <span id="iso8601datetimere">__`iso8601DateTimeRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) _requiring_ both date and time components.
+- <span id="iso8601loosedatere">__`iso8601LooseDateRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-like date time allowing for a space to separate the date and time components instead of requiring a 'T' as the ISO 8601 spec requires, like '20240101 1212Z'. See [`iso8601DateRE`](#iso8601datere) for capture groups.`
+- <span id="iso8601loosedatetimere">__`iso8601LooseDateTimeRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-lke date time allowing for a space to separate the date and time instead of requiring a 'T' and _requiring_ both date and time components, like '20240101 1212Z'. See [`iso8601DateRE`](#iso8601datere) for capture groups.
+- <span id="iso8601timeonlyre">__`iso8601TimeOnlyRE`__</span>: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) style time designation, like '12:12Z'. Provides matching 1 (special instant end of day time), 3 (hour), 4 (decimal fraction of hour), 6 (minute), 7 (decimal fraction of minute), 8 (seconds), 9 (decimal fraction of a second), and 10 (timezone designation). (Groups 2 and 5 are internal back references.)
 
 ### Date/Times
 
-- <span id="iso8601dateonlyre">__`iso8601DateOnlyRE`__</span>: Matches as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) consisting of dates only. Provides matching groups 1 (year), 3 (month), and 4 (day of month), 5 (week date), 6 (day of week date), and 7 (ordinal or Julian date). (Group 2 is an internal backreference.)
+- <span id="iso8601dayonlyre">__`iso8601DayOnlyRE`__</span>: Matches as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) consisting of dates only, like '2024-01-01'. Provides matching groups 1 (year), 3 (month), and 4 (day of month), 5 (week date), 6 (day of week date), and 7 (ordinal or Julian date). (Group 2 is an internal backreference.)
+
+### Date/Tmie
+
+- <span id="rfc2822datere">__`rfc2822DateRE`__</span>: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month), and 4 (year), 5 (hour), 6 (min), 7 (second), and 8 (time zone).
+- <span id="rfc2822dayonlyre">__`rfc2822DayOnlyRE`__</span>: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month), and 4 (year).
 
 ### Identifiers
 
@@ -100,6 +105,10 @@ const allColors = cssContent
 - <span id="integerre">__`integerRE`__</span>: Matches an integer.
 - <span id="plainfloatre">__`plainFloatRE`__</span>: Matches a plain (non-scientific notation) float.
 - <span id="scientificfloatre">__`scientificFloatRE`__</span>: Matches a scientific notation float.
+
+### Uncategorized
+
+- <span id="rfc2822timeonlyre">__`rfc2822TimeOnlyRE`__</span>
 
 ### Web
 

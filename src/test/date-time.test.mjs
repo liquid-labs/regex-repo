@@ -40,8 +40,8 @@ import {
   invalidRFC2822Dates
 } from './data/rfc-2822-date-times'
 
-groupTest(regex.iso8601DateOnlyRE, valid8601DatesOnly, invalid8601DatesOnly, 'ISO 8601 dates only')
-groupTestPartial(regex.iso8601DateOnlyREString, valid8601DatesOnly, invalid8601DatesOnly, 'ISO 8601 dates only')
+groupTest(regex.iso8601DayOnlyRE, valid8601DatesOnly, invalid8601DatesOnly, 'ISO 8601 dates only')
+groupTestPartial(regex.iso8601DayOnlyREString, valid8601DatesOnly, invalid8601DatesOnly, 'ISO 8601 dates only')
 
 groupTest(regex.iso8601TimeOnlyRE, valid8601TimesOnly, invalid8601TimesOnly, 'ISO 8601 times only')
 groupTestPartial(regex.iso8601TimeOnlyREString, valid8601TimesOnly, invalid8601TimesOnly, 'ISO 8601 times only')
