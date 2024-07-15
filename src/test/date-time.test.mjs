@@ -31,6 +31,15 @@ import {
   invalid8601LooseDateTimes
 } from './data/iso-8601-date-times'
 
+import {
+  validRFC2822Days,
+  invalidRFC2822Days,
+  validRFC2822Times,
+  invalidRFC2822Times,
+  validRFC2822Dates,
+  invalidRFC2822Dates
+} from './data/rfc-2822-date-times'
+
 groupTest(regex.iso8601DateOnlyRE, valid8601DatesOnly, invalid8601DatesOnly, 'ISO 8601 dates only')
 groupTestPartial(regex.iso8601DateOnlyREString, valid8601DatesOnly, invalid8601DatesOnly, 'ISO 8601 dates only')
 
@@ -48,3 +57,12 @@ groupTestPartial(regex.iso8601LooseDateREString, valid8601LooseDates, invalid860
 
 groupTest(regex.iso8601LooseDateTimeRE, valid8601LooseDateTimes, invalid8601LooseDateTimes, 'ISO 8601 loose date with time')
 groupTestPartial(regex.iso8601LooseDateTimeREString, valid8601LooseDateTimes, invalid8601LooseDateTimes, 'ISO 8601 loose date with time')
+
+groupTest(regex.rfc2822DayOnlyRE, validRFC2822Days, invalidRFC2822Days, 'RFC 2822 days only')
+groupTestPartial("'" + regex.rfc2822DayOnlyREString + "'", validRFC2822Days, invalidRFC2822Days, 'RFC 2822 days only', "Hi '", "' there")
+
+groupTest(regex.rfc2822TimeOnlyRE, validRFC2822Times, invalidRFC2822Times, 'RFC 2822 times only')
+groupTestPartial("'" + regex.rfc2822TimeOnlyREString + "'", validRFC2822Times, invalidRFC2822Times, 'RFC 2822 times only', "Hi '", "' there")
+
+groupTest(regex.rfc2822DateRE, validRFC2822Dates, invalidRFC2822Dates, 'RFC 2822 dates')
+groupTestPartial("'" + regex.rfc2822DateREString + "'", validRFC2822Dates, invalidRFC2822Dates, 'RFC 2822 dates', "Hi '", "' there")
