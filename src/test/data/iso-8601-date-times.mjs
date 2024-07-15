@@ -1,0 +1,113 @@
+export const valid8601DatesOnly = [
+  '2009', // year only
+  '-0010',
+  '+0010',
+  '2009-05', // month only
+  '200905',
+  '2009-05-19', // full date
+  '20090519',
+  '2009123', // ordinal/Julian date
+  '2009-123',
+  '2009W01',
+  '2009W011',
+  '2009-W01-1',
+  '2009W011',
+]
+
+export const invalid8601DatesOnly = [
+  '2009-0101', // inconsistent separators
+  '200901-01',
+  '2009-W0101',
+  '2009W01-01',
+  '10', // 2 digit years
+  '10-03',
+  '200913', // trivially impossible dates
+  '200920',
+  '20090132'
+]
+
+export const valid8601TimesOnly = [
+  '24:00:00',
+  '240000',
+  '24:00:00Z',
+  '01',
+  '01.5',
+  '01,5',
+  '01:01',
+  '01:01.5',
+  '01:01,5',
+  '0101',
+  '00:23:23',
+  '23:23:23',
+  '23:23:23.5',
+  '23:23:23,5',
+  '232323',
+  '232360', // leap second
+  '232360.5',
+  '23:23:23.23',
+  '23:23:23,23',
+  '23Z',
+  '23:23Z',
+  '23:23:23Z',
+  '23:23:23.123Z',
+  '23:23:23+05',
+  '23:23:23+0500',
+  '23:23:23+05:00',
+  '232323+0500',
+  '232323+05:00',
+  '23:23:23-05',
+  '23:23:23-0500',
+  '23:23:23-05:00',
+  '232323-0500',
+  '232323-05:00'
+]
+
+export const invalid8601TimesOnly = [
+  '24:0000', // inconsistent separators
+  '2400:00',
+  '23:2323',
+  '2323:23',
+  '25:00:00', // impossible times
+  '01:60:00',
+  '01:01:61',
+  '01:02:01+24', // impossible time zones
+  '01:02:01+2400',
+  '01:02:01+24:00',
+  '01:02:01-24',
+  '01:02:01-2400',
+  '01:02:01-24:00',
+  '01:02:01+00',
+  '01:02:01+0000',
+  '01:02:01+00:00',
+  '01:02:01-00',
+  '01:02:01-0000',
+  '01:02:01-00:00'
+]
+
+export const valid8601DateTimes = [
+  '2009-12T12:34',
+  '2009-12T12:34+01'
+]
+
+export const invalid8601DateTimes = [
+  '2009-12-01',
+  '2009-12 12:34',
+  '2009-12 12:34+01'
+]
+
+export const valid8601Dates = [...valid8601DatesOnly, ...valid8601DateTimes]
+
+export const invalid8601Dates = [...invalid8601DatesOnly, ...invalid8601DateTimes.slice(1)]
+
+export const valid8601LooseDateTimes = [
+  '2009-12 12:34',
+  '2009-12 12:34+01'
+]
+
+// not really a lot of utility in testing much, but testing infra needs something
+export const invalid8601LooseDateTimes = ['2009-12-01']
+
+export const valid8601LooseDates = [...valid8601DatesOnly, ...valid8601LooseDateTimes]
+
+// not really a lot of utility in testing much, but testing infra needs something
+export const invalid8601LooseDates = invalid8601DatesOnly
