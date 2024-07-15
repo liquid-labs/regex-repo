@@ -13,17 +13,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18.x, 20.x, 22.x ]
+        # Github doesn't have the latest node 14 available so we specify the version.
+        node-version: [ 14.17.3, 16.x, 18.x, 20.x, 22.x ]
         os: [ ubuntu-latest, windows-latest, macos-latest ]
         include:
           - os: macos-latest
-            node: 14.x
+            node: 14.17.3
             arch: x64
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
