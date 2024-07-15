@@ -40,7 +40,7 @@ const addData = ({ description, reName, section }) => {
   for (const section of Object.keys(data).sort()) {
     content += `### ${section}\n\n`
     for (const { description, reName } of data[section].sort((a, b) => a.reName.localeCompare(b.reName))) {
-      content += `- __${reName}__`
+      content += `- <span id="${reName.toLowerCase()}">__\`${reName}\`__</span>`
       if (description !== undefined) {
         content += ': ' + description
       }
