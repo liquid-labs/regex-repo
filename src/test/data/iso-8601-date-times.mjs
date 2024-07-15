@@ -1,3 +1,4 @@
+// Pulled some test data from https://www.myintervals.com/blog/2009/05/20/iso-8601-date-validation-that-doesnt-suck/ (2024-07-15)
 export const valid8601DatesOnly = [
   '2009', // year only
   '-0010',

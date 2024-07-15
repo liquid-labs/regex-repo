@@ -15,6 +15,9 @@ limitations under the License.
 */
 import { lockdownRE } from './lib/lockdown-re'
 
+// Started RE based on https://www.myintervals.com/blog/2009/05/20/iso-8601-date-validation-that-doesnt-suck/
+// Made some corrections, rearranged capture groups.
+
 export const iso8601DateOnlyREString = '([+-]?\\d{4})(?:(-?)(?:(0[1-9]|1[0-2])(?:\\2([12]\\d|0[1-9]|3[01])?)?|W([0-4]\\d|5[0-3])\\2([1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3(?:[0-5]\\d|6[1-6])))?)?'
 // Date/Times: Matches as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) consisting of dates only. Provides matching groups 1 (year), 3 (month), and 4 (day of month), 5 (week date), 6 (day of week date), and 7 (ordinal or Julian date). (Group 2 is an internal backreference.)
 export const iso8601DateOnlyRE = lockdownRE(iso8601DateOnlyREString)
@@ -45,3 +48,6 @@ export const iso8601LooseDateRE = lockdownRE(iso8601LooseDateREString)
 export const iso8601LooseDateTimeREString = `${iso8601DateOnlyREString}[T\\s]${iso8601TimeOnlyREString}`
 // Date/Time: // Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-lke date time allowing for a space to separate the date and time instead of requiring a 'T' and _requiring_ both date and time components. See [`iso8601DateRE`](#iso8601datere) for capture groups.
 export const iso8601LooseDateTimeRE = lockdownRE(iso8601LooseDateTimeREString)
+
+export const rfc2822DateREString = '(?:(Sun|Mon|Tue|Wed|Thu|Fri|Sat),\s+)?(0[1-9]|[1-2]?[0-9]|3[01])\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(19[0-9]{2}|[2-9][0-9]{3})\s+(2[0-3]|[0-1][0-9]):([0-5][0-9])(?::(60|[0-5][0-9]))?\s+([-\+][0-9]{2}[0-5][0-9]|(?:UT|GMT|(?:E|C|M|P)(?:ST|DT)|[A-IK-Z]))(\s+|\(([^\(\)]+|\\\(|\\\))*\))*'
+
