@@ -27,7 +27,7 @@ const frac = '([.,]\\d+)'
 const hr = `(?:([01]\\d|2[0-3])${frac}?)`
 const min = `(?:([0-5]\\d)${frac}?)`
 const sec = `(?:([0-5]\\d|60)${frac}?)`
-const tz = `([zZ]|(?:[+-](?!00(?::?00)?)(?:[01]\\d|2[0-3])(?::?[0-5]\\d)?))`
+const tz = '([zZ]|(?:[+-](?!00(?::?00)?)(?:[01]\\d|2[0-3])(?::?[0-5]\\d)?))'
 
 export const iso8601TimeOnlyREString = `(?:${eod}|${hr}(?:(?<timeSep>:?)${min}(?:\\k<timeSep>${sec})?)?)${tz}?`
 // Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) style time designation, like '12:12Z'. Provides matching 1 (special instant end of day time), 3 (hour), 4 (decimal fraction of hour), 6 (minute), 7 (decimal fraction of minute), 8 (seconds), 9 (decimal fraction of a second), and 10 (timezone designation). (Groups 2 and 5 are internal back references.)
@@ -60,4 +60,3 @@ export const rfc2822TimeOnlyRE = lockdownRE(rfc2822TimeOnlyREString)
 export const rfc2822DateREString = `${rfc2822DayOnlyREString}\\s+${rfc2822TimeOnlyREString}`
 // Date/Tmie: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month), and 4 (year), 5 (hour), 6 (min), 7 (second), and 8 (time zone).
 export const rfc2822DateRE = lockdownRE(rfc2822DateREString)
-

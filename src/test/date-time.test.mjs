@@ -16,13 +16,13 @@ limitations under the License.
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../date-times'
-import { 
+import {
   valid8601DatesOnly,
-  invalid8601DatesOnly, 
-  valid8601TimesOnly, 
-  invalid8601TimesOnly, 
-  valid8601Dates, 
-  invalid8601Dates, 
+  invalid8601DatesOnly,
+  valid8601TimesOnly,
+  invalid8601TimesOnly,
+  valid8601Dates,
+  invalid8601Dates,
   valid8601DateTimes,
   invalid8601DateTimes,
   valid8601LooseDates,

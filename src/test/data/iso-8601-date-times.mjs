@@ -28,7 +28,7 @@ export const valid8601DatesOnly = [
   '2009W01',
   '2009W011',
   '2009-W01-1',
-  '2009W011',
+  '2009W011'
 ]
 
 export const invalid8601DatesOnly = [
