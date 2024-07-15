@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Node ${{ matrix.node-version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
+      - name: Node ${{ matrix.node-version }}/${{ matrix.architecture || 'default' }} on ${{ matrix.os }}
         uses: actions/setup-node@v4
       - run: npm ci
       - run: npm run build --if-present
