@@ -35,7 +35,7 @@ export const iso8601DateREString = `${iso8601DateOnlyREString}(?:T${iso8601TimeO
 export const iso8601DateRE = lockdownRE(iso8601DateREString)
 
 export const iso8601DateTimeREString = `${iso8601DateOnlyREString}T${iso8601TimeOnlyREString}`
-// Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) requiring both date and time components.
+// Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) _requiring_ both date and time components.
 export const iso8601DateTimeRE = lockdownRE(iso8601DateTimeREString)
 
 export const iso8601LooseDateREString = `${iso8601DateOnlyREString}(?:[T\\s]${iso8601TimeOnlyREString})?`
@@ -43,5 +43,5 @@ export const iso8601LooseDateREString = `${iso8601DateOnlyREString}(?:[T\\s]${is
 export const iso8601LooseDateRE = lockdownRE(iso8601LooseDateREString)
 
 export const iso8601LooseDateTimeREString = `${iso8601DateOnlyREString}[T\\s]${iso8601TimeOnlyREString}`
-// Date/Time: // Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-lke date time allowing for a space to separate the date and time instead of requiring a 'T' and requiring both date and time components. See [`iso8601DateRE`](#iso8601datere) for capture groups.
+// Date/Time: // Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-lke date time allowing for a space to separate the date and time instead of requiring a 'T' and _requiring_ both date and time components. See [`iso8601DateRE`](#iso8601datere) for capture groups.
 export const iso8601LooseDateTimeRE = lockdownRE(iso8601LooseDateTimeREString)
