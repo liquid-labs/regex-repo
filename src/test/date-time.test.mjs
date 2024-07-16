@@ -19,6 +19,7 @@ import * as regex from '../date-times'
 import { valid8601Dates, invalid8601Dates, valid8601DateTimes, invalid8601DateTimes } from './data/iso-8601-date-times'
 import { validIntlDates, invalidIntlDates } from './data/intl-dates'
 import { validRFC2822Dates, invalidRFC2822Dates } from './data/rfc-2822-date-times'
+import { validMilTimes, invalidMilTimes, validTimes, invalidTimes } from './data/times'
 import { validUSDates, invalidUSDates } from './data/us-dates'
 
 groupTest(regex.iso8601DateRE, valid8601Dates, invalid8601Dates, 'ISO 8601 dates')
@@ -96,4 +97,32 @@ groupTestPartial(regex.intlDateREString, validIntlDates, invalidIntlDates, 'intl
   test('intlDateRE matches year', () => expect(match[2]).toBe(year))
   test('intlDateRE matches month', () => expect(match[3]).toBe(month))
   test('intlDateRE matches day', () => expect(match[4]).toBe(day))
+})
+
+groupTest(regex.militaryTimeRE, validMilTimes, invalidMilTimes, 'military time')
+groupTestPartial(regex.militaryTimeREString, validMilTimes, invalidMilTimes, 'military time');
+
+[
+  ['2400', '2400', undefined, undefined],
+  ['2230', undefined, '22', '30']
+].forEach(([input, endOfDay, hours, minutes]) => {
+  const match = input.match(regex.militaryTimeRE)
+  test('militaryTimeRE matches end of day', () => expect(match[1]).toBe(endOfDay))
+  test('militaryTimeRE matches hour', () => expect(match[2]).toBe(hours))
+  test('militaryTimeRE matches minutes', () => expect(match[3]).toBe(minutes))
+})
+
+groupTest(regex.timeRE, validTimes, invalidTimes, 'time (12 hr)')
+groupTestPartial(regex.timeREString, validTimes, invalidTimes, 'time (12 hr)');
+
+[
+  ['12:00 AM', '12', '00', undefined, undefined, 'AM'],
+  ['8:30:12.93 PM', '8', '30', '12', '93', 'PM']
+].forEach(([input, hours, minutes, seconds, secFrac, amPM]) => {
+  const match = input.match(regex.timeRE)
+  test('timeRE matches hour', () => expect(match[1]).toBe(hours))
+  test('timeRE matches minutes', () => expect(match[2]).toBe(minutes))
+  test('timeRE matches seconds', () => expect(match[3]).toBe(seconds))
+  test('timeRE matches fractional seconds', () => expect(match[4]).toBe(secFrac))
+  test('timeRE matches am/pm', () => expect(match[5]).toBe(amPM))
 })

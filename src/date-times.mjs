@@ -58,7 +58,7 @@ export const militaryTimeREString = `(?:(2400)|([0-1][0-9]|2[0-3])([0-5]\\d))`
 // Date/Time: Matches military time style 'HHMM' string. Provides capture groups 1 (special 2400 time), 2 (hour), and 3 (minutes).
 export const militaryTimeRE = lockdownRE(militaryTimeREString)
 
-export const timeREString = '(?:(0?[1-9]|1[0-2]):([0-5][0-9])(?:([0-5][0-9])(?:[.,](\\d+))?)?\\s*([aApP][mM]))'
+export const timeREString = '(?:(0?[1-9]|1[0-2]):([0-5][0-9])(?::([0-5][0-9])(?:[.,](\\d+))?)?\\s*([aApP][mM]))'
 // Date/Time: Matches a twelve hour time designation, requires AM or PM designation. Allows optional leading 0 in hour. Provides matching groups 1 (hour), 2 (minutes), 3 (seconds, without decimal fractions), 4 (decimal fraction seconds), and 5 (AM/PM indicator).
 export const timeRE = lockdownRE(timeREString)
 
