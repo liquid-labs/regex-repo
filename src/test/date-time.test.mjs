@@ -17,8 +17,9 @@ limitations under the License.
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../date-times'
 import { valid8601Dates, invalid8601Dates, valid8601DateTimes, invalid8601DateTimes } from './data/iso-8601-date-times'
-
+import { validIntlDates, invalidIntlDates } from './data/intl-dates'
 import { validRFC2822Dates, invalidRFC2822Dates } from './data/rfc-2822-date-times'
+import { validUSDates, invalidUSDates } from './data/us-dates'
 
 groupTest(regex.iso8601DateRE, valid8601Dates, invalid8601Dates, 'ISO 8601 dates')
 groupTestPartial("'" + regex.iso8601DateREString + "'", valid8601Dates, invalid8601Dates, 'ISO 8601 dates', "Hi '", "' there");
@@ -67,4 +68,32 @@ groupTestPartial("'" + regex.rfc2822DateREString + "'", validRFC2822Dates, inval
   test('rfc2822RE matches minutes', () => expect(match[6]).toBe(minutes))
   test('rfc2822RE matches seconds', () => expect(match[7]).toBe(seconds))
   test('rfc2822RE matches timezone', () => expect(match[8]).toBe(timezone))
+})
+
+groupTest(regex.usDateRE, validUSDates, invalidUSDates, 'US date')
+groupTestPartial(regex.usDateREString, validUSDates, invalidUSDates, 'US date');
+
+[
+  ['01/02/2024', '01', '02', undefined, '2024'],
+  ['01/02/-2024', '01', '02', '-', '2024']
+].forEach(([input, month, day, ceIndicator, year]) => {
+  const match = input.match(regex.usDateRE)
+  test('usDateRE matches month', () => expect(match[1]).toBe(month))
+  test('usDateRE matches day', () => expect(match[2]).toBe(day))
+  test('usDateRE matches ceIndicator', () => expect(match[3]).toBe(ceIndicator))
+  test('usDateRE matches year', () => expect(match[4]).toBe(year))
+})
+
+groupTest(regex.intlDateRE, validIntlDates, invalidIntlDates, 'intl date')
+groupTestPartial(regex.intlDateREString, validIntlDates, invalidIntlDates, 'intl date');
+
+[
+  ['2024/01/02', undefined, '2024', '01', '02'],
+  ['-2024/01/02', '-', '2024', '01', '02']
+].forEach(([input, ceIndicator, year, month, day]) => {
+  const match = input.match(regex.intlDateRE)
+  test('intlDateRE matches ceIndicator', () => expect(match[1]).toBe(ceIndicator))
+  test('intlDateRE matches year', () => expect(match[2]).toBe(year))
+  test('intlDateRE matches month', () => expect(match[3]).toBe(month))
+  test('intlDateRE matches day', () => expect(match[4]).toBe(day))
 })

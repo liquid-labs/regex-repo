@@ -46,11 +46,11 @@ export const rfc2822DateRE = lockdownRE(rfc2822DateREString)
 
 const seps = '[./-]'
 
-export const usDateREString = `(0?[1-9]|1[0-2])${seps}(0?[1-9]|[1-2][0-9]|3[0-1])${seps}([+-]?)(\\d{1,4})`
+export const usDateREString = `(0?[1-9]|1[0-2])${seps}(0?[1-9]|[1-2][0-9]|3[0-1])${seps}([+-])?(\\d{1,})`
 // Date/Time: Matches a US style 'MM/DD/YYYY' string. Accepts separators '.', '/', '-'. Will except 1 or 2 digits for month and day and 1-4 digits for the year. Also accepts a + or - before the year. Provides capture groups 1 (month), 2 (day of month), 3 (BCE/CE indicator), and 4 (year).
 export const usDateRE = lockdownRE(usDateREString)
 
-export const intlDateREString = `([+-]?)(\\d{1,4})${seps}(0?[1-9]|1[0-2])${seps}(0?[1-9]|[1-2][0-9]|3[0-1])`
+export const intlDateREString = `([+-])?(\\d{1,})${seps}(0?[1-9]|1[0-2])${seps}(0?[1-9]|[1-2][0-9]|3[0-1])`
 // Date/Time: Matches an international style 'YYYY/MM/DD' string. Accepts separators '.', '/', '-'. Will except 1 or 2 digits for month and day and 1-4 digits for the year. Also accepts a + or - before the year. Provides capture groups 1 (BCE/CE indicator), 2 (year), 3 (month), 4 (day).
 export const intlDateRE = lockdownRE(intlDateREString)
 
