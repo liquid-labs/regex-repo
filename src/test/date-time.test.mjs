@@ -16,29 +16,9 @@ limitations under the License.
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../date-times'
-import {
-  valid8601DatesOnly,
-  invalid8601DatesOnly,
-  valid8601TimesOnly,
-  invalid8601TimesOnly,
-  valid8601Dates,
-  invalid8601Dates,
-  valid8601DateTimes,
-  invalid8601DateTimes,
-  valid8601LooseDates,
-  invalid8601LooseDates,
-  valid8601LooseDateTimes,
-  invalid8601LooseDateTimes
-} from './data/iso-8601-date-times'
+import { valid8601Dates, invalid8601Dates, valid8601DateTimes, invalid8601DateTimes } from './data/iso-8601-date-times'
 
-import {
-  validRFC2822Days,
-  invalidRFC2822Days,
-  validRFC2822Times,
-  invalidRFC2822Times,
-  validRFC2822Dates,
-  invalidRFC2822Dates
-} from './data/rfc-2822-date-times'
+import { validRFC2822Dates, invalidRFC2822Dates } from './data/rfc-2822-date-times'
 
 groupTest(regex.iso8601DateRE, valid8601Dates, invalid8601Dates, 'ISO 8601 dates')
 groupTestPartial("'" + regex.iso8601DateREString + "'", valid8601Dates, invalid8601Dates, 'ISO 8601 dates', "Hi '", "' there")
