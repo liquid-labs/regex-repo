@@ -62,6 +62,6 @@ export const timeREString = '(?:(0?[1-9]|1[0-2]):([0-5][0-9])(?::([0-5][0-9])(?:
 // Date/Time: Matches a twelve hour time designation, requires AM or PM designation. Allows optional leading 0 in hour. Provides matching groups 1 (hour), 2 (minutes), 3 (seconds, without decimal fractions), 4 (decimal fraction seconds), and 5 (AM/PM indicator).
 export const timeRE = lockdownRE(timeREString)
 
-export const twentyFourHourTimeREString = '(?:(24:00(?::00)?)|(0?[1-9]|1[0-9]|2[0-3]):([0-5][0-9])(?:([0-5][0-9])(?:[.,](\\d+))?)?)'
+export const twentyFourHourTimeREString = '(?:(24:00(?::00)?)|(0?[1-9]|1[0-9]|2[0-3]):([0-5][0-9])(?::([0-5][0-9])(?:[.,](\\d+))?)?)'
 // Date/Time: Matches a twenty-four hour time designationAllows optional leading 0 in hour. Provides matching groups 1 (special 24:00 designation with optional seconds), 2 (hour), 3 (minutes), 4 (seconds, without decimal fractions), 5 (decimal fraction seconds).
 export const twentyFourHourTimeRE = lockdownRE(twentyFourHourTimeREString)

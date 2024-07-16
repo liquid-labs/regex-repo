@@ -19,7 +19,14 @@ import * as regex from '../date-times'
 import { valid8601Dates, invalid8601Dates, valid8601DateTimes, invalid8601DateTimes } from './data/iso-8601-date-times'
 import { validIntlDates, invalidIntlDates } from './data/intl-dates'
 import { validRFC2822Dates, invalidRFC2822Dates } from './data/rfc-2822-date-times'
-import { validMilTimes, invalidMilTimes, validTimes, invalidTimes } from './data/times'
+import { 
+  validMilTimes, 
+  invalidMilTimes, 
+  validTimes, 
+  invalidTimes, 
+  valid24HrTimes, 
+  invalid24HrTimes 
+} from './data/times'
 import { validUSDates, invalidUSDates } from './data/us-dates'
 
 groupTest(regex.iso8601DateRE, valid8601Dates, invalid8601Dates, 'ISO 8601 dates')
@@ -125,4 +132,20 @@ groupTestPartial(regex.timeREString, validTimes, invalidTimes, 'time (12 hr)');
   test('timeRE matches seconds', () => expect(match[3]).toBe(seconds))
   test('timeRE matches fractional seconds', () => expect(match[4]).toBe(secFrac))
   test('timeRE matches am/pm', () => expect(match[5]).toBe(amPM))
+})
+
+groupTest(regex.twentyFourHourTimeRE, valid24HrTimes, invalid24HrTimes, '24-hour time')
+groupTestPartial(regex.twentyFourHourTimeREString, valid24HrTimes, invalid24HrTimes, '24-hour time');
+
+[
+  ['12:00', undefined, '12', '00', undefined, undefined],
+  ['8:30:12.93', undefined, '8', '30', '12', '93'],
+  ['24:00', '24:00', undefined, undefined, undefined, undefined]
+].forEach(([input, endOfDay, hours, minutes, seconds, secFrac]) => {
+  const match = input.match(regex.twentyFourHourTimeRE)
+  test('twentyFourHourTimeRE matches end of day', () => expect(match[1]).toBe(endOfDay))
+  test('twentyFourHourTimeRE matches hour', () => expect(match[2]).toBe(hours))
+  test('twentyFourHourTimeRE matches minutes', () => expect(match[3]).toBe(minutes))
+  test('twentyFourHourTimeRE matches seconds', () => expect(match[4]).toBe(seconds))
+  test('twentyFourHourTimeRE matches fractional seconds', () => expect(match[5]).toBe(secFrac))
 })
