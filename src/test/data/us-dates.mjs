@@ -4,7 +4,7 @@ export const validUSDates = [
   '1/1/1',
   '1/1/10000',
   '1/1/+2024',
-  '1/1/-2024',
+  '1/1/-2024'
 ]
 
 export const invalidUSDates = [

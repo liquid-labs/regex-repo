@@ -4,7 +4,7 @@ export const validIntlDates = [
   '1/1/1',
   '10000/1/1',
   '+2024/1/1',
-  '-2024/1/1',
+  '-2024/1/1'
 ]
 
 export const invalidIntlDates = [

@@ -16,7 +16,7 @@ limitations under the License.
 import { lockdownRE } from './lib/lockdown-re'
 
 // Started RE based on https://www.myintervals.com/blog/2009/05/20/iso-8601-date-validation-that-doesnt-suck/
-// Made some corrections, rearranged capture groups. 
+// Made some corrections, rearranged capture groups.
 
 const iso8601DayOnlyREString = '([+-]?\\d{4})(?:(-?)(?:(0[1-9]|1[0-2])(?:\\2([12]\\d|0[1-9]|3[01])?)?|W([0-4]\\d|5[0-3])\\2([1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3(?:[0-5]\\d|6[1-6])))?)?'
 
@@ -54,7 +54,7 @@ export const intlDateREString = `([+-])?(\\d{1,})${seps}(0?[1-9]|1[0-2])${seps}(
 // Date/Time: Matches an international style 'YYYY/MM/DD' string. Accepts separators '.', '/', '-'. Will except 1 or 2 digits for month and day and 1-4 digits for the year. Also accepts a + or - before the year. Provides capture groups 1 (BCE/CE indicator), 2 (year), 3 (month), 4 (day).
 export const intlDateRE = lockdownRE(intlDateREString)
 
-export const militaryTimeREString = `(?:(2400)|([0-1][0-9]|2[0-3])([0-5]\\d))`
+export const militaryTimeREString = '(?:(2400)|([0-1][0-9]|2[0-3])([0-5]\\d))'
 // Date/Time: Matches military time style 'HHMM' string. Provides capture groups 1 (special 2400 time), 2 (hour), and 3 (minutes).
 export const militaryTimeRE = lockdownRE(militaryTimeREString)
 
