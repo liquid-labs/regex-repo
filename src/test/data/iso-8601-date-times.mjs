@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 // Pulled some test data from https://www.myintervals.com/blog/2009/05/20/iso-8601-date-validation-that-doesnt-suck/ (2024-07-15)
-export const valid8601DatesOnly = [
+const valid8601DatesOnly = [
   '2009', // year only
   '-0010',
   '+0010',
@@ -31,7 +31,7 @@ export const valid8601DatesOnly = [
   '2009W011'
 ]
 
-export const invalid8601DatesOnly = [
+const invalid8601DatesOnly = [
   '2009-0101', // inconsistent separators
   '200901-01',
   '2009-W0101',
@@ -43,7 +43,7 @@ export const invalid8601DatesOnly = [
   '20090132'
 ]
 
-export const valid8601TimesOnly = [
+const valid8601TimesOnly = [
   '24:00:00',
   '240000',
   '24:00:00Z',
@@ -79,7 +79,7 @@ export const valid8601TimesOnly = [
   '232323-05:00'
 ]
 
-export const invalid8601TimesOnly = [
+const invalid8601TimesOnly = [
   '24:0000', // inconsistent separators
   '2400:00',
   '23:2323',
@@ -103,28 +103,20 @@ export const invalid8601TimesOnly = [
 
 export const valid8601DateTimes = [
   '2009-12T12:34',
-  '2009-12T12:34+01'
+  '2009-12T12:34+01',
+  ...valid8601TimesOnly.map((t) => '2009-12-12T' + t)
 ]
 
+const invalid8601DateAndTimes = invalid8601TimesOnly.map((t) => '2009-12-12T' + t)
+
 export const invalid8601DateTimes = [
-  '2009-12-01',
   '2009-12 12:34',
-  '2009-12 12:34+01'
+  '2009-12 12:34+01',
+  ...invalid8601DateAndTimes,
+  ...valid8601DatesOnly,
+  ...valid8601TimesOnly
 ]
 
 export const valid8601Dates = [...valid8601DatesOnly, ...valid8601DateTimes]
 
-export const invalid8601Dates = [...invalid8601DatesOnly, ...invalid8601DateTimes.slice(1)]
-
-export const valid8601LooseDateTimes = [
-  '2009-12 12:34',
-  '2009-12 12:34+01'
-]
-
-// not really a lot of utility in testing much, but testing infra needs something
-export const invalid8601LooseDateTimes = ['2009-12-01']
-
-export const valid8601LooseDates = [...valid8601DatesOnly, ...valid8601LooseDateTimes]
-
-// not really a lot of utility in testing much, but testing infra needs something
-export const invalid8601LooseDates = invalid8601DatesOnly
+export const invalid8601Dates = [...invalid8601DatesOnly, ...invalid8601DateAndTimes]
