@@ -27,8 +27,8 @@ export const ipFormatREString = `(?:${ipTuple}\\.){3}${ipTuple}`
 // Web: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
 export const ipFormatRE = lockdownRE(ipFormatREString)
 
-// Base RE cribbed from: https://github.com/chriso/validator.js via https://stackoverflow.com/a/22648406/929494
-// Annotations cribbed from https://gist.github.com/dperini/729294
+/* Base RE cribbed from: https://github.com/chriso/validator.js via https://stackoverflow.com/a/22648406/929494
+   Annotations cribbed from https://gist.github.com/dperini/729294 */
 export const urlREString =
   // protocol ID
   '(?!mailto:)(?:(?:http|https|ftp)://)' +
