@@ -77,16 +77,13 @@ const allColors = cssContent
 - <span id="iso8601dayrestring">__`iso8601DayREString`__</span>: (string only) Matches the day designation portion of an ISO 8601 date+time. Provides matching groups 1 (year), 3 (month), and 4 (day of month), 5 (week of year), 6 (day of week date), and 7 (ordinal or Julian date).
 - <span id="iso8601timerestring">__`iso8601TimeREString`__</span>: (string only) Matches the time designation portion of an ISO 8601 date+time. Provides matching groups 1 (special end of day time), 3 (hours), 3 (fraction of hour), 5 (minutes), 6 (fraction of minute), 7 (seconds), and 8 (fraction of seconds).
 - <span id="militarytimere">__`militaryTimeRE`__</span>: Matches military time style 'HHMM' string. Provides capture groups 1 (special 2400 time), 2 (hour), and 3 (minutes).
-- <span id="rfc2822dayrestring">__`rfc2822DayREString`__</span>: (string only) Matches the day designation portion of an RFC 2822 date+time. Provides matching groups 1 (day of week name), 2 (day of month), 3 (year).
+- <span id="rfc2822datere">__`rfc2822DateRE`__</span>: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month name), and 4 (year), 5 (hour), 6 (min), 7 (second), and 8 (time zone).
+- <span id="rfc2822dayrestring">__`rfc2822DayREString`__</span>: (string only) Matches the day designation portion of an RFC 2822 date+time. Provides matching groups 1 (day of week name), 2 (day of month), 3 (month name), 4 (year).
 - <span id="rfc2822timerestring">__`rfc2822TimeREString`__</span>: (string only) Matches the time designation portion of an RFC 2822 date+time. Provides matching groups 1 (hour), 2 (minutes), 3 (seconds), and 4 (timezone).
 - <span id="timere">__`timeRE`__</span>: Matches a twelve hour time designation, requires AM or PM designation. Allows optional leading 0 in hour. Provides matching groups 1 (hour), 2 (minutes), 3 (seconds, without decimal fractions), 4 (decimal fraction seconds), and 5 (AM/PM indicator).
 - <span id="timezonerestring">__`timezoneREString`__</span>: (string only) Matches a general timezone designation; compliant with RFC 2822 timezone portion. Provides matching groups 1 (timezone).
 - <span id="twentyfourhourtimere">__`twentyFourHourTimeRE`__</span>: Matches a twenty-four hour time designationAllows optional leading 0 in hour. Provides matching groups 1 (special 24:00 designation with optional seconds), 2 (hour), 3 (minutes), 4 (seconds, without decimal fractions), 5 (decimal fraction seconds).
 - <span id="usdatere">__`usDateRE`__</span>: Matches a US style 'MM/DD/YYYY' string. Accepts separators '.', '/', '-'. Will except 1 or 2 digits for month and day and 1-4 digits for the year. Also accepts a + or - before the year. Provides capture groups 1 (month), 2 (day of month), 3 (BCE/CE indicator), and 4 (year).
-
-### Date/Tmie
-
-- <span id="rfc2822datere">__`rfc2822DateRE`__</span>: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month), and 4 (year), 5 (hour), 6 (min), 7 (second), and 8 (time zone).
 
 ### Identifiers
 

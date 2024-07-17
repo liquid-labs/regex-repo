@@ -39,7 +39,7 @@ export const iso8601DateTimeREString = `${iso8601DayREString}T${iso8601TimeREStr
 // Date/Time: Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) _requiring_ both date and time components. See [`iso8601DateRE`](#iso8601datere) for matching groups.
 export const iso8601DateTimeRE = lockdownRE(iso8601DateTimeREString)
 
-// Date/Time: (string only) Matches the day designation portion of an RFC 2822 date+time. Provides matching groups 1 (day of week name), 2 (day of month), 3 (year).
+// Date/Time: (string only) Matches the day designation portion of an RFC 2822 date+time. Provides matching groups 1 (day of week name), 2 (day of month), 3 (month name), 4 (year).
 export const rfc2822DayREString = '(?:(?:(Sun|Mon|Tue|Wed|Thu|Fri|Sat),\\s+)?(0[1-9]|[1-2]?[0-9]|3[01])\\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s+(\\d{2,4}))'
 // Date/Time: (string only) Matches a general timezone designation; compliant with RFC 2822 timezone portion. Provides matching groups 1 (timezone).
 export const timezoneREString = '([+-][0-9]{2}[0-5][0-9]|(?:UT|GMT|[A-Z]{3,5}|[A-IK-Z]))'
@@ -47,7 +47,7 @@ export const timezoneREString = '([+-][0-9]{2}[0-5][0-9]|(?:UT|GMT|[A-Z]{3,5}|[A
 export const rfc2822TimeREString = `(?:(2[0-3]|[0-1][0-9]):([0-5][0-9])(?::(60|[0-5][0-9]))?(?:\\s+${timezoneREString})?)`
 
 export const rfc2822DateREString = `${rfc2822DayREString}\\s+${rfc2822TimeREString}`
-// Date/Tmie: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month), and 4 (year), 5 (hour), 6 (min), 7 (second), and 8 (time zone).
+// Date/Time: Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month name), and 4 (year), 5 (hour), 6 (min), 7 (second), and 8 (time zone).
 export const rfc2822DateRE = lockdownRE(rfc2822DateREString)
 
 const seps = '[./-]'
