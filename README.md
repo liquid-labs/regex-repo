@@ -87,6 +87,8 @@ const allColors = cssContent
 
 ### Identifiers
 
+- <span id="einre">__`einRE`__</span>: Matches a valid EIN number.
+- <span id="ssnre">__`ssnRE`__</span>: Matches a valid SSN. Provides 3 matching groups, 1 (area number), 2 (group number), and 3 (serial number).
 - <span id="uuidre">__`uuidRE`__</span>: Matches a UUID.
 
 ### JavaScript

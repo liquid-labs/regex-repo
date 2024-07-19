@@ -54,7 +54,8 @@ export const invalidRFC2822Times = [
 
 export const validRFC2822Dates = [
   'Mon, 7 Jan 1992 12:12',
-  '6 Jan 1992 12:12 UT'
+  '6 Jan 1992 12:12 UT',
+  '6 Jan 1992 12:13:14 UT'
 ]
 
 export const invalidRFC2822Dates = [
