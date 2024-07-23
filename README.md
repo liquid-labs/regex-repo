@@ -65,7 +65,7 @@ const allColors = cssContent
 
 ### Contact info
 
-- <span id="emailre">__`emailRE`__</span>: Match a valid email. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'v' flag.
+- <span id="emailre">__`emailRE`__</span>: Match a valid email. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'u' flag.
 - <span id="usphonere">__`usPhoneRE`__</span>: Matches US phone numbers with optional country code and area code.
 - <span id="zipcodere">__`zipCodeRE`__</span>: Matches 5 or 9 digit US zip codes.
 
@@ -109,11 +109,11 @@ const allColors = cssContent
 
 ### Web
 
-- <span id="fqdomainnamere">__`fqDomainNameRE`__</span>: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'v' flag.
+- <span id="fqdomainnamere">__`fqDomainNameRE`__</span>: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 - <span id="ipformatre">__`ipFormatRE`__</span>: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
 - <span id="ipre">__`ipRE`__</span>: Matches a valid, non-localhost IP address.
-- <span id="subdomainlabelre">__`subdomainLabelRE`__</span>: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'v' flag.
-- <span id="tldnamere">__`tldNameRE`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'v' flag.
+- <span id="subdomainlabelre">__`subdomainLabelRE`__</span>: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
+- <span id="tldnamere">__`tldNameRE`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 - <span id="urlre">__`urlRE`__</span>: Matches a valid URL.
 
 ## Domain name rules

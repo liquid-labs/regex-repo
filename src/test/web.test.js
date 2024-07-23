@@ -25,13 +25,13 @@ import { goodTLDs, badTLDs } from './data/tlds'
 import { goodUrls, badUrls } from './data/urls'
 
 groupTest(regex.subdomainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
-groupTestPartial(regex.subdomainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'v')
+groupTestPartial(regex.subdomainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
 
 groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
-groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails', undefined, undefined, 'v')
+groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails', undefined, undefined, 'u')
 
 groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
-groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'v')
+groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')
 
 groupTest(regex.ipRE, goodIPs, badIPs, 'IP address')
 groupTestPartial(regex.ipREString, goodIPs, badIPs, 'IP address')
@@ -40,8 +40,8 @@ groupTest(regex.ipFormatRE, goodIPFormats, badIPFormats, 'IP format')
 groupTestPartial(regex.ipFormatREString, goodIPFormats, badIPFormats, 'IP format')
 
 groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
-groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'v')
+groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')
 
 groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
 // remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs', undefined, undefined, 'v')
+groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs', undefined, undefined, 'u')
