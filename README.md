@@ -65,7 +65,7 @@ const allColors = cssContent
 
 ### Contact info
 
-- <span id="emailre">__`emailRE`__</span>: Match a valid email. Provides matching groups 1 (user name) and 2 (domain).
+- <span id="emailre">__`emailRE`__</span>: Match a valid email. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'v' flag.
 - <span id="usphonere">__`usPhoneRE`__</span>: Matches US phone numbers with optional country code and area code.
 - <span id="zipcodere">__`zipCodeRE`__</span>: Matches 5 or 9 digit US zip codes.
 
@@ -109,25 +109,23 @@ const allColors = cssContent
 
 ### Web
 
-- <span id="domainnamere">__`domainNameRE`__</span>: Matches a registerable domain name. See [domain name rules](#domain-name-rules).
-- <span id="fqdomainnamere">__`fqDomainNameRE`__</span>: Matches fully qualified domain name (zero or more sub-domains + registerable domain + TLD). Does not enforce 63 character domain label limit or 255 character FQN domain limit.
+- <span id="fqdomainnamere">__`fqDomainNameRE`__</span>: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'v' flag.
 - <span id="ipformatre">__`ipFormatRE`__</span>: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
 - <span id="ipre">__`ipRE`__</span>: Matches a valid, non-localhost IP address.
-- <span id="subdomainre">__`subDomainRE`__</span>: Matches a valid sub-domain label. See [domain name rules](#domain-name-rules).
-- <span id="tldnamere">__`tldNameRE`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules).
+- <span id="subdomainlabelre">__`subdomainLabelRE`__</span>: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'v' flag.
+- <span id="tldnamere">__`tldNameRE`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'v' flag.
 - <span id="urlre">__`urlRE`__</span>: Matches a valid URL.
 
 ## Domain name rules
 
-Unfortunately, there isn't clear consensus on what is allowed in a subdomain vs a registerable domain vs a top level domain (TLD); referred to collectively as 'domain labels'. So, here are the rules we follow:
+Unfortunately, there isn't clear consensus on what is allowed in a subdomain vs a top level domain (TLD); referred to collectively as 'domain labels'. So, here are the rules we follow:
 
-* All domain labels must be at least 2 and no more than 63 characters in length. The 63 character limit is __not__ enforced by registerable and sub-domain REs.
-* TLDs may only contain alpha characters (a-z).
-* Registerable domains:
-  * must begin with an alpha-numeric character (a-z, 0-9).
-  * may have consecutive hyphens except in the 3rd and 4th position. E.g. 'xy--z' is invalid.
-* Sub-domains:
-  * must begin with an alpha-numeric character (a-z, 0-9).
-  * may have consecutive hyphens anywhere.
+* All domain labels must be at least 2 and no more than 63 bytes in length. This means that you can have domain names which are a single two-byte Unicode character.
+* A fully qualified domain is limited to 255 bytes in total.
+* TLDs may only contain alpha characters (any Unicode letter).
+* Subdomain labels (non-TLD labels):
+  * are composed of alpha-numeric characters (any Unicode letter plus 0-9) and hyphens ('-'), except
+  * the label must begin and end with an alpha-numeric character (any Uniced letter, 0-9; no hyphens), and
+  * the label must not have consecutive hyphens in the 3rd and 4th position. E.g. 'xy--z' is invalid.
 
 Also note, the base domain label REs do not support International Domain Names (IDNs; also called 'special character domain names').
