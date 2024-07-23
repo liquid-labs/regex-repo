@@ -48,9 +48,9 @@ export const tldNameREString = '(?:[\\p{L}--[a-zA-Z]]|[a-zA-Z\\p{L}]{2,63})'
 // Web: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'v' flag.
 export const tldNameRE = lockdownRE(tldNameREString, 'v')
 
-export const subdomainLabelREString = `(?:[\\p{L}--[a-zA-Z]]|[\\p{L}0-9]` + 
-  `(?:[\\p{L}0-9]|` // two letters only
-  + `[\\p{L}0-9\\-](?!--)[\\p{L}0-9\\-]{0,60}[\\p{L}0-9]))` // otherwise, verify the 3rd and 4th positions are not '-'
+export const subdomainLabelREString = '(?:[\\p{L}--[a-zA-Z]]|[\\p{L}0-9]' +
+  '(?:[\\p{L}0-9]|' + // two letters only
+  '[\\p{L}0-9\\-](?!--)[\\p{L}0-9\\-]{0,60}[\\p{L}0-9]))' // otherwise, verify the 3rd and 4th positions are not '-'
 // Web: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'v' flag.
 export const subdomainLabelRE = lockdownRE(subdomainLabelREString, 'v')
 
