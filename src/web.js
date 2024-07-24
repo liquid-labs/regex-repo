@@ -61,6 +61,6 @@ export const fqDomainNameRE = lockdownRE(fqDomainNameREString, 'u')
 
 // based on https://stackoverflow.com/a/201378/929494; modified to allow uppercase characters and restrict to valid DNS
 // names in the domain portion
-export const emailREString = `([a-zA-Z0-9!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+(?:\\.[a-zA-Z0-9!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+)*|"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*")@(${fqDomainNameREString})`
+export const emailREString = `([a-zA-Z0-9!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+(?:\\.[a-zA-Z0-9!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+)*|"(?:[\\x20-\\x21\\x23-\\x5b\\x5d-\\x7e]|\\\\[\\x20-\\x7f])*")@(${fqDomainNameREString})`
 // Contact info: Match a valid email. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'u' flag.
 export const emailRE = lockdownRE(emailREString, 'u')
