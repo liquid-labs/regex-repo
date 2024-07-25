@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import { lockdownRE } from './lib/lockdown-re'
+import { uniNonASCII } from './lib/uni-non-ascii'
 
 export const ipREString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
   '(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}' +
@@ -26,9 +27,6 @@ const ipTuple = '(?:0|1?\\d{1,2}|2[0-4]\\d|25[0-5])'
 export const ipFormatREString = `(?:${ipTuple}\\.){3}${ipTuple}`
 // Web: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
 export const ipFormatRE = lockdownRE(ipFormatREString)
-
-
-const uniNonASCII = '\\u00a1-\\u{e007f}'
 
 /* Base RE cribbed from: https://github.com/chriso/validator.js via https://stackoverflow.com/a/22648406/929494
    Annotations cribbed from https://gist.github.com/dperini/729294 */
@@ -63,7 +61,3 @@ export const subdomainLabelRE = lockdownRE(subdomainLabelREString, 'u')
 export const fqDomainNameREString = `(?!.{256,})(?:${subdomainLabelREString}\\.)+${tldNameREString}`
 // Web: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 export const fqDomainNameRE = lockdownRE(fqDomainNameREString, 'u')
-
-export const emailREString = `([a-zA-Z0-9${uniNonASCII}!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+(?:\\.[a-zA-Z0-9${uniNonASCII}!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+)*|"(?:[\\x20-\\x21\\x23-\\x5b\\x5d-\\x7e${uniNonASCII}]|\\\\[\\x20-\\x7e${uniNonASCII}])*")@(${fqDomainNameREString})`
-// Contact info: Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'u' flag.
-export const emailRE = lockdownRE(emailREString, 'u')
