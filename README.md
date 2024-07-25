@@ -66,7 +66,6 @@ const allColors = cssContent
 ### Contact info
 
 - <span id="emailre">__`emailRE`__</span>: Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'u' flag.
-- <span id="emailrfc5322re">__`emailRFC5322RE`__</span>: Match any valid email address as defined by [RFC 5322](https://www.rfc-editor.org/rfc/rfc5322). This is a large, complicated RE, you may want to use [`emailRE`](#emailre) in most cases.
 - <span id="usphonere">__`usPhoneRE`__</span>: Matches US phone numbers with optional country code and area code.
 - <span id="zipcodere">__`zipCodeRE`__</span>: Matches 5 or 9 digit US zip codes.
 
