@@ -17,7 +17,6 @@ limitations under the License.
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../web'
 import { goodDomainNames, badDomainNames } from './data/domains'
-import { goodEmails, badEmails } from './data/emails'
 import { goodFQDomainNames, badFQDomainNames } from './data/fq-domains'
 import { goodIPs, badIPs } from './data/ips'
 import { goodIPFormats, badIPFormats } from './data/ip-formats'
@@ -26,9 +25,6 @@ import { goodUrls, badUrls } from './data/urls'
 
 groupTest(regex.subdomainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
 groupTestPartial(regex.subdomainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
-
-groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
-groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails', undefined, undefined, 'u')
 
 groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')

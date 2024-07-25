@@ -16,6 +16,7 @@ limitations under the License.
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../contacts'
+import { goodEmails, badEmails } from './data/emails'
 import { goodUsPhones, badUsPhones } from './data/usPhones'
 import { goodZipCodes, badZipCodes } from './data/zipCodes'
 
@@ -24,3 +25,6 @@ groupTestPartial(regex.usPhoneREString, goodUsPhones, badUsPhones, 'US phones')
 
 groupTest(regex.zipCodeRE, goodZipCodes, badZipCodes, 'US zip codes')
 groupTestPartial(regex.zipCodeREString, goodZipCodes, badZipCodes, 'US zip codes')
+
+groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
+groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails', undefined, undefined, 'u')

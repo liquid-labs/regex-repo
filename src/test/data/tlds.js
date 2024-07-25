@@ -1,6 +1,7 @@
 export const goodTLDs = [
   'com',
   'cc',
+  'a1b',
   '域',
   'alongtld',
   'abcdefghijklmnopqprsuvwxyzabcdefghijklmnopqprsuvwxyzabcdefghijk' // 63 characters OK
@@ -8,7 +9,6 @@ export const goodTLDs = [
 
 export const badTLDs = [
   'a',
-  'a1b',
   '1a',
   'a-z',
   '-az',

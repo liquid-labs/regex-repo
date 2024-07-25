@@ -65,7 +65,8 @@ const allColors = cssContent
 
 ### Contact info
 
-- <span id="emailre">__`emailRE`__</span>: Match a valid email. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'u' flag.
+- <span id="emailre">__`emailRE`__</span>: Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to create a RE, you must use the 'u' flag.
+- <span id="emailrfc5322re">__`emailRFC5322RE`__</span>: Match any valid email address as defined by [RFC 5322](https://www.rfc-editor.org/rfc/rfc5322). This is a large, complicated RE, you may want to use [`emailRE`](#emailre) in most cases.
 - <span id="usphonere">__`usPhoneRE`__</span>: Matches US phone numbers with optional country code and area code.
 - <span id="zipcodere">__`zipCodeRE`__</span>: Matches 5 or 9 digit US zip codes.
 
@@ -114,7 +115,11 @@ const allColors = cssContent
 - <span id="ipre">__`ipRE`__</span>: Matches a valid, non-localhost IP address.
 - <span id="subdomainlabelre">__`subdomainLabelRE`__</span>: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 - <span id="tldnamere">__`tldNameRE`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
-- <span id="urlre">__`urlRE`__</span>: Matches a valid URL.
+- <span id="urlre">__`urlRE`__</span>: Matches a valid URL. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
+
+### export const fqDomainNameREString = `(?![0-9\\p{L}.\\-]{256,})(?
+
+- <span id="fqdomainnamerestring">__`fqDomainNameREString`__</span>: ${subdomainLabelREString}\\.)+${tldNameREString}`
 
 ## Domain name rules
 
@@ -127,5 +132,3 @@ Unfortunately, there isn't clear consensus on what is allowed in a subdomain vs 
   * are composed of alpha-numeric characters (any Unicode letter plus 0-9) and hyphens ('-'), except
   * the label must begin and end with an alpha-numeric character (any Uniced letter, 0-9; no hyphens), and
   * the label must not have consecutive hyphens in the 3rd and 4th position. E.g. 'xy--z' is invalid.
-
-Also note, the base domain label REs do not support International Domain Names (IDNs; also called 'special character domain names').
