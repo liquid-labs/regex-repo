@@ -1,6 +1,6 @@
 {
   "name": "regex-repo",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Collection of JS regular expressions.",
   "main": "dist/regex-repo.js",
   "files": [
