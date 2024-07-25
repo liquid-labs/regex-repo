@@ -1,1 +1,1 @@
-export const uniNonASCII = '\\u00a1-\\u{e007f}'
+export const uniNonASCII = '\\u0080-\\u{e007f}'
