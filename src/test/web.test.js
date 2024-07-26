@@ -20,6 +20,7 @@ import { goodDomainNames, badDomainNames } from './data/domains'
 import { goodFQDomainNames, badFQDomainNames } from './data/fq-domains'
 import { goodIPs, badIPs } from './data/ips'
 import { goodIPFormats, badIPFormats } from './data/ip-formats'
+import { goodIPV6s, badIPV6s } from './data/ipv6s'
 import { goodTLDs, badTLDs } from './data/tlds'
 import { goodUrls, badUrls } from './data/urls'
 
@@ -34,6 +35,9 @@ groupTestPartial(regex.ipREString, goodIPs, badIPs, 'IP address')
 
 groupTest(regex.ipFormatRE, goodIPFormats, badIPFormats, 'IP format')
 groupTestPartial(regex.ipFormatREString, goodIPFormats, badIPFormats, 'IP format')
+
+groupTest(regex.ipV6RE, goodIPV6s, badIPV6s, 'IPV6')
+groupTestPartial(regex.ipV6REString, goodIPV6s, badIPV6s, 'IPV6')
 
 groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
 groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')
