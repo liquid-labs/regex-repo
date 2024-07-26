@@ -2,7 +2,14 @@
   "name": "regex-repo",
   "version": "3.0.1",
   "description": "Collection of JS regular expressions.",
-  "main": "dist/regex-repo.js",
+  "main": "dist/regex-repo.cjs",
+  "module": "dist/regex-repo.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/regex-repo.cjs",
+      "import": "./dist/regex-repo.mjs"
+    }
+  },
   "files": [
     "dist/",
     "LICENSE.txt",

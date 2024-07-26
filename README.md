@@ -1,5 +1,5 @@
 # regex-repo
-[![coverage: 100%](./.readme-assets/coverage.svg)](https://google.com) [![Unit tests](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml/badge.svg)](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml)
+![coverage: 100%](./.readme-assets/coverage.svg) [![Unit tests](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml/badge.svg)](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml)
 
 regex-repo is a collection of regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided REs.
 
@@ -8,6 +8,8 @@ regex-repo is a collection of regular expressions. Refer to the [regex reference
 ```bash
 npm i @liquid-labs/regex-repo
 ```
+
+Supports both CJS and ESM packages.
 
 ## Usage
 
@@ -112,7 +114,7 @@ const allColors = cssContent
 - <span id="fqdomainnamere">__`fqDomainNameRE`__</span>: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 - <span id="ipformatre">__`ipFormatRE`__</span>: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
 - <span id="ipre">__`ipRE`__</span>: Matches a valid, non-localhost IP address.
-- <span id="ipv6re">__`ipV6RE`__</span>: Matches a string in IPV6 format. 
+- <span id="ipv6re">__`ipV6RE`__</span>: Matches a string in IPV6 format.
 - <span id="subdomainlabelre">__`subdomainLabelRE`__</span>: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 - <span id="tldnamere">__`tldNameRE`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 - <span id="urlre">__`urlRE`__</span>: Matches a valid URL. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
