@@ -1,4 +1,5 @@
 export const goodDomainNames = [
+  'f',
   '0f',
   'f0',
   '域',
@@ -14,7 +15,6 @@ export const goodDomainNames = [
 export const badDomainNames = [
   '-',
   '0',
-  'f',
   '-foo',
   'foo-',
   'foo.foo',

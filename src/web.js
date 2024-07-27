@@ -52,6 +52,22 @@ export const ipV6REString =
 // Web: Matches a string in IPV6 format.
 export const ipV6RE = lockdownRE(ipV6REString)
 
+// note the 'v' flag breaks on Ubuntu
+export const tldNameREString = `(?:[${uniNonASCII}]|[a-zA-Z${uniNonASCII}][a-zA-Z0-9${uniNonASCII}]{1,62})`
+// Web: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
+export const tldNameRE = lockdownRE(tldNameREString, 'u')
+
+export const subdomainLabelREString = `(?:[a-zA-Z${uniNonASCII}]|[a-zA-Z0-9${uniNonASCII}]{2}|` +
+  // otherwise, verify the 3rd and 4th positions are not '-'
+  `[a-zA-Z0-9${uniNonASCII}][a-zA-Z0-9${uniNonASCII}\\-](?!--)[a-zA-Z0-9${uniNonASCII}\\-]{0,60}[a-zA-Z0-9${uniNonASCII}])`
+// Web: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
+export const subdomainLabelRE = lockdownRE(subdomainLabelREString, 'u')
+
+// export const fqDomainNameREString = `(?![0-9\\p{L}.\\-]{256,})(?:${subdomainLabelREString}\\.)+${tldNameREString}`
+export const fqDomainNameREString = `(?!.{256,})(?:${subdomainLabelREString}\\.)+${tldNameREString}`
+// Web: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
+export const fqDomainNameRE = lockdownRE(fqDomainNameREString, 'u')
+
 /* Base RE cribbed from: https://github.com/chriso/validator.js via https://stackoverflow.com/a/22648406/929494
    Annotations cribbed from https://gist.github.com/dperini/729294 */
 export const urlREString =
@@ -65,23 +81,6 @@ export const urlREString =
   // excludes network & broacast addresses
   // (first & last IP address of each class)
   '(?:(?:' + ipREString +
-  `|(?:(?:[a-z${uniNonASCII}0-9]+-?)*[a-z${uniNonASCII}0-9]+)(?:\\.(?:[a-z${uniNonASCII}0-9]+-?)*[a-z${uniNonASCII}0-9]+)*(?:\\.(?:[a-z${uniNonASCII}]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?`
+  `|${fqDomainNameREString}|localhost))(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?`
 // Web: Matches a valid URL. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
-export const urlRE = lockdownRE(urlREString, 'ui')
-
-// note the 'v' flag breaks on Ubuntu
-export const tldNameREString = `(?:(?![0-9])(?:[${uniNonASCII}]|[a-zA-Z${uniNonASCII}][a-zA-Z0-9${uniNonASCII}]{1,62}))`
-// Web: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
-export const tldNameRE = lockdownRE(tldNameREString, 'u')
-
-export const subdomainLabelREString = `(?:[${uniNonASCII}]|[a-zA-Z0-9${uniNonASCII}]` + // allow single unicode
-  `(?:[a-zA-Z0-9${uniNonASCII}]|` + // two letters only
-  // otherwise, verify the 3rd and 4th positions are not '-'
-  `[a-zA-Z0-9${uniNonASCII}\\-](?!--)[a-zA-Z0-9${uniNonASCII}\\-]{0,60}[\\p{L}0-9]))`
-// Web: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.
-export const subdomainLabelRE = lockdownRE(subdomainLabelREString, 'u')
-
-// export const fqDomainNameREString = `(?![0-9\\p{L}.\\-]{256,})(?:${subdomainLabelREString}\\.)+${tldNameREString}`
-export const fqDomainNameREString = `(?!.{256,})(?:${subdomainLabelREString}\\.)+${tldNameREString}`
-// Web: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
-export const fqDomainNameRE = lockdownRE(fqDomainNameREString, 'u')
+export const urlRE = lockdownRE(urlREString, 'u')
