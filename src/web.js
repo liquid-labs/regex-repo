@@ -52,6 +52,10 @@ export const ipV6REString =
 // Web: Matches a string in IPV6 format.
 export const ipV6RE = lockdownRE(ipV6REString)
 
+export const localhostREString = `(?:localhost|127(?:\\.${ipTuple}){3}|::1|0:0:0:0:0:0:0:1)`
+// Web: Matches any representation of localhost; the special name, IPV4 loopbacks, or IPV6 loopbacks.
+export const localhostRE = lockdownRE(localhostREString)
+
 // note the 'v' flag breaks on Ubuntu
 export const tldNameREString = `(?:[${uniNonASCII}]|[a-zA-Z${uniNonASCII}][a-zA-Z0-9${uniNonASCII}]{1,62})`
 // Web: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.

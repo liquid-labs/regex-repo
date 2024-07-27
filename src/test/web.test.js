@@ -39,6 +39,12 @@ groupTestPartial(regex.ipFormatREString, goodIPFormats, badIPFormats, 'IP format
 groupTest(regex.ipV6RE, goodIPV6s, badIPV6s, 'IPV6')
 groupTestPartial(regex.ipV6REString, goodIPV6s, badIPV6s, 'IPV6')
 
+const goodLocalhosts = ['127.0.0.1', '127.34.0.255', 'localhost', '::1', '0:0:0:0:0:0:0:1']
+const badLocalhosts = ['128.0.0.1', 'localhosts', '::2']
+
+groupTest(regex.localhostRE, goodLocalhosts, badLocalhosts, 'localhosts')
+groupTestPartial(regex.localhostREString, goodLocalhosts, badLocalhosts, 'localhosts')
+
 groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
 groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')
 
