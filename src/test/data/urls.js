@@ -31,6 +31,7 @@ export const goodUrls = [
   'http://userid@example.com:8080/',
   'http://userid:password@example.com',
   'http://userid:password@example.com/',
+  'http://123.com',
   'http://142.42.1.1/',
   'http://142.42.1.1:8080/',
   'http://➡.ws/䨹',
@@ -52,7 +53,8 @@ export const goodUrls = [
   'http://1337.net',
   'http://a.b-c.de',
   'http://223.255.255.254',
-  'http://some.reallylongtld'
+  'http://some.reallylongtld',
+  'http://a.b--c.de/'
 ]
 
 export const badUrls = [
@@ -80,7 +82,6 @@ export const badUrls = [
   'http://foo.bar/foo(bar)baz quux',
   'ftps://foo.bar/',
   'http://-error-.invalid/',
-  'http://a.b--c.de/',
   'http://-a.b.co',
   'http://a.b-.co',
   'http://0.0.0.0',

@@ -3,6 +3,7 @@ export const goodFQDomainNames = [
   'foo.bar.baz',
   'foo-bar.baz.com',
   'a-b.c-d.co',
+  'a.c--d.de',
   'foo-bar.com',
   '域.co',
   '一个奇怪的域名.com',
