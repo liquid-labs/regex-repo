@@ -24,8 +24,8 @@ import { goodIPV6s, badIPV6s } from './data/ipv6s'
 import { goodTLDs, badTLDs } from './data/tlds'
 import { goodUrls, badUrls } from './data/urls'
 
-groupTest(regex.subdomainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
-groupTestPartial(regex.subdomainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
+groupTest(regex.domainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
+groupTestPartial(regex.domainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
 
 groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')
