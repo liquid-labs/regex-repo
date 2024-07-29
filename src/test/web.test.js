@@ -24,17 +24,17 @@ import { goodIPV6s, badIPV6s } from './data/ipv6s'
 import { goodTLDs, badTLDs } from './data/tlds'
 import { goodUrls, badUrls } from './data/urls'
 
-groupTest(regex.subdomainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
-groupTestPartial(regex.subdomainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
+groupTest(regex.domainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
+groupTestPartial(regex.domainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
 
 groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
 groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')
 
-groupTest(regex.ipRE, goodIPs, badIPs, 'IP address')
-groupTestPartial(regex.ipREString, goodIPs, badIPs, 'IP address')
+groupTest(regex.ipHostRE, goodIPs, badIPs, 'IP address')
+groupTestPartial(regex.ipHostREString, goodIPs, badIPs, 'IP address')
 
-groupTest(regex.ipFormatRE, goodIPFormats, badIPFormats, 'IP format')
-groupTestPartial(regex.ipFormatREString, goodIPFormats, badIPFormats, 'IP format')
+groupTest(regex.ipAddressRE, goodIPFormats, badIPFormats, 'IP format')
+groupTestPartial(regex.ipAddressREString, goodIPFormats, badIPFormats, 'IP format')
 
 groupTest(regex.ipV6RE, goodIPV6s, badIPV6s, 'IPV6')
 groupTestPartial(regex.ipV6REString, goodIPV6s, badIPV6s, 'IPV6')
