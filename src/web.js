@@ -17,16 +17,16 @@ limitations under the License.
 import { lockdownRE } from './lib/lockdown-re'
 import { uniNonASCII } from './lib/uni-non-ascii'
 
-export const ipREString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
+export const ipHostREString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
   '(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}' +
   '(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))'
 // Web: Matches a valid, non-localhost IP address.
-export const ipRE = lockdownRE(ipREString)
+export const ipHostRE = lockdownRE(ipHostREString)
 
 const ipTuple = '(?:0|1?\\d{1,2}|2[0-4]\\d|25[0-5])'
-export const ipFormatREString = `(?:${ipTuple}\\.){3}${ipTuple}`
-// Web: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
-export const ipFormatRE = lockdownRE(ipFormatREString)
+export const ipAddressREString = `(?:${ipTuple}\\.){3}${ipTuple}`
+// Web: Matches a string in IP address format. Use 'ipHostRE' to match actually valid IP addresses.
+export const ipAddressRE = lockdownRE(ipAddressREString)
 
 // credit to: https://stackoverflow.com/a/17871737/929494
 export const ipV6REString =
@@ -84,7 +84,7 @@ export const urlREString =
   // excludes reserved space >= 224.0.0.0
   // excludes network & broacast addresses
   // (first & last IP address of each class)
-  '(?:(?:' + ipREString +
+  '(?:(?:' + ipHostREString +
   `|${fqDomainNameREString}|localhost))(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?`
 // Web: Matches a valid URL. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 export const urlRE = lockdownRE(urlREString, 'u')

@@ -112,8 +112,8 @@ const allColors = cssContent
 ### Web
 
 - <span id="fqdomainnamere">__`fqDomainNameRE`__</span>: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
-- <span id="ipformatre">__`ipFormatRE`__</span>: Matches a string in IP address format. Use 'ipRE' to match actually valid IP addresses.
-- <span id="ipre">__`ipRE`__</span>: Matches a valid, non-localhost IP address.
+- <span id="ipaddressre">__`ipAddressRE`__</span>: Matches a string in IP address format. Use 'ipHostRE' to match actually valid IP addresses.
+- <span id="iphostre">__`ipHostRE`__</span>: Matches a valid, non-localhost IP address.
 - <span id="ipv6re">__`ipV6RE`__</span>: Matches a string in IPV6 format.
 - <span id="localhostre">__`localhostRE`__</span>: Matches any representation of localhost; the special name, IPV4 loopbacks, or IPV6 loopbacks.
 - <span id="subdomainlabelre">__`subdomainLabelRE`__</span>: Matches a registerable domain name. Partially enforces the 63 byte domain label limit, but this is only valid for non-international (all ASCII) labels because we can only count characters. See [domain name rules](#domain-name-rules). When using the partial string to create a RE, you must use the 'u' or 'v' flag.

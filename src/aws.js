@@ -13,10 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import { ipFormatREString } from './web'
+import { ipAddressREString } from './web'
 
-const invalidS3Partials = `(?!^${ipFormatREString}|^xn--|^sthree-|.+-s3alias$|.+--ol-s3$)`
-// const invalidS3Partials = `(?!^${ipFormatREString}|^xn--|^sthree-)`
+const invalidS3Partials = `(?!^${ipAddressREString}|^xn--|^sthree-|.+-s3alias$|.+--ol-s3$)`
+// const invalidS3Partials = `(?!^${ipAddressREString}|^xn--|^sthree-)`
 
 export const awsS3TABucketNameREString = invalidS3Partials + '^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$'
 // AWS: Matches (most) S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TABucketNameREString` cannot be used for partial matches.
