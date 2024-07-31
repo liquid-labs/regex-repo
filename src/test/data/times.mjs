@@ -26,7 +26,11 @@ export const valid24HrTimes = [
   '24:00',
   '24:00:00',
   '12:00',
-  '12:00:32.928'
+  '12:00:32.928',
+  '01:00:32', // allow leading zero
+  '00:00:00',
+  '1:00:32',
+  '0:00:00' // or not
 ]
 
 export const invalid24HrTimes = [
