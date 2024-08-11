@@ -130,10 +130,20 @@ export const badMailtoUrls = [
   ...badURLs
 ]
 
-export const goodUrls = [
-  'rdar://1234',
-  'h://test',
+export const goodCommonURLs = [
   ...goodFTPUrls,
   ...goodHTTPUrls,
   ...goodMailtoUrls
+]
+
+export const badCommonURLs = [
+  ...badFTPUrls,
+  ...badHTTPUrls,
+  ...badMailtoUrls
+]
+
+export const goodUrls = [
+  'rdar://1234',
+  'h://test',
+  ...goodCommonURLs
 ]

@@ -17,6 +17,7 @@ limitations under the License.
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../url'
 import {
+  goodCommonURLs, badCommonURLs,
   goodFileUrls, badFileUrls,
   goodFTPUrls, badFTPUrls,
   goodHTTPUrls, badHTTPUrls,
@@ -43,6 +44,6 @@ groupTest(regex.fileURLRE, goodFileUrls, badFileUrls, 'File URLs')
 // remove URLs with spaces because those will correctly match on a partial match
 groupTestPartial(regex.fileURLREString, goodFileUrls, badFileUrls.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')
 
-// groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
+groupTest(regex.commonURLRE, goodCommonURLs, badCommonURLs, 'File URLs')
 // remove URLs with spaces because those will correctly match on a partial match
-// groupTestPartial(regex.urlREString, goodUrls, badUrls.filter((v) => !v.includes(' ')), 'URLs', undefined, undefined, 'u')
+groupTestPartial(regex.commonURLREString, goodCommonURLs, badCommonURLs.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')
