@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { lockdownRE } from './lib/lockdown-re'
+import { lockdownRe } from './lib/lockdown-re'
 
-export const npmPackageNameREString = '(@[a-z0-9-~][a-z0-9-._~]*/)?([a-z0-9-~][a-z0-9-._~]*)'
+export const npmPackageNameReString = '(@[a-z0-9-~][a-z0-9-._~]*/)?([a-z0-9-~][a-z0-9-._~]*)'
 // NPM: Matches an NPM package name. Provides matching groups 1 (org name, if any) and 2 (package basename).
-export const npmPackageNameRE = lockdownRE(npmPackageNameREString)
+export const npmPackageNameRe = lockdownRe(npmPackageNameReString)

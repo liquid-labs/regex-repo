@@ -21,7 +21,7 @@ const addData = ({ description, reName, section }) => {
     const contents = await fs.readFile(fsPath.resolve(__dirname, '..', fileName), { encoding : 'utf8' })
     const lines = contents.split('\n')
     lines.forEach((l, i, a) => {
-      const exportMatch = l.match(/^\s*export\s+const +([a-zA-Z0-9]+RE(?:String)?(?=[ =]))/)
+      const exportMatch = l.match(/^\s*export\s+const +([a-zA-Z0-9]+Re(?:String)?(?=[ =]))/)
       if (exportMatch !== null) {
         const [, reName] = exportMatch
         const prevLine = a[i - 1]

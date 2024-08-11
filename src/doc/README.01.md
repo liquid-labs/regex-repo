@@ -1,7 +1,7 @@
 # regex-repo
 ![coverage: 100%](./.readme-assets/coverage.svg) [![Unit tests](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml/badge.svg)](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml)
 
-regex-repo is a collection of regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided REs.
+regex-repo is a collection of regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided Res.
 
 ## Installation
 
@@ -14,21 +14,21 @@ Supports both CJS and ESM packages.
 ## Usage
 
 ```javascript
-import { emailRE } from '@liquid-labs/regex-repo' // ES6
-// const { emailRE } = require('@liquid-labs/regex-repo') // cjs
+import { emailRe } from '@liquid-labs/regex-repo' // ES6
+// const { emailRe } = require('@liquid-labs/regex-repo') // cjs
 
-const verified = emailRE.test(userInput)
+const verified = emailRe.test(userInput)
 ```
 
 ## Regex reference
 
-Each regular expression listed below is paired with an embeddable string named `xxxString`. E.g., `rgbRE` is paired with `rgbREString`. Each RE will only match strings that are the given type and nothing else. I.e., the RE begins with '^' and ends with '$'. The `xxxREString` can be used for partial matches, `matchAll`s, and used as part of larger expressions. E.g., to find all unique CSS RGB colors used in a style sheet, you might do something like:
+Each regular expression listed below is paired with an embeddable string named `xxxString`. E.g., `rgbRe` is paired with `rgbReString`. Each Re will only match strings that are the given type and nothing else. I.e., the Re begins with '^' and ends with '$'. The `xxxReString` can be used for partial matches, `matchAll`s, and used as part of larger expressions. E.g., to find all unique CSS RGB colors used in a style sheet, you might do something like:
 
 ```javascript
-import { rgbREString } from '@liquid-labs/regex-repo'
+import { rgbReString } from '@liquid-labs/regex-repo'
 
 const allColors = cssContent
-  .matchAll(new RegExp(`[ :](${rgbREString})[; }]`, 'g'))
+  .matchAll(new RegExp(`[ :](${rgbReString})[; }]`, 'g'))
   .map((match) => match[1]) // extract the capture group
   .filter((v, i, arr) => i === arr.indexOf(v)) // filter non-unique items
   .sort()

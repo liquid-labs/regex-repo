@@ -23,8 +23,8 @@ const stringifyPerc = (arr) => arr.map((i) => i + '%')
 const integers = [1, 0, -100]
 const notIntegers = ['1.0', '00', '01']
 
-groupTest(regex.integerRE, stringify(integers), notIntegers, 'integers')
-groupTestPartial(regex.integerREString, stringify(integers), notIntegers, 'integers')
+groupTest(regex.integerRe, stringify(integers), notIntegers, 'integers')
+groupTestPartial(regex.integerReString, stringify(integers), notIntegers, 'integers')
 
 const plainFloats = [-100, -100.1, '-99.0', 0, '0.0', '-0', '+0', '0.1', '678.938']
 const notPlainFloats = ['1e20', 'a', '1b']
@@ -47,43 +47,43 @@ const notZeroTo360 = stringify([-1, 361, 1000, 0.1])
 const zeroTo360Float = zeroTo360.concat('0.0', 0.1, '359.0', 359.1, 360.0)
 const notZeroTo360Float = stringify([-1, 361, 1000, 360.1])
 
-groupTest(regex.plainFloatRE, stringify(plainFloats), notPlainFloats, 'plainFloat')
-groupTestPartial(regex.plainFloatREString, stringify(plainFloats), notPlainFloats, 'plainFloat')
+groupTest(regex.plainFloatRe, stringify(plainFloats), notPlainFloats, 'plainFloat')
+groupTestPartial(regex.plainFloatReString, stringify(plainFloats), notPlainFloats, 'plainFloat')
 
-groupTest(regex.scientificFloatRE, scientificFloats, notScientificFloats, 'scientificFloat')
-groupTestPartial(regex.scientificFloatREString, scientificFloats, notScientificFloats, 'scientificFloat')
+groupTest(regex.scientificFloatRe, scientificFloats, notScientificFloats, 'scientificFloat')
+groupTestPartial(regex.scientificFloatReString, scientificFloats, notScientificFloats, 'scientificFloat')
 
-groupTest(regex.floatRE, floats, notFloats, 'float')
-groupTestPartial(regex.floatREString, floats, notFloats, 'float')
+groupTest(regex.floatRe, floats, notFloats, 'float')
+groupTestPartial(regex.floatReString, floats, notFloats, 'float')
 
-groupTest(regex.zeroTo1FloatRE, zeroTo1Floats, notZeroTo1Floats, 'zeroTo1Float')
-groupTestPartial(regex.zeroTo1FloatREString, zeroTo1Floats, notZeroTo1Floats, 'zeroTo1Float')
+groupTest(regex.zeroTo1FloatRe, zeroTo1Floats, notZeroTo1Floats, 'zeroTo1Float')
+groupTestPartial(regex.zeroTo1FloatReString, zeroTo1Floats, notZeroTo1Floats, 'zeroTo1Float')
 
-groupTest(regex.zeroTo100PercentRE, stringifyPerc(zeroTo100), stringifyPerc(notZeroTo100), 'zeroTo100Percent')
+groupTest(regex.zeroTo100PercentRe, stringifyPerc(zeroTo100), stringifyPerc(notZeroTo100), 'zeroTo100Percent')
 groupTestPartial(
-  regex.zeroTo100PercentREString,
+  regex.zeroTo100PercentReString,
   stringifyPerc(zeroTo100),
   stringifyPerc(notZeroTo100),
   'zeroTo100Percent'
 )
 
-groupTest(regex.zeroTo100FloatPercentRE,
+groupTest(regex.zeroTo100FloatPercentRe,
   stringifyPerc(zeroTo100Float),
   stringifyPerc(notZeroTo100Float),
   'zeroTo100FloatPercent')
-groupTestPartial(regex.zeroTo100FloatPercentREString,
+groupTestPartial(regex.zeroTo100FloatPercentReString,
   stringifyPerc(zeroTo100Float),
   stringifyPerc(notZeroTo100Float),
   'zeroTo100FloatPercent')
 
-groupTest(regex.zeroTo255RE, stringify(zeroTo255), notZeroTo255, 'zeroTo255')
-groupTestPartial(regex.zeroTo255REString, stringify(zeroTo255), notZeroTo255, 'zeroTo255')
+groupTest(regex.zeroTo255Re, stringify(zeroTo255), notZeroTo255, 'zeroTo255')
+groupTestPartial(regex.zeroTo255ReString, stringify(zeroTo255), notZeroTo255, 'zeroTo255')
 
-groupTest(regex.zeroTo255FloatRE, stringify(zeroTo255Float), notZeroTo255Float, 'zeroTo255Float')
-groupTestPartial(regex.zeroTo255FloatREString, stringify(zeroTo255Float), notZeroTo255Float, 'zeroTo255Float')
+groupTest(regex.zeroTo255FloatRe, stringify(zeroTo255Float), notZeroTo255Float, 'zeroTo255Float')
+groupTestPartial(regex.zeroTo255FloatReString, stringify(zeroTo255Float), notZeroTo255Float, 'zeroTo255Float')
 
-groupTest(regex.zeroTo360RE, stringify(zeroTo360), notZeroTo360, 'zeroTo360')
-groupTestPartial(regex.zeroTo360REString, stringify(zeroTo360), notZeroTo360, 'zeroTo360')
+groupTest(regex.zeroTo360Re, stringify(zeroTo360), notZeroTo360, 'zeroTo360')
+groupTestPartial(regex.zeroTo360ReString, stringify(zeroTo360), notZeroTo360, 'zeroTo360')
 
-groupTest(regex.zeroTo360FloatRE, stringify(zeroTo360Float), notZeroTo360Float, 'zeroTo360Float')
-groupTestPartial(regex.zeroTo360FloatREString, stringify(zeroTo360Float), notZeroTo360Float, 'zeroTo360Float')
+groupTest(regex.zeroTo360FloatRe, stringify(zeroTo360Float), notZeroTo360Float, 'zeroTo360Float')
+groupTestPartial(regex.zeroTo360FloatReString, stringify(zeroTo360Float), notZeroTo360Float, 'zeroTo360Float')

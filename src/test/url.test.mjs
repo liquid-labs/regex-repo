@@ -25,25 +25,25 @@ import {
   goodUrls, badURLs
 } from './data/urls'
 
-groupTest(regex.urlRE, goodUrls, badURLs, 'URL')
+groupTest(regex.urlRe, goodUrls, badURLs, 'URL')
 // remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.urlREString, goodUrls, badURLs.filter((v) => !v.includes(' ')), 'URL', undefined, undefined, 'u')
+groupTestPartial(regex.urlReString, goodUrls, badURLs.filter((v) => !v.includes(' ')), 'URL', undefined, undefined, 'u')
 
-groupTest(regex.mailtoURLRE, goodMailtoUrls, badMailtoUrls, 'mailto URLs')
-groupTestPartial(regex.mailtoURLREString, goodMailtoUrls, badMailtoUrls, 'mailto URLs', undefined, undefined, 'u')
+groupTest(regex.mailtoUrlRe, goodMailtoUrls, badMailtoUrls, 'mailto URLs')
+groupTestPartial(regex.mailtoUrlReString, goodMailtoUrls, badMailtoUrls, 'mailto URLs', undefined, undefined, 'u')
 
-groupTest(regex.httpURLRE, goodHTTPUrls, badHTTPUrls, 'HTTP URLs')
+groupTest(regex.httpUrlRe, goodHTTPUrls, badHTTPUrls, 'HTTP URLs')
 // remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.httpURLREString, goodHTTPUrls, badHTTPUrls.filter((v) => !v.includes(' ')), 'HTTP URLs', undefined, undefined, 'u')
+groupTestPartial(regex.httpUrlReString, goodHTTPUrls, badHTTPUrls.filter((v) => !v.includes(' ')), 'HTTP URLs', undefined, undefined, 'u')
 
-groupTest(regex.ftpURLRE, goodFTPUrls, badFTPUrls, 'FTP URLs')
+groupTest(regex.ftpUrlRe, goodFTPUrls, badFTPUrls, 'FTP URLs')
 // remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.ftpURLREString, goodFTPUrls, badFTPUrls.filter((v) => !v.includes(' ')), 'FTP URLs', undefined, undefined, 'u')
+groupTestPartial(regex.ftpUrlReString, goodFTPUrls, badFTPUrls.filter((v) => !v.includes(' ')), 'FTP URLs', undefined, undefined, 'u')
 
-groupTest(regex.fileURLRE, goodFileUrls, badFileUrls, 'File URLs')
+groupTest(regex.fileUrlRe, goodFileUrls, badFileUrls, 'File URLs')
 // remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.fileURLREString, goodFileUrls, badFileUrls.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')
+groupTestPartial(regex.fileUrlReString, goodFileUrls, badFileUrls.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')
 
-groupTest(regex.commonURLRE, goodCommonURLs, badCommonURLs, 'File URLs')
+groupTest(regex.commonUrlRe, goodCommonURLs, badCommonURLs, 'File URLs')
 // remove URLs with spaces because those will correctly match on a partial match
-groupTestPartial(regex.commonURLREString, goodCommonURLs, badCommonURLs.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')
+groupTestPartial(regex.commonUrlReString, goodCommonURLs, badCommonURLs.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')

@@ -19,17 +19,17 @@ import { goodDomainNames, badDomainNames } from './data/domains'
 import { goodFQDomainNames, badFQDomainNames } from './data/fq-domains'
 import { goodTLDs, badTLDs } from './data/tlds'
 
-groupTest(regex.domainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
-groupTestPartial(regex.domainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
+groupTest(regex.domainLabelRe, goodDomainNames, badDomainNames, 'subdomain label')
+groupTestPartial(regex.domainLabelReString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
 
-groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
-groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')
+groupTest(regex.fqDomainNameRe, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
+groupTestPartial(regex.fqDomainNameReString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')
 
 const goodLocalhosts = ['127.0.0.1', '127.34.0.255', 'localhost', '::1', '0:0:0:0:0:0:0:1']
 const badLocalhosts = ['128.0.0.1', 'localhosts', '::2']
 
-groupTest(regex.localhostRE, goodLocalhosts, badLocalhosts, 'localhosts')
-groupTestPartial(regex.localhostREString, goodLocalhosts, badLocalhosts, 'localhosts')
+groupTest(regex.localhostRe, goodLocalhosts, badLocalhosts, 'localhosts')
+groupTestPartial(regex.localhostReString, goodLocalhosts, badLocalhosts, 'localhosts')
 
-groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
-groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')
+groupTest(regex.tldNameRe, goodTLDs, badTLDs, 'TLDs')
+groupTestPartial(regex.tldNameReString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')

@@ -17,28 +17,28 @@ limitations under the License.
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../ids'
 
-const validUUID = [
+const validUuid = [
   '00000000-0000-1000-8000-000000000000',
   '00000000-0000-1000-8000-000000abcdef',
   '00000000-0000-1000-8000-000000ABCDEF'
 ]
-const invalidUUID = [
+const invalidUuid = [
   '00000000-0000-0000-0000-000000000000',
   '00000000-0000-0000-0000-00000000000G',
   '00000000-0000-0000-0000-00000000000g'
 ]
 
-groupTest(regex.uuidRE, validUUID, invalidUUID, 'uuidRE')
-groupTestPartial(regex.uuidREString, validUUID, invalidUUID, 'uuidRE')
+groupTest(regex.uuidRe, validUuid, invalidUuid, 'uuidRe')
+groupTestPartial(regex.uuidReString, validUuid, invalidUuid, 'uuidRe')
 
-const validSSN = ['100-00-0001', '123-45-6789', '123-45-0001', '123456789']
-const invalidSSN = ['000-45-6789', '666-45-6789', '900-45-6789', '123-45-0000', '123-45-678']
+const validSsn = ['100-00-0001', '123-45-6789', '123-45-0001', '123456789']
+const invalidSsn = ['000-45-6789', '666-45-6789', '900-45-6789', '123-45-0000', '123-45-678']
 
-groupTest(regex.ssnRE, validSSN, invalidSSN, 'SSN')
-groupTestPartial(regex.ssnREString, validSSN, invalidSSN, 'SSN')
+groupTest(regex.ssnRe, validSsn, invalidSsn, 'SSN')
+groupTestPartial(regex.ssnReString, validSsn, invalidSsn, 'SSN')
 
-const validEIN = ['01-3456789', '59-3456789', '123456789']
-const invalidEIN = ['07-3456789', '49-3456789', '12-345678']
+const validEin = ['01-3456789', '59-3456789', '123456789']
+const invalidEin = ['07-3456789', '49-3456789', '12-345678']
 
-groupTest(regex.einRE, validEIN, invalidEIN, 'EIN')
-groupTestPartial(regex.einREString, validEIN, invalidEIN, 'EIN')
+groupTest(regex.einRe, validEin, invalidEin, 'EIN')
+groupTestPartial(regex.einReString, validEin, invalidEin, 'EIN')
