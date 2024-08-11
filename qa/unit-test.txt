@@ -1,0 +1,40 @@
+Test git rev: 66df57aa13f8c193d5e09120f5689bc9d08cf493
+PASS test/css.test.js
+PASS test/url.test.js
+PASS test/date-time.test.js
+PASS test/numbers.test.js
+PASS test/domain-name.test.js
+PASS test/network.test.js
+PASS test/contacts.test.js
+PASS test/javascript.test.js
+PASS test/ids.test.js
+PASS test/aws.test.js
+PASS test/npm.test.js
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     100 |    66.66 |     100 |     100 |                   
+ src                 |     100 |    66.66 |     100 |     100 |                   
+  aws.js             |     100 |      100 |     100 |     100 |                   
+  contacts.js        |     100 |      100 |     100 |     100 |                   
+  css.js             |     100 |    66.66 |     100 |     100 | 27                
+  date-times.mjs     |     100 |      100 |     100 |     100 |                   
+  domain-name.mjs    |     100 |      100 |     100 |     100 |                   
+  ids.js             |     100 |      100 |     100 |     100 |                   
+  javascript.js      |     100 |      100 |     100 |     100 |                   
+  network.mjs        |     100 |      100 |     100 |     100 |                   
+  npm.js             |     100 |      100 |     100 |     100 |                   
+  numbers.js         |     100 |    66.66 |     100 |     100 | 18                
+  url.mjs            |     100 |      100 |     100 |     100 |                   
+ src/lib             |     100 |      100 |     100 |     100 |                   
+  css-color-data.js  |     100 |      100 |     100 |     100 |                   
+  lockdown-re.js     |     100 |      100 |     100 |     100 |                   
+  numbers-strings.js |     100 |      100 |     100 |     100 |                   
+  uni-non-ascii.mjs  |     100 |      100 |     100 |     100 |                   
+---------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 11 passed, 11 total
+Tests:       2643 passed, 2643 total
+Snapshots:   0 total
+Time:        0.622 s, estimated 1 s
+Ran all test suites.
