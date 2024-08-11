@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import { ipAddressREString } from './web'
+import { ipAddressREString } from './ips'
 
 const invalidS3Partials = `(?!^${ipAddressREString}|^xn--|^sthree-|.+-s3alias$|.+--ol-s3$)`
 // const invalidS3Partials = `(?!^${ipAddressREString}|^xn--|^sthree-)`
