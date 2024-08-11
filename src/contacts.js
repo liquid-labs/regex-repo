@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { fqDomainNameREString } from './web'
+import { fqDomainNameREString } from './domain-name'
 import { lockdownRE } from './lib/lockdown-re'
 import { uniNonASCII } from './lib/uni-non-ascii'
 

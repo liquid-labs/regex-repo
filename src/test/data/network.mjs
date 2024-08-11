@@ -1,3 +1,17 @@
+export const goodIPs = [
+  '1.1.1.1',
+  '10.10.10.10',
+  '199.199.199.199',
+  '219.200.200.100',
+  '223.255.255.254'
+]
+
+export const badIPs = [
+  '230.1.1.1',
+  '250.250.250.250',
+  '1.1.1.255'
+]
+
 export const goodIPV6s = [
   '1:2:3:4:5:6:7:8',
   '1::',
@@ -31,4 +45,15 @@ export const goodIPV6s = [
 
 export const badIPV6s = [
   'foo'
+]
+
+export const goodIPFormats = [
+  ...goodIPs,
+  '255.255.255.255',
+  '0.0.0.0'
+]
+
+export const badIPFormats = [
+  '1.1.1.1.1',
+  '256.0.0.1'
 ]
