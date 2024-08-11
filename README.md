@@ -1,7 +1,7 @@
 # regex-repo
 ![coverage: 100%](./.readme-assets/coverage.svg) [![Unit tests](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml/badge.svg)](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml)
 
-regex-repo is a collection of regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided REs.
+A a collection of useful regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided REs.
 
 ## Installation
 
@@ -22,7 +22,7 @@ const verified = emailRe.test(userInput)
 
 ## Regex reference
 
-Each regular expression listed below is paired with an embeddable string named `xxxString`. E.g., `rgbRe` is paired with `rgbReString`. Each RE will only match strings that are the given type and nothing else. I.e., the RE begins with '^' and ends with '$'. The `xxxReString` can be used for partial matches, `matchAll`s, and used as part of larger expressions. E.g., to find all unique CSS RGB colors used in a style sheet, you might do something like:
+Each regular expression listed below is paired with an embeddable string named `xxxString`. E.g., `rgbRe` is paired with `rgbReString`. Each Re will only match strings that are the given type and nothing else. I.e., the RE begins with '^' and ends with '$'. The `xxxReString` can be used for partial matches, `matchAll`s, and used as part of larger expressions. E.g., to find all unique CSS RGB colors used in a style sheet, you might do something like:
 
 ```javascript
 import { rgbReString } from '@liquid-labs/regex-repo'
@@ -111,14 +111,24 @@ const allColors = cssContent
 
 ### Web
 
+- <span id="commonurlre">__`commonUrlRe`__</span>: Matches any of the "common" web URL types: 'mailto', 'http/https', 'ftp', and 'file'. You must use the either the 'u' or 'v' flag when using the Re string.
 - <span id="domainlabelre">__`domainLabelRe`__</span>: Matches a non-tld domain label. Enforces the 63 byte domain label limit for non-international (all ASCII) labels. See [domain name rules](#domain-name-rules). When using the partial string to create a Re, you must use the 'u' or 'v' flag.
+- <span id="fileurlre">__`fileUrlRe`__</span>: Matches a valid 'file' URL. Provides capture groups 1 (host), 2 (port), 3 (path). You must use the either the 'u' or 'v' flag when using the Re string.
 - <span id="fqdomainnamere">__`fqDomainNameRe`__</span>: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a Re, you must use the 'u' or 'v' flag.
+- <span id="ftpurlrestring">__`ftpUrlReString`__</span>: Matches a valid 'ftp' URL. Provides capture groups 1 (username), 2 (user password), 3 (host or IP), 4 (port), 5 (path). You must use the either the 'u' or 'v' flag when using the Re string.
+- <span id="httpurlre">__`httpUrlRe`__</span>: Matches a valid 'http/https' URL. Provides capture groups 1 (protocol), 2 (username), 3 (user password), 4 (host or IP), 5 (port), 6 (path), 7 (query string), and 8 (fragment). You must use the either the 'u' or 'v' flag when using the Re string.
 - <span id="ipaddressre">__`ipAddressRe`__</span>: Matches a string in IP address format. Use 'ipHostRe' to match actually valid IP addresses.
 - <span id="iphostre">__`ipHostRe`__</span>: Matches a valid, non-localhost IP address.
 - <span id="ipv6re">__`ipV6Re`__</span>: Matches a string in IPV6 format.
+- <span id="ipvfuturere">__`ipVFutureRe`__</span>: Matches potential future IP protocols.
 - <span id="localhostre">__`localhostRe`__</span>: Matches any representation of localhost; the special name, IPV4 loopbacks, or IPV6 loopbacks.
+- <span id="mailtourlre">__`mailtoUrlRe`__</span>: Matches a valid 'mailto:' URL. Provides a single capture group, 1 (email address).' You must use the either the 'u' or 'v' flag when using the Re string.
 - <span id="tldnamere">__`tldNameRe`__</span>: Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to create a Re, you must use the 'u' or 'v' flag.
-- <span id="urlre">__`urlRe`__</span>: Matches a valid URL. When using the partial string to create a Re, you must use the 'u' or 'v' flag.
+- <span id="urlre">__`urlRe`__</span>: Matches a valid, generic URL. Provides capture groups 1 (schema), 2 (server/authority), 3 (path), 4 (query part), 5 (intra-page link/fragment.) Note, a URL always has scheme, and at a minimum a server/authority or path, and may have both. The query and fragment components are always optional. For general usage, you might want to use the more specific Res for specific protocols or the `commonUrlRe`.
+
+### based on the generic URI Re given in [RFC 3986](https
+
+- <span id="urlrestring">__`urlReString`__</span>: //datatracker.ietf.org/doc/html/rfc3986#page-51).
 
 ### credit to
 
