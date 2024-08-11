@@ -14,8 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+export const badURLs = [
+  '//',
+  '//a',
+  '///a',
+  '///',
+  'foo.com',
+  ':// should fail'
+]
+
 // test data cribbed from : https://mathiasbynens.be/demo/url-regex
-export const goodUrls = [
+export const goodHTTPUrls = [
   'http://foo.com/blah_blah',
   'http://foo.com/blah_blah/',
   'http://foo.com/blah_blah_(wikipedia)',
@@ -44,7 +53,6 @@ export const goodUrls = [
   'http://☺.damowmow.com/',
   'http://code.google.com/events/#&product=browser',
   'http://j.mp',
-  'ftp://foo.bar/baz',
   'http://foo.bar/?q=Test%20URL-encoded%20stuff',
   'http://مثال.إختبار',
   'http://例子.测试',
@@ -54,10 +62,11 @@ export const goodUrls = [
   'http://a.b-c.de',
   'http://223.255.255.254',
   'http://some.reallylongtld',
-  'http://a.b--c.de/'
+  'http://a.b--c.de/',
+  'https://user:pasword@foo.com:123/path/part?q=1#fragment'
 ]
 
-export const badUrls = [
+export const badHTTPUrls = [
   'http://',
   'http://.',
   'http://..',
@@ -69,18 +78,6 @@ export const badUrls = [
   'http://##',
   'http://##/',
   'http://foo.bar?q=Spaces should be encoded',
-  '//',
-  '//a',
-  '///a',
-  '///',
-  'http:///a',
-  'foo.com',
-  'rdar://1234',
-  'h://test',
-  'http:// shouldfail.com',
-  ':// should fail',
-  'http://foo.bar/foo(bar)baz quux',
-  'ftps://foo.bar/',
   'http://-error-.invalid/',
   'http://-a.b.co',
   'http://a.b-.co',
@@ -94,5 +91,26 @@ export const badUrls = [
   'http://.www.foo.bar/',
   'http://www.foo.bar./',
   'http://.www.foo.bar./',
-  'http://some.really-long-tld-with-dashes'
+  'http://some.really-long-tld-with-dashes',
+  'http:///a',
+  'http:// shouldfail.com',
+  'http://foo.bar/foo(bar)baz quux',
+  ...badURLs
+]
+
+export const goodFTPUrls = [
+  'ftp://foo.bar/baz',
+  'ftp://user:pasword@foo.com:123/path/part'
+]
+
+export const badFTPUrls = [
+  'ftps://foo.bar/',
+  'ftp://user:pasword@foo.com:123/path/part?query',
+  'ftp://user:pasword@foo.com:123/path/part#fragment',
+  ...badURLs
+]
+
+export const goodGeniricUrls = [
+  'rdar://1234',
+  'h://test'
 ]

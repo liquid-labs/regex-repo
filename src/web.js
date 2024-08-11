@@ -14,9 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import { emailREString } from './contacts'
 import { lockdownRE } from './lib/lockdown-re'
 import { uniNonASCII } from './lib/uni-non-ascii'
 
+// IP address dotted notation octets
+// excludes loopback network 0.0.0.0
+// excludes reserved space >= 224.0.0.0
+// excludes network & broacast addresses
+// (first & last IP address of each class)
 export const ipHostREString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
   '(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}' +
   '(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))'
@@ -52,6 +58,10 @@ export const ipV6REString =
 // Web: Matches a string in IPV6 format.
 export const ipV6RE = lockdownRE(ipV6REString)
 
+export const ipVFutureREString = '(?:v[0-9a-fA-F]+\\.[a-zA-Z0-9~_.!$&\'()*+,;=:-]+)'
+// Web: Matches potential future IP protocols.
+export const ipVFutureRE = lockdownRE(ipVFutureREString)
+
 export const localhostREString = `(?:localhost|127(?:\\.${ipTuple}){3}|::1|0:0:0:0:0:0:0:1)`
 // Web: Matches any representation of localhost; the special name, IPV4 loopbacks, or IPV6 loopbacks.
 export const localhostRE = lockdownRE(localhostREString)
@@ -72,19 +82,36 @@ export const fqDomainNameREString = `(?!.{256,})(?:${domainLabelREString}\\.)+${
 // Web: Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
 export const fqDomainNameRE = lockdownRE(fqDomainNameREString, 'u')
 
-/* Base RE cribbed from: https://github.com/chriso/validator.js via https://stackoverflow.com/a/22648406/929494
-   Annotations cribbed from https://gist.github.com/dperini/729294 */
-export const urlREString =
-  // protocol ID
-  '(?!mailto:)(?:(?:http|https|ftp)://)' +
-  // user + pass
-  '(?:\\S+(?::\\S*)?@)?' +
-  // IP address dotted notation octets
-  // excludes loopback network 0.0.0.0
-  // excludes reserved space >= 224.0.0.0
-  // excludes network & broacast addresses
-  // (first & last IP address of each class)
-  '(?:(?:' + ipHostREString +
-  `|${fqDomainNameREString}|localhost))(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?`
-// Web: Matches a valid URL. When using the partial string to create a RE, you must use the 'u' or 'v' flag.
+// based on the generic URI RE given in [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986#page-51).
+export const urlREString = `(?:([a-z][a-z0-9+.-]*):\\/{0,2}([^/?#]*)\\/([^?#]*)(?:\\?([^#]*))?(?:#(.*))?)`
+// Web: Matches a valid, generic URL. Provides capture groups 1 (schema), 2 (server/authority), 3 (path), 4 (query part), 5 (intra-page link/fragment.) Note, a URL always has scheme, and at a minimum a server/authority or path, and may have both. The query and fragment components are always optional. For general usage, you might want to use the more specific REs for specific protocols or the `commonURLRE`.
 export const urlRE = lockdownRE(urlREString, 'u')
+
+export const mailtoURLREString = `(?:mailto:(${emailREString}))`
+// Web: Matches a valid 'mailto:' URL. Provides a single capture group, 1 (email address).' You must use the either the 'u' or 'v' flag when using the RE string.
+export const mailtoURLRE = lockdownRE(mailtoURLREString, 'u')
+
+const userPlusPassREString = '(?:(\\S+)(?::(\\S*))?@)'
+const hostOrIPREString = `(${ipHostREString}|${fqDomainNameREString}|\\[(?:${ipV6REString}|${ipVFutureREString})\\]|localhost)`
+const portREString = '(?::(\\d{2,5}))'
+// though URLs in general allow spaces in the path component, they are disallowed in the HTTP(S) protocols
+const urlPathREString = '(\\/[^ ?#]*)'
+// though URLs in general allow spaces in the query and fragment components, we disallow them in the HTTP(S) protocol
+const urlQueryAndFragementREString = '(?:\\?([^ #]*))?(?:#([^ ]*))?' // already has the '?' qualifiers
+
+export const httpURLREString =
+`(https?):\\/\\/${userPlusPassREString}?${hostOrIPREString}${portREString}?${urlPathREString}?${urlQueryAndFragementREString}`
+// Web: Matches a valid 'http/https' URL. Provides capture groups 1 (protocol), 2 (username), 3 (user password), 4 (host or IP), 5 (port), 6 (path), 7 (query string), and 8 (fragment). You must use the either the 'u' or 'v' flag when using the RE string.
+export const httpURLRE = lockdownRE(httpURLREString, 'u')
+
+// Web: Matches a valid 'ftp' URL. Provides capture groups 1 (username), 2 (user password), 3 (host or IP), 4 (port), 5 (path). You must use the either the 'u' or 'v' flag when using the RE string.
+export const ftpURLREString = `(?:ftp:\\/\\/${userPlusPassREString}?${hostOrIPREString}${portREString}?${urlPathREString}?)`
+export const ftpURLRE = lockdownRE(ftpURLREString, 'u')
+
+export const fileURLREString = `(?:file:\\/\\/(?:${hostOrIPREString}${portREString})?${urlPathREString})`
+// Web: Matches a valid 'file' URL. Provides capture groups 1 (host), 2 (port), 3 (path). You must use the either the 'u' or 'v' flag when using the RE string.
+export const fileURLRE = lockdownRE(fileURLREString, 'u')
+
+export const commonURLREString = `(?:${mailtoURLREString}|${httpURLREString}|${ftpURLREString}|${fileURLREString})`
+// Web: Matches any of the "common" web URL types: 'mailto', 'http/https', 'ftp', and 'file'. You must use the either the 'u' or 'v' flag when using the RE string.
+export const commonURLRE = lockdownRE(commonURLREString, 'u')
