@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-export const goodAWSS3TABuckenNames = ['foobar', 'foo-bar', 'a-very-long-bucket-name-less-than-63-characters']
+export const goodAWSS3TaBuckenNames = ['foobar', 'foo-bar', 'a-very-long-bucket-name-less-than-63-characters']
 
 export const badAWSS3BuckenNames = [
   'ab',
@@ -27,9 +27,9 @@ export const badAWSS3BuckenNames = [
   'foo--ol-s3'
 ]
 
-export const badAWSS3TABuckenNames = badAWSS3BuckenNames.concat([
+export const badAWSS3TaBuckenNames = badAWSS3BuckenNames.concat([
   'foo.bar',
   //       10        20        30        40        50        60
   '1234567890123456789012345678901234567890123456789012345678901234'
 ])
-export const goodAWSS3BuckenNames = goodAWSS3TABuckenNames.concat(['foo.bar'])
+export const goodAWSS3BuckenNames = goodAWSS3TaBuckenNames.concat(['foo.bar'])

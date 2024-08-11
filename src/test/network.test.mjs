@@ -15,13 +15,13 @@ limitations under the License.
 */
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../network'
-import { goodIPs, badIPs, goodIPFormats, badIPFormats, goodIPV6s, badIPV6s } from './data/network'
+import { goodIps, badIps, goodIpFormats, badIpFormats, goodIpV6s, badIpV6s } from './data/network'
 
-groupTest(regex.ipHostRE, goodIPs, badIPs, 'IP address')
-groupTestPartial(regex.ipHostREString, goodIPs, badIPs, 'IP address')
+groupTest(regex.ipHostRe, goodIps, badIps, 'IP address')
+groupTestPartial(regex.ipHostReString, goodIps, badIps, 'IP address')
 
-groupTest(regex.ipAddressRE, goodIPFormats, badIPFormats, 'IP format')
-groupTestPartial(regex.ipAddressREString, goodIPFormats, badIPFormats, 'IP format')
+groupTest(regex.ipAddressRe, goodIpFormats, badIpFormats, 'IP format')
+groupTestPartial(regex.ipAddressReString, goodIpFormats, badIpFormats, 'IP format')
 
-groupTest(regex.ipV6RE, goodIPV6s, badIPV6s, 'IPV6')
-groupTestPartial(regex.ipV6REString, goodIPV6s, badIPV6s, 'IPV6')
+groupTest(regex.ipV6Re, goodIpV6s, badIpV6s, 'IPV6')
+groupTestPartial(regex.ipV6ReString, goodIpV6s, badIpV6s, 'IPV6')

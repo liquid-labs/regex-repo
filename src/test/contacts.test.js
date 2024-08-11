@@ -20,11 +20,11 @@ import { goodEmails, badEmails } from './data/emails'
 import { goodUsPhones, badUsPhones } from './data/usPhones'
 import { goodZipCodes, badZipCodes } from './data/zipCodes'
 
-groupTest(regex.usPhoneRE, goodUsPhones, badUsPhones, 'US phones')
-groupTestPartial(regex.usPhoneREString, goodUsPhones, badUsPhones, 'US phones')
+groupTest(regex.usPhoneRe, goodUsPhones, badUsPhones, 'US phones')
+groupTestPartial(regex.usPhoneReString, goodUsPhones, badUsPhones, 'US phones')
 
-groupTest(regex.zipCodeRE, goodZipCodes, badZipCodes, 'US zip codes')
-groupTestPartial(regex.zipCodeREString, goodZipCodes, badZipCodes, 'US zip codes')
+groupTest(regex.zipCodeRe, goodZipCodes, badZipCodes, 'US zip codes')
+groupTestPartial(regex.zipCodeReString, goodZipCodes, badZipCodes, 'US zip codes')
 
-groupTest(regex.emailRE, goodEmails, badEmails, 'emails')
-groupTestPartial(regex.emailREString, goodEmails, badEmails, 'emails', undefined, undefined, 'u')
+groupTest(regex.emailRe, goodEmails, badEmails, 'emails')
+groupTestPartial(regex.emailReString, goodEmails, badEmails, 'emails', undefined, undefined, 'u')

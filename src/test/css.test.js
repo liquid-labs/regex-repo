@@ -20,55 +20,55 @@ import { validHexColors1, validHexColors, invalidHexColors } from './data/hexCol
 import { validRgb1, validRgba3, invalidRgb1, validRgb, invalidRgb } from './data/rgbColors'
 import { validHsl3, invalidHsl3, validHsl, invalidHsl } from './data/hslColors'
 
-groupTest(regex.hexColorNoAlphaRE, validHexColors1, invalidHexColors, 'hexColor1')
-groupTestPartial(regex.hexColorNoAlphaREString, validHexColors1, invalidHexColors, 'hexColor1')
+groupTest(regex.hexColorNoAlphaRe, validHexColors1, invalidHexColors, 'hexColor1')
+groupTestPartial(regex.hexColorNoAlphaReString, validHexColors1, invalidHexColors, 'hexColor1')
 
-groupTest(regex.hexColorAlphaRE, validHexColors, invalidHexColors, 'hexColor')
-groupTestPartial(regex.hexColorAlphaREString, validHexColors, invalidHexColors, 'hexColor')
+groupTest(regex.hexColorAlphaRe, validHexColors, invalidHexColors, 'hexColor')
+groupTestPartial(regex.hexColorAlphaReString, validHexColors, invalidHexColors, 'hexColor')
 
 // since the colors are hard coded, we don't test the while thing; we'd just
 // end up replicating the structure or building pointless tests from the same
 // structure, we just want to check that the regex gets built.
 test('cssPreColors1 matches valid \'red\'', () => {
-  expect(regex.cssPreColors1RE.test('red')).toBe(true)
+  expect(regex.cssPreColors1Re.test('red')).toBe(true)
 })
 test('cssPreColors1 fails to match invalid', () => {
-  expect(regex.cssPreColors1RE.test('orange')).toBe(false)
-  expect(regex.cssPreColors1RE.test('blueberry')).toBe(false)
+  expect(regex.cssPreColors1Re.test('orange')).toBe(false)
+  expect(regex.cssPreColors1Re.test('blueberry')).toBe(false)
 })
 test('cssPreColors2 matches valid', () => {
-  expect(regex.cssPreColors2RE.test('orange')).toBe(true)
+  expect(regex.cssPreColors2Re.test('orange')).toBe(true)
 })
 test('cssPreColors2 fails to match invalid', () => {
-  expect(regex.cssPreColors2RE.test('azure')).toBe(false)
+  expect(regex.cssPreColors2Re.test('azure')).toBe(false)
 })
 test('cssPreColors3 matches valid', () => {
-  expect(regex.cssPreColors3RE.test('azure')).toBe(true)
+  expect(regex.cssPreColors3Re.test('azure')).toBe(true)
 })
 test('cssPreColors3 fails to match invalid', () => {
-  expect(regex.cssPreColors3RE.test('rebeccapurple')).toBe(false)
+  expect(regex.cssPreColors3Re.test('rebeccapurple')).toBe(false)
 })
 test('cssPreColors matches valid', () => {
-  expect(regex.cssPreColorsRE.test('rebeccapurple')).toBe(true)
+  expect(regex.cssPreColorsRe.test('rebeccapurple')).toBe(true)
 })
 test('cssPreColors fails to match invalid', () => {
-  expect(regex.cssPreColorsRE.test('blueberry')).toBe(false)
+  expect(regex.cssPreColorsRe.test('blueberry')).toBe(false)
 })
 
-groupTest(regex.rgbFuncRE, validRgb1, invalidRgb1, 'rgb')
-groupTestPartial(regex.rgbFuncREString, validRgb1, invalidRgb1, 'rgb')
+groupTest(regex.rgbFuncRe, validRgb1, invalidRgb1, 'rgb')
+groupTestPartial(regex.rgbFuncReString, validRgb1, invalidRgb1, 'rgb')
 
-groupTest(regex.rgbaFuncRE, validRgba3, invalidRgb1, 'rgba3')
-groupTestPartial(regex.rgbaFuncREString, validRgba3, invalidRgb1, 'rgba3')
+groupTest(regex.rgbaFuncRe, validRgba3, invalidRgb1, 'rgba3')
+groupTestPartial(regex.rgbaFuncReString, validRgba3, invalidRgb1, 'rgba3')
 
-groupTest(regex.rgbRE, validRgb, invalidRgb, 'rgb')
-groupTestPartial(regex.rgbREString, validRgb, invalidRgb, 'rgb')
+groupTest(regex.rgbRe, validRgb, invalidRgb, 'rgb')
+groupTestPartial(regex.rgbReString, validRgb, invalidRgb, 'rgb')
 
-groupTest(regex.hsl3RE, validHsl3, invalidHsl3, 'hsl3')
-groupTestPartial(regex.hsl3REString, validHsl3, invalidHsl3, 'hsl3')
+groupTest(regex.hsl3Re, validHsl3, invalidHsl3, 'hsl3')
+groupTestPartial(regex.hsl3ReString, validHsl3, invalidHsl3, 'hsl3')
 
-groupTest(regex.hslRE, validHsl, invalidHsl, 'hsl')
-groupTestPartial(regex.hslREString, validHsl, invalidHsl, 'hsl')
+groupTest(regex.hslRe, validHsl, invalidHsl, 'hsl')
+groupTestPartial(regex.hslReString, validHsl, invalidHsl, 'hsl')
 
 const validCssColors3 = validHexColors1
   .concat(validRgb1)
@@ -79,8 +79,8 @@ const invalidCssColors3 = invalidHexColors
   .concat(invalidRgb1)
   .concat(['rebeccapurple'])
   .concat(invalidHsl3)
-groupTest(regex.cssColor3RE, validCssColors3, invalidCssColors3, 'cssColors3')
-groupTestPartial(regex.cssColor3REString, validCssColors3, invalidCssColors3, 'cssColors3')
+groupTest(regex.cssColor3Re, validCssColors3, invalidCssColors3, 'cssColors3')
+groupTestPartial(regex.cssColor3ReString, validCssColors3, invalidCssColors3, 'cssColors3')
 
 const validCssColors = validHexColors
   .concat(validRgb)
@@ -90,5 +90,5 @@ const invalidCssColors = invalidHexColors
   .concat(invalidRgb)
   .concat(['blueberry'])
   .concat(invalidHsl)
-groupTest(regex.cssColorRE, validCssColors, invalidCssColors, 'cssColors')
-groupTestPartial(regex.cssColorREString, validCssColors, invalidCssColors, 'cssColors')
+groupTest(regex.cssColorRe, validCssColors, invalidCssColors, 'cssColors')
+groupTestPartial(regex.cssColorReString, validCssColors, invalidCssColors, 'cssColors')

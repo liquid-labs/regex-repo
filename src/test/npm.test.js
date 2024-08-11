@@ -20,5 +20,5 @@ import * as regex from '../npm'
 const validNPMPackegeNames = ['ansi-escapes', 'foo.com', '@acme/foo']
 const invalidNPMPackageNames = ['excited!', '.start-with-a-peried', '@acme/!foo']
 
-groupTest(regex.npmPackageNameRE, validNPMPackegeNames, invalidNPMPackageNames, 'NPM package names')
-groupTestPartial(regex.npmPackageNameREString, validNPMPackegeNames, invalidNPMPackageNames, 'NPM package names')
+groupTest(regex.npmPackageNameRe, validNPMPackegeNames, invalidNPMPackageNames, 'NPM package names')
+groupTestPartial(regex.npmPackageNameReString, validNPMPackegeNames, invalidNPMPackageNames, 'NPM package names')

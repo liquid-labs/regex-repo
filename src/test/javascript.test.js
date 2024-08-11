@@ -20,11 +20,11 @@ import { groupTest, groupTestPartial } from './lib/test-lib'
 const validReservedWords = ['for', 'in', 'var', 'yield']
 const invalidReservedWords = ['excited', 'javascript', 'ina']
 
-groupTest(regex.jsReservedWordRE, validReservedWords, invalidReservedWords, 'JS reserved words')
-groupTestPartial(regex.jsReservedWordREString, validReservedWords, invalidReservedWords, 'JS reserved words')
+groupTest(regex.jsReservedWordRe, validReservedWords, invalidReservedWords, 'JS reserved words')
+groupTestPartial(regex.jsReservedWordReString, validReservedWords, invalidReservedWords, 'JS reserved words')
 
 const validVariableNames = ['blah', 'foo', 'ᾩ', 'ĦĔĽĻŎ', '〱〱〱〱', 'जावास्क्रिप्ट', 'KingGeorgeⅦ']
 const invalidVariableNames = ['for', 'in', 'var', 'yield', 'a-bad-name']
 
-groupTest(regex.jsVariableRE, validVariableNames, invalidVariableNames, 'JS variable')
-groupTestPartial(regex.jsVariableREString, validVariableNames, invalidVariableNames, 'JS variable', '= ', '  ')
+groupTest(regex.jsVariableRe, validVariableNames, invalidVariableNames, 'JS variable')
+groupTestPartial(regex.jsVariableReString, validVariableNames, invalidVariableNames, 'JS variable', '= ', '  ')
