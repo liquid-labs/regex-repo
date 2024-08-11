@@ -1,6 +1,6 @@
 {
   "name": "regex-repo",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "A collection of useful regular expressions.",
   "main": "dist/regex-repo.cjs",
   "module": "dist/regex-repo.mjs",
