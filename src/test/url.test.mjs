@@ -16,12 +16,17 @@ limitations under the License.
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../url'
-import { 
-    goodFileUrls, badFileUrls,
-    goodFTPUrls, badFTPUrls,
-    goodHTTPUrls, badHTTPUrls,
-    goodMailtoUrls, badMailtoUrls
+import {
+  goodFileUrls, badFileUrls,
+  goodFTPUrls, badFTPUrls,
+  goodHTTPUrls, badHTTPUrls,
+  goodMailtoUrls, badMailtoUrls,
+  goodUrls, badURLs
 } from './data/urls'
+
+groupTest(regex.urlRE, goodUrls, badURLs, 'URL')
+// remove URLs with spaces because those will correctly match on a partial match
+groupTestPartial(regex.urlREString, goodUrls, badURLs.filter((v) => !v.includes(' ')), 'URL', undefined, undefined, 'u')
 
 groupTest(regex.mailtoURLRE, goodMailtoUrls, badMailtoUrls, 'mailto URLs')
 groupTestPartial(regex.mailtoURLREString, goodMailtoUrls, badMailtoUrls, 'mailto URLs', undefined, undefined, 'u')

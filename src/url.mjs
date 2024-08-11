@@ -20,7 +20,7 @@ import { fqDomainNameREString } from './domain-name'
 import { lockdownRE } from './lib/lockdown-re'
 
 // based on the generic URI RE given in [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986#page-51).
-export const urlREString = `(?:([a-z][a-z0-9+.-]*):\\/{0,2}([^/?#]*)\\/([^?#]*)(?:\\?([^#]*))?(?:#(.*))?)`
+export const urlREString = '(?:([a-z][a-z0-9+.-]*):\\/{0,2}([^/?#]*)(\\/[^?#]*)?(?:\\?([^#]*))?(?:#(.*))?)'
 // Web: Matches a valid, generic URL. Provides capture groups 1 (schema), 2 (server/authority), 3 (path), 4 (query part), 5 (intra-page link/fragment.) Note, a URL always has scheme, and at a minimum a server/authority or path, and may have both. The query and fragment components are always optional. For general usage, you might want to use the more specific REs for specific protocols or the `commonURLRE`.
 export const urlRE = lockdownRE(urlREString, 'u')
 

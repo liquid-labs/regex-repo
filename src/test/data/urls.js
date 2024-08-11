@@ -130,7 +130,7 @@ export const badMailtoUrls = [
   ...badURLs
 ]
 
-export const goodGeniricUrls = [
+export const goodUrls = [
   'rdar://1234',
   'h://test',
   ...goodFTPUrls,
