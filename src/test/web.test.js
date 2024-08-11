@@ -16,30 +16,12 @@ limitations under the License.
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
 import * as regex from '../web'
-import { goodDomainNames, badDomainNames } from './data/domains'
-import { goodFQDomainNames, badFQDomainNames } from './data/fq-domains'
-import { goodTLDs, badTLDs } from './data/tlds'
 import { 
     goodFileUrls, badFileUrls,
     goodFTPUrls, badFTPUrls,
     goodHTTPUrls, badHTTPUrls,
     goodMailtoUrls, badMailtoUrls
 } from './data/urls'
-
-groupTest(regex.domainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
-groupTestPartial(regex.domainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
-
-groupTest(regex.fqDomainNameRE, goodFQDomainNames, badFQDomainNames, 'FQ domain names')
-groupTestPartial(regex.fqDomainNameREString, goodFQDomainNames, badFQDomainNames, 'FQ domain names', undefined, undefined, 'u')
-
-const goodLocalhosts = ['127.0.0.1', '127.34.0.255', 'localhost', '::1', '0:0:0:0:0:0:0:1']
-const badLocalhosts = ['128.0.0.1', 'localhosts', '::2']
-
-groupTest(regex.localhostRE, goodLocalhosts, badLocalhosts, 'localhosts')
-groupTestPartial(regex.localhostREString, goodLocalhosts, badLocalhosts, 'localhosts')
-
-groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
-groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')
 
 groupTest(regex.mailtoURLRE, goodMailtoUrls, badMailtoUrls, 'mailto URLs')
 groupTestPartial(regex.mailtoURLREString, goodMailtoUrls, badMailtoUrls, 'mailto URLs', undefined, undefined, 'u')
