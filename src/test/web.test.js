@@ -22,7 +22,12 @@ import { goodIPs, badIPs } from './data/ips'
 import { goodIPFormats, badIPFormats } from './data/ip-formats'
 import { goodIPV6s, badIPV6s } from './data/ipv6s'
 import { goodTLDs, badTLDs } from './data/tlds'
-import { goodHTTPUrls, badHTTPUrls } from './data/urls'
+import { 
+    goodFileUrls, badFileUrls,
+    goodFTPUrls, badFTPUrls,
+    goodHTTPUrls, badHTTPUrls,
+    goodMailtoUrls, badMailtoUrls
+} from './data/urls'
 
 groupTest(regex.domainLabelRE, goodDomainNames, badDomainNames, 'subdomain label')
 groupTestPartial(regex.domainLabelREString, goodDomainNames, badDomainNames, 'subdomain label', undefined, undefined, 'u')
@@ -48,9 +53,20 @@ groupTestPartial(regex.localhostREString, goodLocalhosts, badLocalhosts, 'localh
 groupTest(regex.tldNameRE, goodTLDs, badTLDs, 'TLDs')
 groupTestPartial(regex.tldNameREString, goodTLDs, badTLDs, 'TLDs', undefined, undefined, 'u')
 
+groupTest(regex.mailtoURLRE, goodMailtoUrls, badMailtoUrls, 'mailto URLs')
+groupTestPartial(regex.mailtoURLREString, goodMailtoUrls, badMailtoUrls, 'mailto URLs', undefined, undefined, 'u')
+
 groupTest(regex.httpURLRE, goodHTTPUrls, badHTTPUrls, 'HTTP URLs')
 // remove URLs with spaces because those will correctly match on a partial match
 groupTestPartial(regex.httpURLREString, goodHTTPUrls, badHTTPUrls.filter((v) => !v.includes(' ')), 'HTTP URLs', undefined, undefined, 'u')
+
+groupTest(regex.ftpURLRE, goodFTPUrls, badFTPUrls, 'FTP URLs')
+// remove URLs with spaces because those will correctly match on a partial match
+groupTestPartial(regex.ftpURLREString, goodFTPUrls, badFTPUrls.filter((v) => !v.includes(' ')), 'FTP URLs', undefined, undefined, 'u')
+
+groupTest(regex.fileURLRE, goodFileUrls, badFileUrls, 'File URLs')
+// remove URLs with spaces because those will correctly match on a partial match
+groupTestPartial(regex.fileURLREString, goodFileUrls, badFileUrls.filter((v) => !v.includes(' ')), 'File URLs', undefined, undefined, 'u')
 
 // groupTest(regex.urlRE, goodUrls, badUrls, 'URLs')
 // remove URLs with spaces because those will correctly match on a partial match

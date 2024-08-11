@@ -108,7 +108,7 @@ export const httpURLRE = lockdownRE(httpURLREString, 'u')
 export const ftpURLREString = `(?:ftp:\\/\\/${userPlusPassREString}?${hostOrIPREString}${portREString}?${urlPathREString}?)`
 export const ftpURLRE = lockdownRE(ftpURLREString, 'u')
 
-export const fileURLREString = `(?:file:\\/\\/(?:${hostOrIPREString}${portREString})?${urlPathREString})`
+export const fileURLREString = `(?:file:\\/\\/${hostOrIPREString}?${urlPathREString})`
 // Web: Matches a valid 'file' URL. Provides capture groups 1 (host), 2 (port), 3 (path). You must use the either the 'u' or 'v' flag when using the RE string.
 export const fileURLRE = lockdownRE(fileURLREString, 'u')
 

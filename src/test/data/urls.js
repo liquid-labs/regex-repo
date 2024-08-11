@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import { goodEmails, badEmails } from './emails'
+
 export const badURLs = [
   '//',
   '//a',
@@ -110,7 +112,28 @@ export const badFTPUrls = [
   ...badURLs
 ]
 
+export const goodFileUrls = [
+  'file://host.com/path/to/something',
+  'file://host.com/',
+  'file:///path/to/something'
+]
+
+export const badFileUrls = [
+  'file://naked-host.com',
+  ...badURLs
+]
+
+export const goodMailtoUrls = goodEmails.map((email) => 'mailto:' + email)
+
+export const badMailtoUrls = [
+  ...(badEmails.map((email) => 'mailto:' + email)),
+  ...badURLs
+]
+
 export const goodGeniricUrls = [
   'rdar://1234',
-  'h://test'
+  'h://test',
+  ...goodFTPUrls,
+  ...goodHTTPUrls,
+  ...goodMailtoUrls
 ]
