@@ -40,242 +40,291 @@ _API generated with [dmd-readme-api](https://www.npmjs.com/package/dmd-readme-ap
 ### Modules
 
 <dl>
-<dt><a href="#module_AWS">AWS</a></dt>
+<dt><a href="#module_regex-repo">regex-repo</a></dt>
 <dd></dd>
-<dt><a href="#module_Contacts">Contacts</a></dt>
-<dd></dd>
-<dt><a href="#module_CSS">CSS</a></dt>
+<dt><a href="#module_regex-repo">regex-repo</a></dt>
 <dd></dd>
 </dl>
 
+Constants:
+- [`cssColor3Re`](#cssColor3Re): Matches CSS3 'hex, rgb, rgba, hsl, and predefined colors.
+- [`cssColorRe`](#cssColorRe): Matches CSS4 'hex, rgb, rgba, hsl, and predefined colors.
+- [`cssPreColors1Re`](#cssPreColors1Re): Matches CSS1 predefined color names.
+- [`cssPreColors2Re`](#cssPreColors2Re): Matches CSS2 predefined color names.
+- [`cssPreColors3Re`](#cssPreColors3Re): Matches CSS3 predefined color names.
+- [`cssPreColorsRe`](#cssPreColorsRe): Matches CSS4 predefined color names.
+- [`hexColorAlphaRe`](#hexColorAlphaRe): Matches hex specified RGBA colors with an alpha channel.
+- [`hexColorNoAlphaRe`](#hexColorNoAlphaRe): Matches hex specified RGB colors with no alpha channel.
+- [`hsl3Re`](#hsl3Re): Matches CSS3 'hsl(.
+- [`hslRe`](#hslRe): Matches CSS4 'hsl(.
+- [`rgbaFuncRe`](#rgbaFuncRe): Matches CSS3 'rgba(.
+- [`rgbFuncRe`](#rgbFuncRe): Matches CSS1 'rgb(.
+- [`rgbRe`](#rgbRe): Matches CSS4 'rgb(.
 
-<a id="module_AWS"></a>
-### AWS
+<a id="module_regex-repo"></a>
+### regex-repo
 
 
 [**Source code**](./src/aws.js#L16)
 
 
-* [AWS](#module_AWS)
-    * [`.awsS3BucketNameRe`](#module_AWS.awsS3BucketNameRe)
-    * [`.awsS3TaBucketNameRe`](#module_AWS.awsS3TaBucketNameRe)
+* [regex-repo](#module_regex-repo)
+    * _AWS_
+        * [`.awsS3BucketNameRe`](#module_regex-repo.awsS3BucketNameRe)
+        * [`.awsS3TaBucketNameRe`](#module_regex-repo.awsS3TaBucketNameRe)
+    * _Contacts_
+        * [`.emailRe`](#module_regex-repo.emailRe)
+        * [`.usPhoneRe`](#module_regex-repo.usPhoneRe)
+        * [`.zipCodeRe`](#module_regex-repo.zipCodeRe)
 
-<a id="module_AWS.awsS3BucketNameRe"></a>
-#### `AWS.awsS3BucketNameRe`
+<a id="module_regex-repo.awsS3BucketNameRe"></a>
+#### `regex-repo.awsS3BucketNameRe`
 
 Matches (most) valid S3 bucket name. Note `awsS3BucketNameReString` cannot be used for partial matches. Does not 
 enforce 63 character limit.
 
 
-**Kind**: static constant of [`AWS`](#module_AWS)  
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: AWS  
 
-[**Source code**](./src/aws.js#L33)
+[**Source code**](./src/aws.js#L35)
 
-<a id="module_AWS.awsS3TaBucketNameRe"></a>
-#### `AWS.awsS3TaBucketNameRe`
+<a id="module_regex-repo.awsS3TaBucketNameRe"></a>
+#### `regex-repo.awsS3TaBucketNameRe`
 
 Matches (most) S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TaBucketNameReString` cannot be used 
 for partial matches.
 
 
-**Kind**: static constant of [`AWS`](#module_AWS)  
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: AWS  
 
-[**Source code**](./src/aws.js#L26)
+[**Source code**](./src/aws.js#L27)
 
-<a id="module_Contacts"></a>
-### Contacts
-
-
-[**Source code**](./src/contacts.js#L16)
-
-
-* [Contacts](#module_Contacts)
-    * [`.emailRe`](#module_Contacts.emailRe)
-    * [`.usPhoneRe`](#module_Contacts.usPhoneRe)
-    * [`.zipCodeRe`](#module_Contacts.zipCodeRe)
-
-<a id="module_Contacts.emailRe"></a>
-#### `Contacts.emailRe`
+<a id="module_regex-repo.emailRe"></a>
+#### `regex-repo.emailRe`
 
 Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to 
 create a Re, you must use the 'u' flag.
 
 
-**Kind**: static constant of [`Contacts`](#module_Contacts)  
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: Contacts  
 
-[**Source code**](./src/contacts.js#L38)
+[**Source code**](./src/contacts.js#L41)
 
-<a id="module_Contacts.usPhoneRe"></a>
-#### `Contacts.usPhoneRe`
+<a id="module_regex-repo.usPhoneRe"></a>
+#### `regex-repo.usPhoneRe`
 
 Matches US phone numbers with optional country code and area code.
 
 
-**Kind**: static constant of [`Contacts`](#module_Contacts)  
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: Contacts  
 
-[**Source code**](./src/contacts.js#L25)
+[**Source code**](./src/contacts.js#L26)
 
-<a id="module_Contacts.zipCodeRe"></a>
-#### `Contacts.zipCodeRe`
+<a id="module_regex-repo.zipCodeRe"></a>
+#### `regex-repo.zipCodeRe`
 
 Matches 5 or 9 digit US zip codes.
 
 
-**Kind**: static constant of [`Contacts`](#module_Contacts)  
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: Contacts  
 
-[**Source code**](./src/contacts.js#L31)
+[**Source code**](./src/contacts.js#L33)
 
-<a id="module_CSS"></a>
-### CSS
-
-
-[**Source code**](./src/css.js#L16)
+<a id="module_regex-repo"></a>
+### regex-repo
 
 
-* [CSS](#module_CSS)
-    * [`.cssColor3Re`](#module_CSS.cssColor3Re)
-    * [`.cssColorRe`](#module_CSS.cssColorRe)
-    * [`.cssPreColors1Re`](#module_CSS.cssPreColors1Re)
-    * [`.cssPreColors2Re`](#module_CSS.cssPreColors2Re)
-    * [`.cssPreColors3Re`](#module_CSS.cssPreColors3Re)
-    * [`.cssPreColorsRe`](#module_CSS.cssPreColorsRe)
-    * [`.hexColorAlphaRe`](#module_CSS.hexColorAlphaRe)
-    * [`.hexColorNoAlphaRe`](#module_CSS.hexColorNoAlphaRe)
-    * [`.hsl3Re`](#module_CSS.hsl3Re)
-    * [`.hslRe`](#module_CSS.hslRe)
-    * [`.rgbaFuncRe`](#module_CSS.rgbaFuncRe)
-    * [`.rgbFuncRe`](#module_CSS.rgbFuncRe)
-    * [`.rgbRe`](#module_CSS.rgbRe)
+[**Source code**](./src/contacts.js#L16)
 
-<a id="module_CSS.cssColor3Re"></a>
-#### `CSS.cssColor3Re`
+
+* [regex-repo](#module_regex-repo)
+    * _AWS_
+        * [`.awsS3BucketNameRe`](#module_regex-repo.awsS3BucketNameRe)
+        * [`.awsS3TaBucketNameRe`](#module_regex-repo.awsS3TaBucketNameRe)
+    * _Contacts_
+        * [`.emailRe`](#module_regex-repo.emailRe)
+        * [`.usPhoneRe`](#module_regex-repo.usPhoneRe)
+        * [`.zipCodeRe`](#module_regex-repo.zipCodeRe)
+
+<a id="module_regex-repo.awsS3BucketNameRe"></a>
+#### `regex-repo.awsS3BucketNameRe`
+
+Matches (most) valid S3 bucket name. Note `awsS3BucketNameReString` cannot be used for partial matches. Does not 
+enforce 63 character limit.
+
+
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: AWS  
+
+[**Source code**](./src/aws.js#L35)
+
+<a id="module_regex-repo.awsS3TaBucketNameRe"></a>
+#### `regex-repo.awsS3TaBucketNameRe`
+
+Matches (most) S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TaBucketNameReString` cannot be used 
+for partial matches.
+
+
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: AWS  
+
+[**Source code**](./src/aws.js#L27)
+
+<a id="module_regex-repo.emailRe"></a>
+#### `regex-repo.emailRe`
+
+Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to 
+create a Re, you must use the 'u' flag.
+
+
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: Contacts  
+
+[**Source code**](./src/contacts.js#L41)
+
+<a id="module_regex-repo.usPhoneRe"></a>
+#### `regex-repo.usPhoneRe`
+
+Matches US phone numbers with optional country code and area code.
+
+
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: Contacts  
+
+[**Source code**](./src/contacts.js#L26)
+
+<a id="module_regex-repo.zipCodeRe"></a>
+#### `regex-repo.zipCodeRe`
+
+Matches 5 or 9 digit US zip codes.
+
+
+**Kind**: static constant of [`regex-repo`](#module_regex-repo)  
+**Category**: Contacts  
+
+[**Source code**](./src/contacts.js#L33)
+
+<a id="cssColor3Re"></a>
+### `cssColor3Re`
 
 Matches CSS3 'hex, rgb, rgba, hsl, and predefined colors.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L135)
 
-[**Source code**](./src/css.js#L124)
-
-<a id="module_CSS.cssColorRe"></a>
-#### `CSS.cssColorRe`
+<a id="cssColorRe"></a>
+### `cssColorRe`
 
 Matches CSS4 'hex, rgb, rgba, hsl, and predefined colors.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L146)
 
-[**Source code**](./src/css.js#L134)
-
-<a id="module_CSS.cssPreColors1Re"></a>
-#### `CSS.cssPreColors1Re`
+<a id="cssPreColors1Re"></a>
+### `cssPreColors1Re`
 
 Matches CSS1 predefined color names.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L48)
 
-[**Source code**](./src/css.js#L46)
-
-<a id="module_CSS.cssPreColors2Re"></a>
-#### `CSS.cssPreColors2Re`
+<a id="cssPreColors2Re"></a>
+### `cssPreColors2Re`
 
 Matches CSS2 predefined color names.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L55)
 
-[**Source code**](./src/css.js#L52)
-
-<a id="module_CSS.cssPreColors3Re"></a>
-#### `CSS.cssPreColors3Re`
+<a id="cssPreColors3Re"></a>
+### `cssPreColors3Re`
 
 Matches CSS3 predefined color names.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L62)
 
-[**Source code**](./src/css.js#L58)
-
-<a id="module_CSS.cssPreColorsRe"></a>
-#### `CSS.cssPreColorsRe`
+<a id="cssPreColorsRe"></a>
+### `cssPreColorsRe`
 
 Matches CSS4 predefined color names.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L69)
 
-[**Source code**](./src/css.js#L64)
-
-<a id="module_CSS.hexColorAlphaRe"></a>
-#### `CSS.hexColorAlphaRe`
+<a id="hexColorAlphaRe"></a>
+### `hexColorAlphaRe`
 
 Matches hex specified RGBA colors with an alpha channel.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L41)
 
-[**Source code**](./src/css.js#L40)
-
-<a id="module_CSS.hexColorNoAlphaRe"></a>
-#### `CSS.hexColorNoAlphaRe`
+<a id="hexColorNoAlphaRe"></a>
+### `hexColorNoAlphaRe`
 
 Matches hex specified RGB colors with no alpha channel.
 
-
-**Kind**: static constant of [`CSS`](#module_CSS)  
+**Category**: CSS  
 
 [**Source code**](./src/css.js#L33)
 
-<a id="module_CSS.hsl3Re"></a>
-#### `CSS.hsl3Re`
+<a id="hsl3Re"></a>
+### `hsl3Re`
 
 Matches CSS3 'hsl(...) and hsla(...) deg and percent notation.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L115)
 
-[**Source code**](./src/css.js#L106)
-
-<a id="module_CSS.hslRe"></a>
-#### `CSS.hslRe`
+<a id="hslRe"></a>
+### `hslRe`
 
 Matches CSS4 'hsl(...) and hsla(...) deg, grad, rad, turn and percent notation.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L123)
 
-[**Source code**](./src/css.js#L113)
-
-<a id="module_CSS.rgbaFuncRe"></a>
-#### `CSS.rgbaFuncRe`
+<a id="rgbaFuncRe"></a>
+### `rgbaFuncRe`
 
 Matches CSS3 'rgba(...) using '0...255 and percent (integer) notation.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L89)
 
-[**Source code**](./src/css.js#L82)
-
-<a id="module_CSS.rgbFuncRe"></a>
-#### `CSS.rgbFuncRe`
+<a id="rgbFuncRe"></a>
+### `rgbFuncRe`
 
 Matches CSS1 'rgb(...) using '0...255 and percent (integer) notation.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
+[**Source code**](./src/css.js#L82)
 
-[**Source code**](./src/css.js#L76)
-
-<a id="module_CSS.rgbRe"></a>
-#### `CSS.rgbRe`
+<a id="rgbRe"></a>
+### `rgbRe`
 
 Matches CSS4 'rgb(...) and rgba(...) functios  using '0...255 and percent (float) notation.
 
+**Category**: CSS  
 
-**Kind**: static constant of [`CSS`](#module_CSS)  
-
-[**Source code**](./src/css.js#L97)
+[**Source code**](./src/css.js#L105)
 
 ## Domain name rules
 

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+/** @module Network */
 import { lockdownRe } from './lib/lockdown-re'
 
 // IP address dotted notation octets
@@ -23,12 +24,16 @@ import { lockdownRe } from './lib/lockdown-re'
 export const ipHostReString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
   '(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}' +
   '(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))'
-// Web: Matches a valid, non-localhost IP address.
+/**
+ * Matches a valid, non-localhost IP address.
+ */
 export const ipHostRe = lockdownRe(ipHostReString)
 
 export const ipTupleReString = '(?:0|1?\\d{1,2}|2[0-4]\\d|25[0-5])'
 export const ipAddressReString = `(?:${ipTupleReString}\\.){3}${ipTupleReString}`
-// Web: Matches a string in IP address format. Use 'ipHostRe' to match actually valid IP addresses.
+/**
+ * Matches a string in IP address format. Use 'ipHostRe' to match actually valid IP addresses.
+ */
 export const ipAddressRe = lockdownRe(ipAddressReString)
 
 // credit to: https://stackoverflow.com/a/17871737/929494
@@ -52,9 +57,13 @@ export const ipV6ReString =
   '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
   // 2001:db8:3:4::192.0.2.33  64:ff9b::192.0.2.33 (IPv4-Embedded IPv6 Address)
   '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))'
-// Web: Matches a string in IPV6 format.
+/**
+ * Matches a string in IPV6 format.
+ */
 export const ipV6Re = lockdownRe(ipV6ReString)
 
 export const ipVFutureReString = '(?:v[0-9a-fA-F]+\\.[a-zA-Z0-9~_.!$&\'()*+,;=:-]+)'
-// Web: Matches potential future IP protocols.
+/**
+ * Matches potential future IP protocols.
+ */
 export const ipVFutureRe = lockdownRe(ipVFutureReString)
