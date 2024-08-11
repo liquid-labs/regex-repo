@@ -14,10 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import { groupTest, groupTestPartial } from './lib/test-lib'
-import * as regex from '../ips'
-import { goodIPs, badIPs } from './data/ips'
-import { goodIPFormats, badIPFormats } from './data/ip-formats'
-import { goodIPV6s, badIPV6s } from './data/ipv6s'
+import * as regex from '../network'
+import { goodIPs, badIPs, goodIPFormats, badIPFormats, goodIPV6s, badIPV6s } from './data/network'
 
 groupTest(regex.ipHostRE, goodIPs, badIPs, 'IP address')
 groupTestPartial(regex.ipHostREString, goodIPs, badIPs, 'IP address')

@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import { emailREString } from './contacts'
-import { ipHostREString, ipV6REString, ipVFutureREString } from './ips'
+import { ipHostREString, ipV6REString, ipVFutureREString } from './network'
 import { fqDomainNameREString } from './domain-name'
 import { lockdownRE } from './lib/lockdown-re'
 

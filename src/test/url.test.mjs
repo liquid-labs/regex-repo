@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import { groupTest, groupTestPartial } from './lib/test-lib'
-import * as regex from '../web'
+import * as regex from '../url'
 import { 
     goodFileUrls, badFileUrls,
     goodFTPUrls, badFTPUrls,

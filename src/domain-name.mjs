@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import { lockdownRE } from './lib/lockdown-re'
-import { ipTupleREString } from './ips'
+import { ipTupleREString } from './network'
 import { uniNonASCII } from './lib/uni-non-ascii'
 
 export const localhostREString = `(?:localhost|127(?:\\.${ipTupleREString}){3}|::1|0:0:0:0:0:0:0:1)`
