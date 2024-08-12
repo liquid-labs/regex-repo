@@ -145,5 +145,6 @@ export const badCommonURLs = [
 export const goodUrls = [
   'rdar://1234',
   'h://test',
+  'telnet://16.123.123.123',
   ...goodCommonURLs
 ]
