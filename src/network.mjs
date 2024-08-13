@@ -13,7 +13,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-/** @module Network */
 import { lockdownRe } from './lib/lockdown-re'
 
 // IP address dotted notation octets
@@ -26,6 +25,7 @@ export const ipHostReString = '(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])' +
   '(?:\\.(?:[1-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))'
 /**
  * Matches a valid, non-localhost IP address.
+ * @category Network
  */
 export const ipHostRe = lockdownRe(ipHostReString)
 
@@ -33,6 +33,7 @@ export const ipTupleReString = '(?:0|1?\\d{1,2}|2[0-4]\\d|25[0-5])'
 export const ipAddressReString = `(?:${ipTupleReString}\\.){3}${ipTupleReString}`
 /**
  * Matches a string in IP address format. Use 'ipHostRe' to match actually valid IP addresses.
+ * @category Network
  */
 export const ipAddressRe = lockdownRe(ipAddressReString)
 
@@ -59,11 +60,13 @@ export const ipV6ReString =
   '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))'
 /**
  * Matches a string in IPV6 format.
+ * @category Network
  */
 export const ipV6Re = lockdownRe(ipV6ReString)
 
 export const ipVFutureReString = '(?:v[0-9a-fA-F]+\\.[a-zA-Z0-9~_.!$&\'()*+,;=:-]+)'
 /**
  * Matches potential future IP protocols.
+ * @category Network
  */
 export const ipVFutureRe = lockdownRe(ipVFutureReString)

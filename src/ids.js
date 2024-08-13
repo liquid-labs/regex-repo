@@ -17,16 +17,26 @@ limitations under the License.
 import { lockdownRe } from './lib/lockdown-re'
 
 export const uuidReString = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}'
-// Identifiers: Matches a UUID.
+/**
+ * Matches a UUID.
+ * @category Identifiers
+ */
 export const uuidRe = lockdownRe(uuidReString)
 
 export const ssnReString = '(?!000|666|9\\d\\d)(\\d{3})-?(\\d\\d)-?(?!0000)(\\d{4})'
-// Identifiers: Matches a valid SSN. Provides 3 matching groups, 1 (area number), 2 (group number), and 3 (serial number).
+/**
+ * Matches a valid SSN. Provides 3 matching groups, 1 (area number), 2 
+ * (group number), and 3 (serial number).
+ * @category Identifiers
+ */
 export const ssnRe = lockdownRe(ssnReString)
 
 // https://www.irs.gov/businesses/small-businesses-self-employed/how-eins-are-assigned-and-valid-ein-prefixes
 const validEinPrefix = [10, 12, 60, 67, 50, 53, 1, 2, 3, 4, 5, 6, 11, 13, 14, 16, 21, 22, 23, 25, 34, 51, 52, 54, 55, 56, 57, 58, 59, 65, 30, 32, 35, 36, 37, 38, 61, 15, 24, 40, 44, 94, 95, 80, 90, 33, 39, 41, 42, 43, 48, 62, 63, 64, 66, 68, 71, 72, 73, 74, 75, 76, 77, 82, 83, 84, 85, 86, 87, 88, 91, 92, 93, 98, 99, 20, 26, 27, 45, 46, 47, 81, 31].map((prefix) => ('' + prefix).padStart(2, '0'))
 
 export const einReString = '(?:' + validEinPrefix.join('|') + ')-?\\d{7}'
-// Identifiers: Matches a valid EIN number.
+/**
+ * Matches a valid EIN number.
+ * @category Identifiers
+ */
 export const einRe = lockdownRe(einReString)

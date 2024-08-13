@@ -13,7 +13,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-/** @module regex-repo */
 import { fqDomainNameReString } from './domain-name'
 import { lockdownRe } from './lib/lockdown-re'
 import { uniNonASCII } from './lib/uni-non-ascii'
