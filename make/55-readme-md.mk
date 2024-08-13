@@ -6,8 +6,10 @@ $(README_MD): $(README_MD_SRC)
 	cp $(SRC)/doc/README.01.md $@
 	npx jsdoc2md \
 	  --files 'src/**/*' \
-	  --global-index-format list \
-	  --name-format \
 	  --plugin dmd-readme-api \
+	  --global-index-format grouped \
+	  --name-format \
+	  --configure jsdoc.config.json \
+	  --no-cache \
 	  >> $@
 	cat $(SRC)/doc/README.02.md >> $@
