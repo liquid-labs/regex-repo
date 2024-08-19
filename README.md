@@ -113,194 +113,196 @@ _API generated with [dmd-readme-api](https://www.npmjs.com/package/dmd-readme-ap
     - [`urlRe`](#urlRe): Matches a valid, generic URL.
 
 <a id="awsS3BucketNameRe"></a>
-### `awsS3BucketNameRe`
+### `awsS3BucketNameRe`<sub>[source code](./src/aws.js#L34); [global index](#global-constant-index), [AWS index](#global-constant-AWS-index)</sub>
+
+
 
 Matches (most) valid S3 bucket name. Note `awsS3BucketNameReString` cannot be used for partial matches. Does not 
 enforce 63 character limit.
 
-<sub>[source code](./src/aws.js#L34); [global index](#global-constant-index), [AWS index](#global-constant-AWS-index)</sub>
-
 <a id="awsS3TaBucketNameRe"></a>
-### `awsS3TaBucketNameRe`
+### `awsS3TaBucketNameRe`<sub>[source code](./src/aws.js#L26); [global index](#global-constant-index), [AWS index](#global-constant-AWS-index)</sub>
+
+
 
 Matches (most) S3 Transfer Acceleration compatible S3 bucket name. Note `awsS3TaBucketNameReString` cannot be used 
 for partial matches.
 
-<sub>[source code](./src/aws.js#L26); [global index](#global-constant-index), [AWS index](#global-constant-AWS-index)</sub>
-
 <a id="emailRe"></a>
-### `emailRe`
+### `emailRe`<sub>[source code](./src/contacts.js#L40); [global index](#global-constant-index), [Contacts index](#global-constant-Contacts-index)</sub>
+
+
 
 Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to 
 create a Re, you must use the 'u' flag.
 
-<sub>[source code](./src/contacts.js#L40); [global index](#global-constant-index), [Contacts index](#global-constant-Contacts-index)</sub>
-
 <a id="usPhoneRe"></a>
-### `usPhoneRe`
+### `usPhoneRe`<sub>[source code](./src/contacts.js#L25); [global index](#global-constant-index), [Contacts index](#global-constant-Contacts-index)</sub>
+
+
 
 Matches US phone numbers with optional country code and area code.
 
-<sub>[source code](./src/contacts.js#L25); [global index](#global-constant-index), [Contacts index](#global-constant-Contacts-index)</sub>
-
 <a id="zipCodeRe"></a>
-### `zipCodeRe`
+### `zipCodeRe`<sub>[source code](./src/contacts.js#L32); [global index](#global-constant-index), [Contacts index](#global-constant-Contacts-index)</sub>
+
+
 
 Matches 5 or 9 digit US zip codes.
 
-<sub>[source code](./src/contacts.js#L32); [global index](#global-constant-index), [Contacts index](#global-constant-Contacts-index)</sub>
-
 <a id="cssColor3Re"></a>
-### `cssColor3Re`
+### `cssColor3Re`<sub>[source code](./src/css.js#L135); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS3 'hex, rgb, rgba, hsl, and predefined colors.
 
-<sub>[source code](./src/css.js#L135); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="cssColorRe"></a>
-### `cssColorRe`
+### `cssColorRe`<sub>[source code](./src/css.js#L146); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS4 'hex, rgb, rgba, hsl, and predefined colors.
 
-<sub>[source code](./src/css.js#L146); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="cssPreColors1Re"></a>
-### `cssPreColors1Re`
+### `cssPreColors1Re`<sub>[source code](./src/css.js#L48); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS1 predefined color names.
 
-<sub>[source code](./src/css.js#L48); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="cssPreColors2Re"></a>
-### `cssPreColors2Re`
+### `cssPreColors2Re`<sub>[source code](./src/css.js#L55); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS2 predefined color names.
 
-<sub>[source code](./src/css.js#L55); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="cssPreColors3Re"></a>
-### `cssPreColors3Re`
+### `cssPreColors3Re`<sub>[source code](./src/css.js#L62); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS3 predefined color names.
 
-<sub>[source code](./src/css.js#L62); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="cssPreColorsRe"></a>
-### `cssPreColorsRe`
+### `cssPreColorsRe`<sub>[source code](./src/css.js#L69); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS4 predefined color names.
 
-<sub>[source code](./src/css.js#L69); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="hexColorAlphaRe"></a>
-### `hexColorAlphaRe`
+### `hexColorAlphaRe`<sub>[source code](./src/css.js#L41); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches hex specified RGBA colors with an alpha channel.
 
-<sub>[source code](./src/css.js#L41); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="hexColorNoAlphaRe"></a>
-### `hexColorNoAlphaRe`
+### `hexColorNoAlphaRe`<sub>[source code](./src/css.js#L33); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches hex specified RGB colors with no alpha channel.
 
-<sub>[source code](./src/css.js#L33); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="hsl3Re"></a>
-### `hsl3Re`
+### `hsl3Re`<sub>[source code](./src/css.js#L115); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS3 'hsl(...) and hsla(...) deg and percent notation.
 
-<sub>[source code](./src/css.js#L115); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="hslRe"></a>
-### `hslRe`
+### `hslRe`<sub>[source code](./src/css.js#L123); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS4 'hsl(...) and hsla(...) deg, grad, rad, turn and percent notation.
 
-<sub>[source code](./src/css.js#L123); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="rgbaFuncRe"></a>
-### `rgbaFuncRe`
+### `rgbaFuncRe`<sub>[source code](./src/css.js#L89); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS3 'rgba(...) using '0...255 and percent (integer) notation.
 
-<sub>[source code](./src/css.js#L89); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="rgbFuncRe"></a>
-### `rgbFuncRe`
+### `rgbFuncRe`<sub>[source code](./src/css.js#L82); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS1 'rgb(...) using '0...255 and percent (integer) notation.
 
-<sub>[source code](./src/css.js#L82); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="rgbRe"></a>
-### `rgbRe`
+### `rgbRe`<sub>[source code](./src/css.js#L105); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
+
+
 
 Matches CSS4 'rgb(...) and rgba(...) functios  using '0...255 and percent (float) notation.
 
-<sub>[source code](./src/css.js#L105); [global index](#global-constant-index), [CSS index](#global-constant-CSS-index)</sub>
-
 <a id="zeroTo100FloatPercentRe"></a>
-### `zeroTo100FloatPercentRe`
+### `zeroTo100FloatPercentRe`<sub>[source code](./src/numbers.js#L67); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 100% float as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L67); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="zeroTo100PercentRe"></a>
-### `zeroTo100PercentRe`
+### `zeroTo100PercentRe`<sub>[source code](./src/numbers.js#L60); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 100% integer as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L60); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="zeroTo1FloatRe"></a>
-### `zeroTo1FloatRe`
+### `zeroTo1FloatRe`<sub>[source code](./src/numbers.js#L53); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 1 float as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L53); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="zeroTo255FloatRe"></a>
-### `zeroTo255FloatRe`
+### `zeroTo255FloatRe`<sub>[source code](./src/numbers.js#L81); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 255 float as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L81); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="zeroTo255Re"></a>
-### `zeroTo255Re`
+### `zeroTo255Re`<sub>[source code](./src/numbers.js#L74); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 255 integer as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L74); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="zeroTo360FloatRe"></a>
-### `zeroTo360FloatRe`
+### `zeroTo360FloatRe`<sub>[source code](./src/numbers.js#L95); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 360 float as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L95); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="zeroTo360Re"></a>
-### `zeroTo360Re`
+### `zeroTo360Re`<sub>[source code](./src/numbers.js#L88); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
+
+
 
 Matches a 0 to 360 integer as used in CSS color specifications.
 
-<sub>[source code](./src/numbers.js#L88); [global index](#global-constant-index), [CSS numbers index](#global-constant-CSS-numbers-index)</sub>
-
 <a id="intlDateRe"></a>
-### `intlDateRe`
+### `intlDateRe`<sub>[source code](./src/date-times.mjs#L107); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches an international style 'YYYY/MM/DD' string. Accepts separators '.', '/', '-'. Will except 1 or 2 digits for 
 month and day and 1-4 digits for the year. Also accepts a + or - before the year. Provides capture groups 1 (BCE/CE 
 indicator), 2 (year), 3 (month), 4 (day).
 
-<sub>[source code](./src/date-times.mjs#L107); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="iso8601DateRe"></a>
-### `iso8601DateRe`
+### `iso8601DateRe`<sub>[source code](./src/date-times.mjs#L51); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time like '20240101T1212Z. Provides matching 
 groups 1 (year), 3 (month), and 4 (day of month), 5 (week of year), 6 (day of week date), and 7 (ordinal or Julian 
@@ -308,282 +310,280 @@ date), 8 (special end of day time), 10 (hour), 11 (decimal fraction of hour), 13
 minute), 15 (seconds), 16 (decimal fraction of a second), and 17 (timezone designation). (Groups 2, 11, and 13 are 
 internal back references.)
 
-<sub>[source code](./src/date-times.mjs#L51); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="iso8601DateReString"></a>
-### `iso8601DateReString`
+### `iso8601DateReString`<sub>[source code](./src/date-times.mjs#L42); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches the time designation portion of an ISO 8601 date+time. Provides matching groups 1 (special end of day time), 
 3 (hours), 3 (fraction of hour), 5 (minutes), 6 (fraction of minute), 7 (seconds), and 8 (fraction of seconds).
 
-<sub>[source code](./src/date-times.mjs#L42); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="iso8601DateTimeRe"></a>
-### `iso8601DateTimeRe`
+### `iso8601DateTimeRe`<sub>[source code](./src/date-times.mjs#L59); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) _requiring_ both date and time components. See 
 [iso8601DateRe](#iso8601DateRe) for matching groups.
 
-<sub>[source code](./src/date-times.mjs#L59); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="iso8601DayReString"></a>
-### `iso8601DayReString`
+### `iso8601DayReString`<sub>[source code](./src/date-times.mjs#L26); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 An RE ready string that matches the day designation portion of an ISO 8601 date+time. Provides matching groups 1 (
 year), 3 (month), and 4 (day of month), 5 (week of year), 6 (day of week date), and 7 (ordinal or Julian date).
 
-<sub>[source code](./src/date-times.mjs#L26); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="militaryTimeRe"></a>
-### `militaryTimeRe`
+### `militaryTimeRe`<sub>[source code](./src/date-times.mjs#L114); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches military time style 'HHMM' string. Provides capture groups 1 (special 2400 time), 2 (hour), and 3 (minutes).
 
-<sub>[source code](./src/date-times.mjs#L114); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="rfc2822DateRe"></a>
-### `rfc2822DateRe`
+### `rfc2822DateRe`<sub>[source code](./src/date-times.mjs#L87); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 
 12:12 UTC'. Provides matching groups 1 (day of week), 2 (day of month), 3 (month name), and 4 (year), 5 (hour), 6 
 (min), 7 (second), and 8 (time zone).
 
-<sub>[source code](./src/date-times.mjs#L87); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="rfc2822DayReString"></a>
-### `rfc2822DayReString`
+### `rfc2822DayReString`<sub>[source code](./src/date-times.mjs#L66); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 An RE ready string that matches the day designation portion of an RFC 2822 date+time. Provides matching groups 1 
 (day of week name), 2 (day of month), 3 (month name), 4 (year).
 
-<sub>[source code](./src/date-times.mjs#L66); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="rfc2822TimeReString"></a>
-### `rfc2822TimeReString`
+### `rfc2822TimeReString`<sub>[source code](./src/date-times.mjs#L78); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 An RE ready string that matches the time designation portion of an RFC 2822 date+time. Provides matching groups 1 
 (hour), 2 (minutes), 3 (seconds), and 4 (timezone).
 
-<sub>[source code](./src/date-times.mjs#L78); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="timeRe"></a>
-### `timeRe`
+### `timeRe`<sub>[source code](./src/date-times.mjs#L123); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches a twelve hour time designation, requires AM or PM designation. Allows optional leading 0 in hour. Provides 
 matching groups 1 (hour), 2 (minutes), 3 (seconds, without decimal fractions), 4 (decimal fraction seconds), and 5 (
 AM/PM indicator).
 
-<sub>[source code](./src/date-times.mjs#L123); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="timezoneReString"></a>
-### `timezoneReString`
+### `timezoneReString`<sub>[source code](./src/date-times.mjs#L72); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 An RE ready string that matches a general timezone designation; compliant with RFC 2822 timezone portion. Provides 
 matching groups 1 (timezone).
 
-<sub>[source code](./src/date-times.mjs#L72); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="twentyFourHourTimeRe"></a>
-### `twentyFourHourTimeRe`
+### `twentyFourHourTimeRe`<sub>[source code](./src/date-times.mjs#L132); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches a twenty-four hour time designationAllows optional leading 0 in hour. Provides matching groups 1 (special 
 24:00 designation with optional seconds), 2 (hour), 3 (minutes), 4 (seconds, without decimal fractions), 5 (decimal 
 fraction seconds).
 
-<sub>[source code](./src/date-times.mjs#L132); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="usDateRe"></a>
-### `usDateRe`
+### `usDateRe`<sub>[source code](./src/date-times.mjs#L98); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
+
+
 
 Matches a US style 'MM/DD/YYYY' string. Accepts separators '.', '/', '-'. Will except 1 or 2 digits for month and 
 day and 1-4 digits for the year. Also accepts a + or - before the year. Provides capture groups 1 (month), 2 (day of 
 month), 3 (BCE/CE indicator), and 4 (year).
 
-<sub>[source code](./src/date-times.mjs#L98); [global index](#global-constant-index), [Date time index](#global-constant-Date-time-index)</sub>
-
 <a id="domainLabelRe"></a>
-### `domainLabelRe`
+### `domainLabelRe`<sub>[source code](./src/domain-name.mjs#L45); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
+
+
 
 Matches a non-tld domain label. Enforces the 63 byte domain label limit for non-international (all ASCII) labels. 
 See [domain name rules](#domain-name-rules). When using the partial string to create a Re, you must use the 'u' or 
 'v' flag.
 
-<sub>[source code](./src/domain-name.mjs#L45); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
-
 <a id="fqDomainNameRe"></a>
-### `fqDomainNameRe`
+### `fqDomainNameRe`<sub>[source code](./src/domain-name.mjs#L55); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
+
+
 
 Matches fully qualified domain name (one or more subdomains + TLD). Partially enforces the 255 byte FQ domain name 
 limit, but this is only valid for non-international (all ASCII) domain names because we can only count characters. 
 When using the partial string to create a Re, you must use the 'u' or 'v' flag.
 
-<sub>[source code](./src/domain-name.mjs#L55); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
-
 <a id="localhostRe"></a>
-### `localhostRe`
+### `localhostRe`<sub>[source code](./src/domain-name.mjs#L25); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
+
+
 
 Matches any representation of localhost; the special name, IPV4 loopbacks, or IPV6 loopbacks.
 
-<sub>[source code](./src/domain-name.mjs#L25); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
-
 <a id="tldNameRe"></a>
-### `tldNameRe`
+### `tldNameRe`<sub>[source code](./src/domain-name.mjs#L34); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
+
+
 
 Matches a Top Level Domain (TLD). See [domain name rules](#domain-name-rules). When using the partial string to 
 create a Re, you must use the 'u' or 'v' flag.
 
-<sub>[source code](./src/domain-name.mjs#L34); [global index](#global-constant-index), [Domain names index](#global-constant-Domain-names-index)</sub>
-
 <a id="einRe"></a>
-### `einRe`
+### `einRe`<sub>[source code](./src/ids.js#L42); [global index](#global-constant-index), [Identifiers index](#global-constant-Identifiers-index)</sub>
+
+
 
 Matches a valid EIN number.
 
-<sub>[source code](./src/ids.js#L42); [global index](#global-constant-index), [Identifiers index](#global-constant-Identifiers-index)</sub>
-
 <a id="ssnRe"></a>
-### `ssnRe`
+### `ssnRe`<sub>[source code](./src/ids.js#L32); [global index](#global-constant-index), [Identifiers index](#global-constant-Identifiers-index)</sub>
+
+
 
 Matches a valid SSN. Provides 3 matching groups, 1 (area number), 2 
 (group number), and 3 (serial number).
 
-<sub>[source code](./src/ids.js#L32); [global index](#global-constant-index), [Identifiers index](#global-constant-Identifiers-index)</sub>
-
 <a id="uuidRe"></a>
-### `uuidRe`
+### `uuidRe`<sub>[source code](./src/ids.js#L24); [global index](#global-constant-index), [Identifiers index](#global-constant-Identifiers-index)</sub>
+
+
 
 Matches a UUID.
 
-<sub>[source code](./src/ids.js#L24); [global index](#global-constant-index), [Identifiers index](#global-constant-Identifiers-index)</sub>
-
 <a id="jsReservedWordRe"></a>
-### `jsReservedWordRe`
+### `jsReservedWordRe`<sub>[source code](./src/javascript.js#L24); [global index](#global-constant-index), [Javascript index](#global-constant-Javascript-index)</sub>
+
+
 
 Matches a JS resereved word.
 
-<sub>[source code](./src/javascript.js#L24); [global index](#global-constant-index), [Javascript index](#global-constant-Javascript-index)</sub>
-
 <a id="jsVariableRe"></a>
-### `jsVariableRe`
+### `jsVariableRe`<sub>[source code](./src/javascript.js#L32); [global index](#global-constant-index), [Javascript index](#global-constant-Javascript-index)</sub>
+
+
 
 Matches a valid JS variable name.
 
-<sub>[source code](./src/javascript.js#L32); [global index](#global-constant-index), [Javascript index](#global-constant-Javascript-index)</sub>
-
 <a id="ipAddressRe"></a>
-### `ipAddressRe`
+### `ipAddressRe`<sub>[source code](./src/network.mjs#L38); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
+
+
 
 Matches a string in IP address format. Use 'ipHostRe' to match actually valid IP addresses.
 
-<sub>[source code](./src/network.mjs#L38); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
-
 <a id="ipHostRe"></a>
-### `ipHostRe`
+### `ipHostRe`<sub>[source code](./src/network.mjs#L30); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
+
+
 
 Matches a valid, non-localhost IP address.
 
-<sub>[source code](./src/network.mjs#L30); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
-
 <a id="ipV6Re"></a>
-### `ipV6Re`
+### `ipV6Re`<sub>[source code](./src/network.mjs#L65); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
+
+
 
 Matches a string in IPV6 format.
 
-<sub>[source code](./src/network.mjs#L65); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
-
 <a id="ipVFutureRe"></a>
-### `ipVFutureRe`
+### `ipVFutureRe`<sub>[source code](./src/network.mjs#L72); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
+
+
 
 Matches potential future IP protocols.
 
-<sub>[source code](./src/network.mjs#L72); [global index](#global-constant-index), [Network index](#global-constant-Network-index)</sub>
-
 <a id="npmPackageNameRe"></a>
-### `npmPackageNameRe`
+### `npmPackageNameRe`<sub>[source code](./src/npm.js#L25); [global index](#global-constant-index), [NPM index](#global-constant-NPM-index)</sub>
+
+
 
 Matches an NPM package name. Provides matching groups 1 (org name, 
 if any) and 2 (package basename).
 
-<sub>[source code](./src/npm.js#L25); [global index](#global-constant-index), [NPM index](#global-constant-NPM-index)</sub>
-
 <a id="floatRe"></a>
-### `floatRe`
+### `floatRe`<sub>[source code](./src/numbers.js#L46); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
+
+
 
 Matches a float in either plan or scientific format.
 
-<sub>[source code](./src/numbers.js#L46); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
-
 <a id="integerRe"></a>
-### `integerRe`
+### `integerRe`<sub>[source code](./src/numbers.js#L25); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
+
+
 
 Matches an integer.
 
-<sub>[source code](./src/numbers.js#L25); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
-
 <a id="plainFloatRe"></a>
-### `plainFloatRe`
+### `plainFloatRe`<sub>[source code](./src/numbers.js#L32); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
+
+
 
 Matches a plain (non-scientific notation) float.
 
-<sub>[source code](./src/numbers.js#L32); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
-
 <a id="scientificFloatRe"></a>
-### `scientificFloatRe`
+### `scientificFloatRe`<sub>[source code](./src/numbers.js#L39); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
+
+
 
 Matches a scientific notation float.
 
-<sub>[source code](./src/numbers.js#L39); [global index](#global-constant-index), [Numbers index](#global-constant-Numbers-index)</sub>
-
 <a id="commonUrlRe"></a>
-### `commonUrlRe`
+### `commonUrlRe`<sub>[source code](./src/url.mjs#L80); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
+
+
 
 Matches any of the "common" web URL types: 'mailto', 'http/https', 'ftp', and 'file'. You must use the either the 
 'u' or 'v' flag when using the Re string.
 
-<sub>[source code](./src/url.mjs#L80); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
-
 <a id="fileUrlRe"></a>
-### `fileUrlRe`
+### `fileUrlRe`<sub>[source code](./src/url.mjs#L72); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
+
+
 
 Matches a valid 'file' URL. Provides capture groups 1 (host), 2 (port), 3 (path). You must use the either the 'u' or 
 'v' flag when using the Re string.
 
-<sub>[source code](./src/url.mjs#L72); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
-
 <a id="ftpUrlRe"></a>
-### `ftpUrlRe`
+### `ftpUrlRe`<sub>[source code](./src/url.mjs#L64); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
+
+
 
 Matches a valid 'ftp' URL. Provides capture groups 1 (username), 2 (user password), 3 (host or IP), 4 (port), 5 
 (path). You must use the either the 'u' or 'v' flag when using the Re string.
 
-<sub>[source code](./src/url.mjs#L64); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
-
 <a id="httpUrlRe"></a>
-### `httpUrlRe`
+### `httpUrlRe`<sub>[source code](./src/url.mjs#L56); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
+
+
 
 Matches a valid 'http/https' URL. Provides capture groups 1 (protocol), 2 (username), 3 (user password), 4 (host or 
 IP), 5 (port), 6 (path), 7 (query string), and 8 (fragment). You must use the either the 'u' or 'v' flag when using 
 the Re string.
 
-<sub>[source code](./src/url.mjs#L56); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
-
 <a id="mailtoUrlRe"></a>
-### `mailtoUrlRe`
+### `mailtoUrlRe`<sub>[source code](./src/url.mjs#L38); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
+
+
 
 Matches a valid 'mailto:' URL. Provides a single capture group, 1 (email address).' You must use the either the 'u' 
 or 'v' flag when using the Re string.
 
-<sub>[source code](./src/url.mjs#L38); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
-
 <a id="urlRe"></a>
-### `urlRe`
+### `urlRe`<sub>[source code](./src/url.mjs#L30); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
+
+
 
 Matches a valid, generic URL. Provides capture groups 1 (schema), 2 (server/authority), 3 (path), 4 (query part), 5 (
 intra-page link/fragment.) Note, a URL always has scheme, and at a minimum a server/authority or path, and may have 
 both. The query and fragment components are always optional. For general usage, you might want to use the more 
 specific Res for specific protocols or the `commonUrlRe`.
-
-<sub>[source code](./src/url.mjs#L30); [global index](#global-constant-index), [URL index](#global-constant-URL-index)</sub>
 
 ## Domain name rules
 
