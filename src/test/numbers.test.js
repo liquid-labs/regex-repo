@@ -64,7 +64,7 @@ groupTestPartial(
   regex.zeroTo100PercentReString,
   stringifyPerc(zeroTo100),
   stringifyPerc(notZeroTo100),
-  'zeroTo100Percent'
+  'zeroTo100Percent',
 )
 
 groupTest(regex.zeroTo100FloatPercentRe,

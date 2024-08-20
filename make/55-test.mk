@@ -27,8 +27,6 @@ $(SDLC_TEST_FILES_BUILT) &: $(SDLC_ALL_JS_FILES_SRC)
 		--out-dir=./$(TEST_STAGING) \
 		--source-maps=inline \
 		$(SRC)
-	# remove because it's not really part of the test
-	rm $(TEST_STAGING)/doc-extractor/doc-extractor.js
 
 $(SDLC_TEST_PASS_MARKER) $(SDLC_TEST_REPORT) $(TEST_STAGING)/coverage &: package.json $(SDLC_TEST_FILES_BUILT) $(SDLC_TEST_DATA_BUILT)
 	rm -rf $@

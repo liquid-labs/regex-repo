@@ -30,11 +30,11 @@ export const cssPreColors1 = {
   navy    : '#000080',
   blue    : '#0000ff',
   teal    : '#008080',
-  aqua    : '#00ffff'
+  aqua    : '#00ffff',
 }
 
 export const cssPreColors2 = Object.assign({
-  orange : '#ffa500'
+  orange : '#ffa500',
 }, cssPreColors1)
 
 export const cssPreColors3 = Object.assign({
@@ -167,9 +167,9 @@ export const cssPreColors3 = Object.assign({
   violet               : '#ee82ee',
   wheat                : '#f5deb3',
   whitesmoke           : '#f5f5f5',
-  yellowgreen          : '#9acd32'
+  yellowgreen          : '#9acd32',
 }, cssPreColors2)
 
 export const cssPreColors = Object.assign({
-  rebeccapurple : '#663399'
+  rebeccapurple : '#663399',
 }, cssPreColors3)

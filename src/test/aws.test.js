@@ -20,7 +20,7 @@ import {
   goodAWSS3TaBuckenNames,
   badAWSS3TaBuckenNames,
   goodAWSS3BuckenNames,
-  badAWSS3BuckenNames
+  badAWSS3BuckenNames,
 } from './data/aws-s3-bucket-names'
 
 groupTest(regex.awsS3TaBucketNameRe, goodAWSS3TaBuckenNames, badAWSS3TaBuckenNames, 'AWS S3Ta bucket RE')

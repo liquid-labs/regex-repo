@@ -1,25 +1,25 @@
 export const validMilTimes = [
   '2400',
   '0000',
-  '0130'
+  '0130',
 ]
 
 export const invalidMilTimes = [
   '2500',
   '2060',
-  '300'
+  '300',
 ]
 
 export const validTimes = [
   '12:00 AM',
   '12:00:39 PM',
-  '2:00:39.383 PM'
+  '2:00:39.383 PM',
 ]
 
 export const invalidTimes = [
   '13:00 AM',
   '5:60 PM',
-  '7:00'
+  '7:00',
 ]
 
 export const valid24HrTimes = [
@@ -30,7 +30,7 @@ export const valid24HrTimes = [
   '01:00:32', // allow leading zero
   '00:00:00',
   '1:00:32',
-  '0:00:00' // or not
+  '0:00:00', // or not
 ]
 
 export const invalid24HrTimes = [
@@ -38,5 +38,5 @@ export const invalid24HrTimes = [
   '25:00',
   '12:60',
   '12:00:60',
-  '12:00:10.'
+  '12:00:10.',
 ]

@@ -16,12 +16,12 @@ limitations under the License.
 
 export const validRFC2822Days = [
   'Mon, 6 Jan 1992',
-  '6 Jan 1992'
+  '6 Jan 1992',
 ]
 
 export const invalidRFC2822Days = [
   'Foo, 6 Jan 1992',
-  'Jan 6 1992'
+  'Jan 6 1992',
 ]
 
 export const validRFC2822Times = [
@@ -38,7 +38,7 @@ export const validRFC2822Times = [
   '12:12 -0000',
   '12:12 -1200',
   '12:12:12 +1200',
-  '03:12'
+  '03:12',
 ]
 
 export const invalidRFC2822Times = [
@@ -49,17 +49,17 @@ export const invalidRFC2822Times = [
   '12:12 J',
   '12:12 +12',
   '12:12 +123',
-  '12:12 +1260'
+  '12:12 +1260',
 ]
 
 export const validRFC2822Dates = [
   'Mon, 7 Jan 1992 12:12',
   '6 Jan 1992 12:12 UT',
-  '6 Jan 1992 12:13:14 UT'
+  '6 Jan 1992 12:13:14 UT',
 ]
 
 export const invalidRFC2822Dates = [
   '32 Jan 1992 12:12',
   '06 Jan 1922T12:12',
-  '06 Jan 1992 25:12'
+  '06 Jan 1992 25:12',
 ]

@@ -20,8 +20,9 @@ export const validRgb1 = [
   'rgb(234, 29, 120)',
   'rgb( 234 ,  29 ,120 )',
   'rgb(100%,0%,60%)',
-  'rgb(100%, 0%, 60%)'
+  'rgb(100%, 0%, 60%)',
 ]
+
 export const validRgba3 = [
   'rgba(1, 2, 3, .4)',
   'rgba(1, 2, 3, .002)',
@@ -32,7 +33,7 @@ export const validRgba3 = [
   'rgba(234, 29, 120, 1)',
   'rgba( 234 ,  29 ,120,.5 )',
   'rgba(100%, 0%, 60%, 0.4)',
-  'rgba(100%, 0%, 60%, 40%)'
+  'rgba(100%, 0%, 60%, 40%)',
 ]
 
 export const validRgb = validRgb1.concat(validRgba3).concat([
@@ -57,7 +58,7 @@ export const validRgb = validRgb1.concat(validRgba3).concat([
   'rgba(51.5% 17.5% 51% / 40.5%)',
   'rgba(255, 0, 153.6, 1)',
   'rgba(100%, 0.5%, 60.863%, 0.4)',
-  'rgba(100%, 0.5%, 60.683%, 40.5%)'
+  'rgba(100%, 0.5%, 60.683%, 40.5%)',
   // We don't support exponential notation
   // 'rgba(1e2, .5e1, .5e0, +.25e2%)',
   // 'rgb(1e2, .5e1, .5e0, +.25e2%)',
@@ -76,7 +77,7 @@ export const invalidRgb = [
   'rgba(234, 29, 120, -89)',
   'rgba(234, 029, 120, 89)',
   'rgba(20, 20, 20, 256)',
-  'rgb(100%, 0, 60%)' /* ERROR! Don't mix integers and percentages. */
+  'rgb(100%, 0, 60%)', /* ERROR! Don't mix integers and percentages. */
 ]
 
 export const invalidRgb1 = invalidRgb.concat([
@@ -87,5 +88,5 @@ export const invalidRgb1 = invalidRgb.concat([
   'rgb(20, 20, 20, 10%)',
   'rgb(20%, 20%, 20%, .1)',
   'rgb(20%, 20%, 20%, 10%)',
-  'rgb(255, 0, 153.0)' /* ERROR! Don't use fractions. */
+  'rgb(255, 0, 153.0)', /* ERROR! Don't use fractions. */
 ])

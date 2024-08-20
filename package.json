@@ -62,8 +62,11 @@
     "orgKey": "@liquid-labs"
   },
   "devDependencies": {
+    "@liquid-labs/dmd": "^6.3.1",
+    "@liquid-labs/jsdoc-to-markdown": "^8.1.1",
     "@liquid-labs/sdlc-resource-babel-and-rollup": "^1.0.0-alpha.9",
-    "@liquid-labs/sdlc-resource-eslint": "^1.0.0-alpha.10",
-    "@liquid-labs/sdlc-resource-jest": "^1.0.0-alpha.7"
+    "@liquid-labs/sdlc-resource-eslint": "^1.0.0-alpha.16",
+    "@liquid-labs/sdlc-resource-jest": "^1.0.0-alpha.7",
+    "dmd-readme-api": "^1.0.0-beta.7"
   }
 }
