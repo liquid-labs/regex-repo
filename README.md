@@ -53,11 +53,11 @@ _API generated with [dmd-readme-api](https://www.npmjs.com/package/dmd-readme-ap
     - [`cssPreColorsRe`](#cssPreColorsRe): Matches CSS4 predefined color names.
     - [`hexColorAlphaRe`](#hexColorAlphaRe): Matches hex specified RGBA colors with an alpha channel.
     - [`hexColorNoAlphaRe`](#hexColorNoAlphaRe): Matches hex specified RGB colors with no alpha channel.
-    - [`hsl3Re`](#hsl3Re): Matches CSS3 'hsl(.
-    - [`hslRe`](#hslRe): Matches CSS4 'hsl(.
-    - [`rgbaFuncRe`](#rgbaFuncRe): Matches CSS3 'rgba(.
-    - [`rgbFuncRe`](#rgbFuncRe): Matches CSS1 'rgb(.
-    - [`rgbRe`](#rgbRe): Matches CSS4 'rgb(.
+    - [`hsl3Re`](#hsl3Re): Matches CSS3 'hsl(...) and hsla(...) deg and percent notation.
+    - [`hslRe`](#hslRe): Matches CSS4 'hsl(...) and hsla(...) deg, grad, rad, turn and percent notation.
+    - [`rgbaFuncRe`](#rgbaFuncRe): Matches CSS3 'rgba(...) using '0...255 and percent (integer) notation.
+    - [`rgbFuncRe`](#rgbFuncRe): Matches CSS1 'rgb(...) using '0...255 and percent (integer) notation.
+    - [`rgbRe`](#rgbRe): Matches CSS4 'rgb(...) and rgba(...) functios using '0...255 and percent (float) notation.
   - <span id="global-constant-CSS-numbers-index"></span>_CSS numbers_
     - [`zeroTo100FloatPercentRe`](#zeroTo100FloatPercentRe): Matches a 0 to 100% float as used in CSS color specifications.
     - [`zeroTo100PercentRe`](#zeroTo100PercentRe): Matches a 0 to 100% integer as used in CSS color specifications.
@@ -68,12 +68,12 @@ _API generated with [dmd-readme-api](https://www.npmjs.com/package/dmd-readme-ap
     - [`zeroTo360Re`](#zeroTo360Re): Matches a 0 to 360 integer as used in CSS color specifications.
   - <span id="global-constant-Date-time-index"></span>_Date time_
     - [`intlDateRe`](#intlDateRe): Matches an international style 'YYYY/MM/DD' string.
-    - [`iso8601DateRe`](#iso8601DateRe): Matches an [ISO 8601](https://en.
+    - [`iso8601DateRe`](#iso8601DateRe): Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time like '20240101T1212Z.
     - [`iso8601DateReString`](#iso8601DateReString): Matches the time designation portion of an ISO 8601 date+time.
-    - [`iso8601DateTimeRe`](#iso8601DateTimeRe): Matches an [ISO 8601](https://en.
+    - [`iso8601DateTimeRe`](#iso8601DateTimeRe): Matches an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) _requiring_ both date and time components.
     - [`iso8601DayReString`](#iso8601DayReString): An RE ready string that matches the day designation portion of an ISO 8601 date+time.
     - [`militaryTimeRe`](#militaryTimeRe): Matches military time style 'HHMM' string.
-    - [`rfc2822DateRe`](#rfc2822DateRe): Matches an [RFC 2822](https://datatracker.
+    - [`rfc2822DateRe`](#rfc2822DateRe): Matches an [RFC 2822](https://datatracker.ietf.org/doc/html/rfc2822#section-3.3) style date like 'Mon, 6 Jan 1992 12:12 UTC'.
     - [`rfc2822DayReString`](#rfc2822DayReString): An RE ready string that matches the day designation portion of an RFC 2822 date+time.
     - [`rfc2822TimeReString`](#rfc2822TimeReString): An RE ready string that matches the time designation portion of an RFC 2822 date+time.
     - [`timeRe`](#timeRe): Matches a twelve hour time designation, requires AM or PM designation.
