@@ -17,8 +17,9 @@ limitations under the License.
 import { lockdownRe } from './lib/lockdown-re'
 
 export const npmPackageNameReString = '(@[a-z0-9-~][a-z0-9-._~]*/)?([a-z0-9-~][a-z0-9-._~]*)'
+
 /**
- * Matches an NPM package name. Provides matching groups 1 (org name, 
+ * Matches an NPM package name. Provides matching groups 1 (org name,
  * if any) and 2 (package basename).
  * @category NPM
  */

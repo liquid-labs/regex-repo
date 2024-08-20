@@ -25,7 +25,7 @@ import {
   validTimes,
   invalidTimes,
   valid24HrTimes,
-  invalid24HrTimes
+  invalid24HrTimes,
 } from './data/times'
 import { validUSDates, invalidUSDates } from './data/us-dates'
 
@@ -38,7 +38,7 @@ groupTestPartial("'" + regex.iso8601DateReString + "'", valid8601Dates, invalid8
   ['2024027T12:30:40.50+1000', '2024', undefined, undefined, undefined, undefined, '027', undefined, '12', undefined, '30', undefined, '40', '50', '+1000'],
   ['2024027T24:00:00+1000', '2024', undefined, undefined, undefined, undefined, '027', '24:00:00', undefined, undefined, undefined, undefined, undefined, undefined, '+1000'],
   ['2024027T12,168+1000', '2024', undefined, undefined, undefined, undefined, '027', undefined, '12', '168', undefined, undefined, undefined, undefined, '+1000'],
-  ['2024027T12:30.168+1000', '2024', undefined, undefined, undefined, undefined, '027', undefined, '12', undefined, '30', '168', undefined, undefined, '+1000']
+  ['2024027T12:30.168+1000', '2024', undefined, undefined, undefined, undefined, '027', undefined, '12', undefined, '30', '168', undefined, undefined, '+1000'],
 ].forEach(([input, year, month, day, week, dayOfWeek, ordinalDate, endOfDay, hour, hourFrac, minutes, minFrac, seconds, secFrac, timezone]) => {
   const match = input.match(regex.iso8601DateRe)
   test('iso8601Re matches year', () => expect(match[1]).toBe(year))
@@ -65,7 +65,7 @@ groupTestPartial("'" + regex.rfc2822DateReString + "'", validRFC2822Dates, inval
 
 [
   ['Mon, 1 Jan 2024 12:30:40 +1000', 'Mon', '1', 'Jan', '2024', '12', '30', '40', '+1000'],
-  ['1 Jan 2024 12:30:40 +1000', undefined, '1', 'Jan', '2024', '12', '30', '40', '+1000']
+  ['1 Jan 2024 12:30:40 +1000', undefined, '1', 'Jan', '2024', '12', '30', '40', '+1000'],
 ].forEach(([input, day, dayOfMonth, month, year, hour, minutes, seconds, timezone]) => {
   const match = input.match(regex.rfc2822DateRe)
   test('rfc2822Re matches day', () => expect(match[1]).toBe(day))
@@ -83,7 +83,7 @@ groupTestPartial(regex.usDateReString, validUSDates, invalidUSDates, 'US date');
 
 [
   ['01/02/2024', '01', '02', undefined, '2024'],
-  ['01/02/-2024', '01', '02', '-', '2024']
+  ['01/02/-2024', '01', '02', '-', '2024'],
 ].forEach(([input, month, day, ceIndicator, year]) => {
   const match = input.match(regex.usDateRe)
   test('usDateRe matches month', () => expect(match[1]).toBe(month))
@@ -97,7 +97,7 @@ groupTestPartial(regex.intlDateReString, validIntlDates, invalidIntlDates, 'intl
 
 [
   ['2024/01/02', undefined, '2024', '01', '02'],
-  ['-2024/01/02', '-', '2024', '01', '02']
+  ['-2024/01/02', '-', '2024', '01', '02'],
 ].forEach(([input, ceIndicator, year, month, day]) => {
   const match = input.match(regex.intlDateRe)
   test('intlDateRe matches ceIndicator', () => expect(match[1]).toBe(ceIndicator))
@@ -111,7 +111,7 @@ groupTestPartial(regex.militaryTimeReString, validMilTimes, invalidMilTimes, 'mi
 
 [
   ['2400', '2400', undefined, undefined],
-  ['2230', undefined, '22', '30']
+  ['2230', undefined, '22', '30'],
 ].forEach(([input, endOfDay, hours, minutes]) => {
   const match = input.match(regex.militaryTimeRe)
   test('militaryTimeRe matches end of day', () => expect(match[1]).toBe(endOfDay))
@@ -124,7 +124,7 @@ groupTestPartial(regex.timeReString, validTimes, invalidTimes, 'time (12 hr)');
 
 [
   ['12:00 AM', '12', '00', undefined, undefined, 'AM'],
-  ['8:30:12.93 PM', '8', '30', '12', '93', 'PM']
+  ['8:30:12.93 PM', '8', '30', '12', '93', 'PM'],
 ].forEach(([input, hours, minutes, seconds, secFrac, amPM]) => {
   const match = input.match(regex.timeRe)
   test('timeRe matches hour', () => expect(match[1]).toBe(hours))
@@ -140,7 +140,7 @@ groupTestPartial(regex.twentyFourHourTimeReString, valid24HrTimes, invalid24HrTi
 [
   ['12:00', undefined, '12', '00', undefined, undefined],
   ['8:30:12.93', undefined, '8', '30', '12', '93'],
-  ['24:00', '24:00', undefined, undefined, undefined, undefined]
+  ['24:00', '24:00', undefined, undefined, undefined, undefined],
 ].forEach(([input, endOfDay, hours, minutes, seconds, secFrac]) => {
   const match = input.match(regex.twentyFourHourTimeRe)
   test('twentyFourHourTimeRe matches end of day', () => expect(match[1]).toBe(endOfDay))

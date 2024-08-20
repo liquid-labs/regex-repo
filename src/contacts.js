@@ -18,6 +18,7 @@ import { lockdownRe } from './lib/lockdown-re'
 import { uniNonASCII } from './lib/uni-non-ascii'
 
 export const usPhoneReString = '(\\+?1[._ -]?)?(\\(\\d{3}\\)|\\d{3})[._ -]?\\d{3}[._ -]?\\d{4}'
+
 /**
  * Matches US phone numbers with optional country code and area code.
  * @category Contacts
@@ -25,6 +26,7 @@ export const usPhoneReString = '(\\+?1[._ -]?)?(\\(\\d{3}\\)|\\d{3})[._ -]?\\d{3
 export const usPhoneRe = lockdownRe(usPhoneReString)
 
 export const zipCodeReString = '\\d{5}([._ -]?\\d{4})?'
+
 /**
  * Matches 5 or 9 digit US zip codes.
  * @category Contacts
@@ -32,8 +34,9 @@ export const zipCodeReString = '\\d{5}([._ -]?\\d{4})?'
 export const zipCodeRe = lockdownRe(zipCodeReString)
 
 export const emailReString = `([a-zA-Z0-9${uniNonASCII}!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+(?:\\.[a-zA-Z0-9${uniNonASCII}!#$%&'*+\\/=?^_\`\\{\\|\\}~\\-]+)*|"(?:[\\x20-\\x21\\x23-\\x5b\\x5d-\\x7e${uniNonASCII}]|\\\\[\\x20-\\x7e${uniNonASCII}])*")@(${fqDomainNameReString})`
+
 /**
- * Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to 
+ * Match most valid emails. Provides matching groups 1 (user name) and 2 (domain). When using the partial string to
  * create a Re, you must use the 'u' flag.
  * @category Contacts
  */

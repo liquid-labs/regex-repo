@@ -24,12 +24,13 @@ export const badAWSS3BuckenNames = [
   'xn--foo',
   'sthree-foo',
   'foo-s3alias',
-  'foo--ol-s3'
+  'foo--ol-s3',
 ]
 
 export const badAWSS3TaBuckenNames = badAWSS3BuckenNames.concat([
   'foo.bar',
   //       10        20        30        40        50        60
-  '1234567890123456789012345678901234567890123456789012345678901234'
+  '1234567890123456789012345678901234567890123456789012345678901234',
 ])
+
 export const goodAWSS3BuckenNames = goodAWSS3TaBuckenNames.concat(['foo.bar'])

@@ -28,7 +28,7 @@ const valid8601DatesOnly = [
   '2009W01',
   '2009W011',
   '2009-W01-1',
-  '2009W011'
+  '2009W011',
 ]
 
 const invalid8601DatesOnly = [
@@ -40,7 +40,7 @@ const invalid8601DatesOnly = [
   '10-03',
   '200913', // trivially impossible dates
   '200920',
-  '20090132'
+  '20090132',
 ]
 
 const valid8601TimesOnly = [
@@ -76,7 +76,7 @@ const valid8601TimesOnly = [
   '23:23:23-0500',
   '23:23:23-05:00',
   '232323-0500',
-  '232323-05:00'
+  '232323-05:00',
 ]
 
 const invalid8601TimesOnly = [
@@ -98,13 +98,13 @@ const invalid8601TimesOnly = [
   '01:02:01+00:00',
   '01:02:01-00',
   '01:02:01-0000',
-  '01:02:01-00:00'
+  '01:02:01-00:00',
 ]
 
 export const valid8601DateTimes = [
   '2009-12T12:34',
   '2009-12T12:34+01',
-  ...valid8601TimesOnly.map((t) => '2009-12-12T' + t)
+  ...valid8601TimesOnly.map((t) => '2009-12-12T' + t),
 ]
 
 const invalid8601DateAndTimes = invalid8601TimesOnly.map((t) => '2009-12-12T' + t)
@@ -114,7 +114,7 @@ export const invalid8601DateTimes = [
   '2009-12 12:34+01',
   ...invalid8601DateAndTimes,
   ...valid8601DatesOnly,
-  ...valid8601TimesOnly
+  ...valid8601TimesOnly,
 ]
 
 export const valid8601Dates = [...valid8601DatesOnly, ...valid8601DateTimes]

@@ -22,7 +22,7 @@ import {
   goodFTPUrls, badFTPUrls,
   goodHTTPUrls, badHTTPUrls,
   goodMailtoUrls, badMailtoUrls,
-  goodUrls, badURLs
+  goodUrls, badURLs,
 } from './data/urls'
 
 groupTest(regex.urlRe, goodUrls, badURLs, 'URL')

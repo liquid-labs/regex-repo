@@ -4,7 +4,7 @@ export const goodTLDs = [
   'a1b',
   '域',
   'alongtld',
-  'abcdefghijklmnopqprsuvwxyzabcdefghijklmnopqprsuvwxyzabcdefghijk' // 63 characters OK
+  'abcdefghijklmnopqprsuvwxyzabcdefghijklmnopqprsuvwxyzabcdefghijk', // 63 characters OK
 ]
 
 export const badTLDs = [
@@ -13,5 +13,5 @@ export const badTLDs = [
   'a-z',
   '-az',
   'az-',
-  'abcdefghijklmnopqprsuvwxyzabcdefghijklmnopqprsuvwxyzabcdefghijkl' // 64 characters too much
+  'abcdefghijklmnopqprsuvwxyzabcdefghijklmnopqprsuvwxyzabcdefghijkl', // 64 characters too much
 ]

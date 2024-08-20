@@ -22,7 +22,7 @@ export const badURLs = [
   '///a',
   '///',
   'foo.com',
-  ':// should fail'
+  ':// should fail',
 ]
 
 // test data cribbed from : https://mathiasbynens.be/demo/url-regex
@@ -65,7 +65,7 @@ export const goodHTTPUrls = [
   'http://223.255.255.254',
   'http://some.reallylongtld',
   'http://a.b--c.de/',
-  'https://user:pasword@foo.com:123/path/part?q=1#fragment'
+  'https://user:pasword@foo.com:123/path/part?q=1#fragment',
 ]
 
 export const badHTTPUrls = [
@@ -97,53 +97,53 @@ export const badHTTPUrls = [
   'http:///a',
   'http:// shouldfail.com',
   'http://foo.bar/foo(bar)baz quux',
-  ...badURLs
+  ...badURLs,
 ]
 
 export const goodFTPUrls = [
   'ftp://foo.bar/baz',
-  'ftp://user:pasword@foo.com:123/path/part'
+  'ftp://user:pasword@foo.com:123/path/part',
 ]
 
 export const badFTPUrls = [
   'ftps://foo.bar/',
   'ftp://user:pasword@foo.com:123/path/part?query',
   'ftp://user:pasword@foo.com:123/path/part#fragment',
-  ...badURLs
+  ...badURLs,
 ]
 
 export const goodFileUrls = [
   'file://host.com/path/to/something',
   'file://host.com/',
-  'file:///path/to/something'
+  'file:///path/to/something',
 ]
 
 export const badFileUrls = [
   'file://naked-host.com',
-  ...badURLs
+  ...badURLs,
 ]
 
 export const goodMailtoUrls = goodEmails.map((email) => 'mailto:' + email)
 
 export const badMailtoUrls = [
   ...(badEmails.map((email) => 'mailto:' + email)),
-  ...badURLs
+  ...badURLs,
 ]
 
 export const goodCommonURLs = [
   ...goodFTPUrls,
   ...goodHTTPUrls,
-  ...goodMailtoUrls
+  ...goodMailtoUrls,
 ]
 
 export const badCommonURLs = [
   ...badFTPUrls,
   ...badHTTPUrls,
-  ...badMailtoUrls
+  ...badMailtoUrls,
 ]
 
 export const goodUrls = [
   'rdar://1234',
   'h://test',
-  ...goodCommonURLs
+  ...goodCommonURLs,
 ]

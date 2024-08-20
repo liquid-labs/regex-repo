@@ -18,6 +18,7 @@ import * as numStrs from './lib/numbers-strings'
 import { lockdownRe } from './lib/lockdown-re'
 
 export const integerReString = '-?(?:0|[1-9]\\d*)'
+
 /**
  * Matches an integer.
  * @category Numbers
@@ -25,6 +26,7 @@ export const integerReString = '-?(?:0|[1-9]\\d*)'
 export const integerRe = lockdownRe(integerReString)
 
 export const plainFloatReString = numStrs.plainFloatStr
+
 /**
  * Matches a plain (non-scientific notation) float.
  * @category Numbers
@@ -32,6 +34,7 @@ export const plainFloatReString = numStrs.plainFloatStr
 export const plainFloatRe = lockdownRe(plainFloatReString)
 
 export const scientificFloatReString = numStrs.scientificFloatStr
+
 /**
  * Matches a scientific notation float.
  * @category Numbers
@@ -39,6 +42,7 @@ export const scientificFloatReString = numStrs.scientificFloatStr
 export const scientificFloatRe = lockdownRe(scientificFloatReString)
 
 export const floatReString = numStrs.floatStr
+
 /**
  * Matches a float in either plan or scientific format.
  * @category Numbers
@@ -46,6 +50,7 @@ export const floatReString = numStrs.floatStr
 export const floatRe = lockdownRe(floatReString)
 
 export const zeroTo1FloatReString = numStrs.zeroTo1FloatStr
+
 /**
  * Matches a 0 to 1 float as used in CSS color specifications.
  * @category CSS numbers
@@ -53,6 +58,7 @@ export const zeroTo1FloatReString = numStrs.zeroTo1FloatStr
 export const zeroTo1FloatRe = lockdownRe(zeroTo1FloatReString)
 
 export const zeroTo100PercentReString = numStrs.zeroTo100PercentStr
+
 /**
  * Matches a 0 to 100% integer as used in CSS color specifications.
  * @category CSS numbers
@@ -60,6 +66,7 @@ export const zeroTo100PercentReString = numStrs.zeroTo100PercentStr
 export const zeroTo100PercentRe = lockdownRe(zeroTo100PercentReString)
 
 export const zeroTo100FloatPercentReString = numStrs.zeroTo100FloatPercentStr
+
 /**
  * Matches a 0 to 100% float as used in CSS color specifications.
  * @category CSS numbers
@@ -67,6 +74,7 @@ export const zeroTo100FloatPercentReString = numStrs.zeroTo100FloatPercentStr
 export const zeroTo100FloatPercentRe = lockdownRe(zeroTo100FloatPercentReString)
 
 export const zeroTo255ReString = numStrs.zeroTo255Str
+
 /**
  * Matches a 0 to 255 integer as used in CSS color specifications.
  * @category CSS numbers
@@ -74,6 +82,7 @@ export const zeroTo255ReString = numStrs.zeroTo255Str
 export const zeroTo255Re = lockdownRe(zeroTo255ReString)
 
 export const zeroTo255FloatReString = numStrs.zeroTo255FloatStr
+
 /**
  * Matches a 0 to 255 float as used in CSS color specifications.
  * @category CSS numbers
@@ -81,6 +90,7 @@ export const zeroTo255FloatReString = numStrs.zeroTo255FloatStr
 export const zeroTo255FloatRe = lockdownRe(zeroTo255FloatReString)
 
 export const zeroTo360ReString = numStrs.zeroTo360Str
+
 /**
  * Matches a 0 to 360 integer as used in CSS color specifications.
  * @category CSS numbers
@@ -88,6 +98,7 @@ export const zeroTo360ReString = numStrs.zeroTo360Str
 export const zeroTo360Re = lockdownRe(zeroTo360ReString)
 
 export const zeroTo360FloatReString = numStrs.zeroTo360FloatStr
+
 /**
  * Matches a 0 to 360 float as used in CSS color specifications.
  * @category CSS numbers
