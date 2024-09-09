@@ -41,8 +41,8 @@ export const ipAddressReString = `(?:${ipTupleReString}\\.){3}${ipTupleReString}
 export const ipAddressRe = lockdownRe(ipAddressReString)
 
 // credit to: https://stackoverflow.com/a/17871737/929494
-export const ipV6ReString
-  = '(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|' // 1:2:3:4:5:6:7:8
+export const ipV6ReString =
+  '(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|' // 1:2:3:4:5:6:7:8
   + '([0-9a-fA-F]{1,4}:){1,7}:|' // 1::                              1:2:3:4:5:6:7::
   + '([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|' // 1::8             1:2:3:4:5:6::8  1:2:3:4:5:6::8
   + '([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|' // 1::7:8           1:2:3:4:5::7:8  1:2:3:4:5::8

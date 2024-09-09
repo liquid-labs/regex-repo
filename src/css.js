@@ -22,7 +22,7 @@ import {
   zeroTo100PercentStr,
   zeroTo100FloatPercentStr,
   zeroTo255FloatStr,
-  zeroTo360Str,
+  zeroTo360Str
 } from './lib/numbers-strings'
 
 export const hexColorNoAlphaReString = '#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})'
@@ -124,8 +124,8 @@ export const hsl3ReString = '(?:' + hsl3Opts.join('|') + ')'
  */
 export const hsl3Re = lockdownRe(hsl3ReString)
 
-export const hslReString
-  = `hsla?\\(\\s*${floatStr}(deg|grad|rad|turn)?\\s*(,\\s*${zeroTo100FloatPercentStr}\\s*){2,3}\\)`
+export const hslReString =
+  `hsla?\\(\\s*${floatStr}(deg|grad|rad|turn)?\\s*(,\\s*${zeroTo100FloatPercentStr}\\s*){2,3}\\)`
 
 /**
  * Matches CSS4 'hsl(...) and hsla(...) deg, grad, rad, turn and percent notation.
