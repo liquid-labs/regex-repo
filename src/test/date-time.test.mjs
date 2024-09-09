@@ -25,7 +25,7 @@ import {
   validTimes,
   invalidTimes,
   valid24HrTimes,
-  invalid24HrTimes,
+  invalid24HrTimes
 } from './data/times'
 import { validUSDates, invalidUSDates } from './data/us-dates'
 

@@ -47,8 +47,8 @@ const urlPathReString = '(\\/[^ ?#]*)'
 // though URLs in general allow spaces in the query and fragment components, we disallow them in the HTTP(S) protocol
 const urlQueryAndFragementReString = '(?:\\?([^ #]*))?(?:#([^ ]*))?' // already has the '?' qualifiers
 
-export const httpUrlReString
-= `(https?):\\/\\/${userPlusPassReString}?${hostOrIPReString}${portReString}?${urlPathReString}?${urlQueryAndFragementReString}`
+export const httpUrlReString =
+`(https?):\\/\\/${userPlusPassReString}?${hostOrIPReString}${portReString}?${urlPathReString}?${urlQueryAndFragementReString}`
 
 /**
  * Matches a valid 'http/https' URL. Provides capture groups 1 (protocol), 2 (username), 3 (user password), 4 (host or
