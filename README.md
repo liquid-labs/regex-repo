@@ -104,6 +104,8 @@ _API generated with [dmd-readme-api](https://www.npmjs.com/package/dmd-readme-ap
     - [`ipVFutureRe`](#ipVFutureRe): Matches potential future IP protocols.
   - <span id="global-constant-NPM-index"></span>_NPM_
     - [`npmPackageNameRe`](#npmPackageNameRe): Matches an NPM package name.
+    - [`npmPackageSpecRe`](#npmPackageSpecRe): Matches an NPM package specification.
+    - [`npmPackageTagRe`](#npmPackageTagRe): Matches an NPM package tag.
   - <span id="global-constant-Numbers-index"></span>_Numbers_
     - [`floatRe`](#floatRe): Matches a float in either plan or scientific format.
     - [`integerRe`](#integerRe): Matches an integer.
@@ -512,10 +514,22 @@ Matches a string in IPV6 format.
 Matches potential future IP protocols.
 
 <a id="npmPackageNameRe"></a>
-### `npmPackageNameRe` <sup>↱<sup>[source code](./src/npm.js#L26)</sup></sup> <sup>⇧<sup>[NPM index](#global-constant-NPM-index) | [global index](#global-constant-index)</sup></sup>
+### `npmPackageNameRe` <sup>↱<sup>[source code](./src/npm.js#L27)</sup></sup> <sup>⇧<sup>[NPM index](#global-constant-NPM-index) | [global index](#global-constant-index)</sup></sup>
 
 Matches an NPM package name. Provides matching groups 1 (org name,
 if any) and 2 (package basename).
+
+<a id="npmPackageSpecRe"></a>
+### `npmPackageSpecRe` <sup>↱<sup>[source code](./src/npm.js#L46)</sup></sup> <sup>⇧<sup>[NPM index](#global-constant-NPM-index) | [global index](#global-constant-index)</sup></sup>
+
+Matches an NPM package specification. Note, because any string that cannot be confused with a semver is, in theory,
+a valid tag, this could be any string.
+
+<a id="npmPackageTagRe"></a>
+### `npmPackageTagRe` <sup>↱<sup>[source code](./src/npm.js#L36)</sup></sup> <sup>⇧<sup>[NPM index](#global-constant-NPM-index) | [global index](#global-constant-index)</sup></sup>
+
+Matches an NPM package tag. A tag can, in theory, be anything that cannot be confused with a semver range. Due to
+the requirements of RE construction, the RE string ends up being useless for partial matches so is *NOT* exported.
 
 <a id="floatRe"></a>
 ### `floatRe` <sup>↱<sup>[source code](./src/numbers.js#L50)</sup></sup> <sup>⇧<sup>[Numbers index](#global-constant-Numbers-index) | [global index](#global-constant-index)</sup></sup>
