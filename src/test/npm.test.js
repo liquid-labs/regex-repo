@@ -17,12 +17,20 @@ limitations under the License.
 import { groupTest, groupTestPartial, testCaptureGroups } from './lib/test-lib'
 import * as regex from '../npm'
 import {
-  validNPMPackageNames,
-  invalidNPMPackageNames,
+  validNpmPackageNames,
+  invalidNpmPackageNames,
   npmPackageNameCaptureGroupInputs,
-  npmPackageNameCaptureGroupMatches
+  npmPackageNameCaptureGroupMatches,
+  validNpmPackageTags,
+  invalidNpmPackageTags,
+  validNpmPackageSpecs
 } from './data/npm'
 
-groupTest(regex.npmPackageNameRe, validNPMPackageNames, invalidNPMPackageNames, 'NPM package names')
-groupTestPartial(regex.npmPackageNameReString, validNPMPackageNames, invalidNPMPackageNames, 'NPM package names')
+groupTest(regex.npmPackageNameRe, validNpmPackageNames, invalidNpmPackageNames, 'NPM package names')
+groupTestPartial(regex.npmPackageNameReString, validNpmPackageNames, invalidNpmPackageNames, 'NPM package names')
 testCaptureGroups(regex.npmPackageNameRe, npmPackageNameCaptureGroupInputs, npmPackageNameCaptureGroupMatches, 'NPM package name capture groups')
+
+groupTest(regex.npmPackageTagRe, validNpmPackageTags, invalidNpmPackageTags, 'NPM package tags')
+// Note: Partial matching not tested for tags since any non-semver substring matches
+
+groupTest(regex.npmPackageSpecRe, validNpmPackageSpecs, [], 'NPM package specs')

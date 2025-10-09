@@ -20,9 +20,15 @@ import {
   validSemver2,
   invalidSemver2,
   semver2CaptureGroupInputs,
-  semver2CaptureGroupMatches
+  semver2CaptureGroupMatches,
+  validSemver2Range,
+  invalidSemver2Range,
+  invalidSemver2RangePartials
 } from './data/semver'
 
 groupTest(regex.semver2Re, validSemver2, invalidSemver2, 'semver2')
 groupTestPartial(regex.semver2ReString, validSemver2, invalidSemver2, 'semver2')
 testCaptureGroups(regex.semver2Re, semver2CaptureGroupInputs, semver2CaptureGroupMatches, 'semver2 capture groups')
+
+groupTest(regex.semver2RangeRe, validSemver2Range, invalidSemver2Range, 'semver2Range')
+groupTestPartial(regex.semver2RangeReString, validSemver2Range, invalidSemver2RangePartials, 'semver2Range')

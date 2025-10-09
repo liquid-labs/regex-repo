@@ -82,3 +82,160 @@ export const semver2CaptureGroupMatches = [
   ['1', '0', '0', 'beta', 'exp.sha.5114f85'],
   ['2', '0', '0', 'rc.1', 'build.123'],
 ]
+
+// Valid semver range specifications
+export const validSemver2Range = [
+  // Exact versions
+  '0.0.0',
+  '0.0.1',
+  '0.1.0',
+  '1.2.3',
+  '10.20.30',
+  '999.999.999',
+  '1.2.3+build.1',
+  '1.2.3+exp.sha.5114f85',
+  '1.2.3-alpha.1+build.42',
+  '1.2.3-01',
+  '=1.2.3',
+
+  // Wildcards and X-ranges
+  '*',
+  'x',
+  'X',
+  '1.x',
+  '1.X',
+  '1.*',
+  '1.2.x',
+  '1.2.*',
+  '0.x',
+  '0.0.x',
+
+  // Tilde ranges
+  '~1',
+  '~1.2',
+  '~1.2.3',
+  '~0',
+  '~0.2',
+  '~0.2.3',
+  '~10.20.30',
+
+  // Caret ranges
+  '^1',
+  '^1.2',
+  '^1.2.3',
+  '^0',
+  '^0.2',
+  '^0.2.3',
+  '^0.0',
+  '^0.0.3',
+
+  // Inequalities (comparators)
+  '>0.0.0',
+  '>=1.2.3',
+  '<2.0.0',
+  '<=2.0.0',
+  '>=1.2.3-alpha.1',
+  '<1.3.0-0',
+
+  // Hyphen ranges
+  '1.2.3 - 2.3.4',
+  '1.2 - 2.3',
+  '1.2.3 - 2.3',
+  '1.2 - 2',
+  '0.1.0 - 0.2.5',
+  '1.2.3-alpha.1 - 1.2.3',
+
+  // Mixed partials
+  '1',
+  '1.2',
+  '0',
+  '0.0',
+  '2',
+  '2.5',
+  'v1',
+  'v1.2',
+
+  // AND (space-separated comparator sets)
+  '>=1.2.3 <2.0.0',
+  '>1.2.3 <=2.3.4',
+  '>=0.0.0 <1.0.0',
+  '>=1.2.3-alpha.1 <1.3.0',
+
+  // OR (||) unions
+  '^1.2.3 || ^2.0.0',
+  '~1.2.3 || >=2.0.0 <3.0.0',
+  '1.x || >=2.0.0 <2.1.0',
+  '>=0.0.0 <1.0.0 || >=2.0.0',
+
+  // Prerelease ranges and exacts
+  '1.2.3-alpha',
+  '1.2.3-alpha.1',
+  '1.2.3-rc.0',
+  '1.2.3-rc.1+build.7',
+  '>=1.2.3-alpha.1 <1.3.0',
+  '^1.2.3-alpha.1',
+  '1.2.3-alpha.1 - 1.2.4-0',
+
+  // Build metadata examples
+  '2.3.4+build',
+  '2.3.4+build.11.e0f985a',
+  '2.3.4-rc.1+build.11',
+
+  // Loose 'v' prefix (accepted by many tools)
+  'v1.2.3',
+  'v0.1.0',
+  'v1.2.3-alpha.1',
+  'v1.2.3+build.5',
+]
+
+// partials will match sub-parts of the range, so is a more limited set than invalid semver ranges
+export const invalidSemver2RangePartials = [
+  '',
+  '01.2.3',
+  '1.2.3.4',
+  '1.02.3',
+  '1.2.03',
+  'a.b.c',
+  '1.2.-3',
+  '1.2.x.y',
+  'x.y.z',
+  '1.*.*.*',
+  '=>1.2.3',
+  '><1.2.3',
+  '~>1.2.3',
+  '1.2.3-alpha..1',
+  '1.2.3-alpha.',
+  '1.2.3-alpha!1',
+  '1.2.3+build..1',
+  '1.2.3+!build',
+  'v',
+  'v.1',
+  'v.1.2',
+  'latest',
+  'next',
+  'canary',
+  'git+https://example.com/repo.git#v1.2.3',
+  '~',
+  '^',
+  '>',
+  '>=',
+  '<',
+  '<=',
+]
+
+// Invalid semver range specifications
+export const invalidSemver2Range = [
+  ...invalidSemver2RangePartials,
+  '>=1.2.3, <2.0.0',
+  '1.2.3 -- 2.0.0',
+  '1.2.3 -',
+  '- 1.2.3',
+  '(>=1.2.3 <2.0.0)',
+  '>=1.2.3    <2.0.0', // the spec is picky about 'and' spaces
+  '|| ^1.2.3',
+  '^1.2.3 ||',
+  '^1.2.3 || || ^2.0.0',
+  '>= 1.2.3 < 2.0.0',
+  '>= 1.2.3    < 2.0 .0',
+  '>=1.2.3  <  2.0.0 ||',
+]

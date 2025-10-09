@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-export const validNPMPackageNames = ['ansi-escapes', 'foo.com', '@acme/foo']
+export const validNpmPackageNames = ['ansi-escapes', 'foo.com', '@acme/foo']
 
-export const invalidNPMPackageNames = ['excited!', '.start-with-a-peried', '@acme/!foo']
+export const invalidNpmPackageNames = ['excited!', '.start-with-a-peried', '@acme/!foo']
 
 export const npmPackageNameCaptureGroupInputs = [
   'ansi-escapes',
@@ -28,4 +28,31 @@ export const npmPackageNameCaptureGroupMatches = [
   [undefined, 'ansi-escapes'],
   ['@acme/', 'foo'],
   [undefined, 'foo.com'],
+]
+
+// NPM tags - anything that is NOT a valid semver range
+export const validNpmPackageTags = [
+  'latest',
+  'next',
+  'beta',
+  'canary'
+]
+
+export const invalidNpmPackageTags = [
+  '1.2.3',
+  '^1.0.0',
+  '~2.1.0',
+  '>=1.0.0'
+]
+
+// NPM package specs - can be anything (tags or semver ranges)
+export const validNpmPackageSpecs = [
+  'latest',
+  'next',
+  'beta',
+  'canary',
+  '1.2.3',
+  '^1.0.0',
+  '~2.1.0',
+  '>=1.0.0'
 ]
