@@ -1,7 +1,7 @@
 # regex-repo
 ![coverage: 100%](./.readme-assets/coverage.svg) [![Unit tests](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml/badge.svg)](https://github.com/liquid-labs/regex-repo/actions/workflows/unit-tests-node.yaml)
 
-A a collection of useful regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided REs.
+A a collection of useful regular expressions. Refer to the [regex reference](#regex-reference) below for a list of the provided REs. Supports both CJS and ESM packages.
 
 ## Installation
 
@@ -9,7 +9,7 @@ A a collection of useful regular expressions. Refer to the [regex reference](#re
 npm i @liquid-labs/regex-repo
 ```
 
-Supports both CJS and ESM packages.
+`pnpm` and `yarn` also  work.
 
 ## Usage
 
