@@ -21,7 +21,7 @@
     "lint:fix": "make lint-fix",
     "test": "make test",
     "prepack": "make build",
-    "preversion": "make release",
+    "preversion": "make preprelease",
     "qa": "make qa"
   },
   "engines": {

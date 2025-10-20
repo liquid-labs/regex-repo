@@ -14,8 +14,8 @@ lint: $(LINT_TARGETS)
 lint-fix: $(LINT_FIX_TARGETS)
 .PHONY+=lint lint-fix
 
-release: all qa package-lock.json
-.PHONY+=release
+preprelease: all qa package-lock.json
+.PHONY+=preprelease
 
 test: $(TEST_TARGETS)
 .PHONY+= test
