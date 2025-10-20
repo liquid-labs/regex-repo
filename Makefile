@@ -8,7 +8,7 @@ SHELL:=bash
 
 default: all
 
-PHONY_TARGETS:=all default
+.PHONY:=default
 
 BUILD_TARGETS:=
 
@@ -21,3 +21,6 @@ TEST_TARGETS:=
 ifneq ($(wildcard make/*.mk),)
 include make/*.mk
 endif
+
+test-npm:
+	which npm

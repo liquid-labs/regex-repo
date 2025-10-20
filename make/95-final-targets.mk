@@ -5,23 +5,20 @@
 .PRECIOUS: $(PRECIOUS_TARGETS)
 
 build: $(BUILD_TARGETS)
-
-PHONY_TARGETS+=build
+.PHONY+=build
 
 all: build
+.PHONY+=all
 
 lint: $(LINT_TARGETS)
-
 lint-fix: $(LINT_FIX_TARGETS)
+.PHONY+=lint lint-fix
 
-PHONY_TARGETS+=lint lint-fix
+release: all qa package-lock.json
+.PHONY+=release
 
 test: $(TEST_TARGETS)
-
-PHONY_TARGETS+= test
+.PHONY+= test
 
 qa: test lint
-
-PHONY_TARGETS+=qa
-
-.PHONY: $(PHONY_TARGETS)
+.PHONY+=qa
